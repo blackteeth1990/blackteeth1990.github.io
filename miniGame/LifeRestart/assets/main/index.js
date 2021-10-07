@@ -1,58 +1,5154 @@
-System.register("chunks:///_virtual/LifeTrackItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts"],(function(e){"use strict";var t,i,n,r,o,a,c,l,s,p,u,f,g,h;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,n=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,c=e.Label,l=e.RichText,s=e.Node,p=e.UITransform,u=e.Size,f=e.Sprite,g=e.Component},function(e){h=e.GradeColor}],execute:function(){var d,b,y,m,z,T,L,v,w,S,x;o._RF.push({},"13c8150xT9OHoVDT5Oz5bA9","LifeTrackItem",void 0);var C=a.ccclass,D=a.property;e("LifeTrackItem",(d=C("LifeTrackItem"),b=D({type:c}),y=D({type:l}),m=D({type:s}),z=D({type:s}),d((v=t((L=function(e){function t(){for(var t,i=arguments.length,o=new Array(i),a=0;a<i;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,n(r(t),"agaLabel",v,r(t)),n(r(t),"descriptionText",w,r(t)),n(r(t),"descriptionBG",S,r(t)),n(r(t),"lineNode",x,r(t)),t}i(t,e);var o=t.prototype;return o.start=function(){},o.setData=function(e,t,i){this.agaLabel.string=e,this.descriptionText.string=t;var n=this.getHeight(),r=this.descriptionBG.getComponent(p),o=r.contentSize;r.contentSize=new u(o.width,n),this.descriptionBG.getComponent(f).color=h[i]},o.getHeight=function(){return this.descriptionText.getComponent(p).contentSize.height},o.setLineLength=function(e){var t=this.lineNode.getComponent(p),i=t.contentSize;t.contentSize=new u(i.width,e)},t}(g)).prototype,"agaLabel",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=t(L.prototype,"descriptionText",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),S=t(L.prototype,"descriptionBG",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),x=t(L.prototype,"lineNode",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=L))||T));o._RF.pop()}}}));
+System.register("chunks:///_virtual/LifeTrackItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+  'use strict';
 
-System.register("chunks:///_virtual/property.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./util.ts"],(function(t){"use strict";var s,i,e,T,h,S,E,P,a,Y,r;return{setters:[function(t){s=t.classPrivateFieldSet,i=t.classPrivateFieldGet,e=t.createForOfIteratorHelperLoose,T=t.defineProperty},function(t){h=t.cclegacy,S=t.sys},function(t){E=t.sum,P=t.max,a=t.min,Y=t.clone,r=t.listRandom}],execute:function(){h._RF.push({},"146017WEUlI/LkSWRI1dalX","property",void 0);var c,n=new WeakMap,u=new WeakMap;t({Property:c=function(){function t(){T(this,"TYPES",{AGE:"AGE",CHR:"CHR",INT:"INT",STR:"STR",MNY:"MNY",SPR:"SPR",ESC:"ESC",LIF:"LIF",TLT:"TLT",EVT:"EVT",TMS:"TMS",LAGE:"LAGE",HAGE:"HAGE",LCHR:"LCHR",HCHR:"HCHR",LINT:"LINT",HINT:"HINT",LSTR:"LSTR",HSTR:"HSTR",LMNY:"LMNY",HMNY:"HMNY",LSPR:"LSPR",HSPR:"HSPR",SUM:"SUM",EXT:"EXT",ATLT:"ATLT",AEVT:"AEVT",ACHV:"ACHV",CTLT:"RTLT",CEVT:"REVT",CACHV:"CACHV",RDM:"RDM"}),T(this,"SPECIAL",{RDM:[this.TYPES.CHR,this.TYPES.INT,this.TYPES.STR,this.TYPES.MNY,this.TYPES.SPR]}),n.set(this,{writable:!0,value:void 0}),u.set(this,{writable:!0,value:{}})}var h=t.prototype;return h.initial=function(t){var e=t.age;for(var T in s(this,n,new Map),e){var h,S,E=e[T].age,P=e[T],a=P.event,Y=P.talent;Array.isArray(a)||(a=(null===(h=a)||void 0===h?void 0:h.split(","))||[]),a=a.map((function(t){var s=(""+t).split("*").map((function(t){return Number(t)}));return 1==s.length&&s.push(1),s})),Array.isArray(Y)||(Y=(null===(S=Y)||void 0===S?void 0:S.split(","))||[]),Y=Y.map((function(t){return Number(t)})),i(this,n)[E]={event:a,talent:Y}}},h.restart=function(t){var i;for(var e in s(this,u,((i={})[this.TYPES.AGE]=-1,i[this.TYPES.CHR]=0,i[this.TYPES.INT]=0,i[this.TYPES.STR]=0,i[this.TYPES.MNY]=0,i[this.TYPES.SPR]=0,i[this.TYPES.ESC]=0,i[this.TYPES.LIF]=1,i[this.TYPES.TLT]=[],i[this.TYPES.EVT]=[],i[this.TYPES.LAGE]=1/0,i[this.TYPES.LCHR]=1/0,i[this.TYPES.LINT]=1/0,i[this.TYPES.LSTR]=1/0,i[this.TYPES.LSPR]=1/0,i[this.TYPES.LMNY]=1/0,i[this.TYPES.HAGE]=-1/0,i[this.TYPES.HCHR]=-1/0,i[this.TYPES.HINT]=-1/0,i[this.TYPES.HSTR]=-1/0,i[this.TYPES.HMNY]=-1/0,i[this.TYPES.HSPR]=-1/0,i)),t)this.change(e,t[e])},h.restartLastStep=function(){i(this,u)[this.TYPES.LAGE]=this.get(this.TYPES.AGE),i(this,u)[this.TYPES.LCHR]=this.get(this.TYPES.CHR),i(this,u)[this.TYPES.LINT]=this.get(this.TYPES.INT),i(this,u)[this.TYPES.LSTR]=this.get(this.TYPES.STR),i(this,u)[this.TYPES.LSPR]=this.get(this.TYPES.SPR),i(this,u)[this.TYPES.LMNY]=this.get(this.TYPES.MNY),i(this,u)[this.TYPES.HAGE]=this.get(this.TYPES.AGE),i(this,u)[this.TYPES.HCHR]=this.get(this.TYPES.CHR),i(this,u)[this.TYPES.HINT]=this.get(this.TYPES.INT),i(this,u)[this.TYPES.HSTR]=this.get(this.TYPES.STR),i(this,u)[this.TYPES.HMNY]=this.get(this.TYPES.MNY),i(this,u)[this.TYPES.HSPR]=this.get(this.TYPES.SPR)},h.get=function(t){switch(t){case this.TYPES.AGE:case this.TYPES.CHR:case this.TYPES.INT:case this.TYPES.STR:case this.TYPES.MNY:case this.TYPES.SPR:case this.TYPES.ESC:case this.TYPES.LIF:case this.TYPES.TLT:case this.TYPES.EVT:var s=i(this,u)[t];return Y(s);case this.TYPES.LAGE:case this.TYPES.LCHR:case this.TYPES.LINT:case this.TYPES.LSTR:case this.TYPES.LMNY:case this.TYPES.LSPR:return a(i(this,u)[t],this.get(this.fallback(t)));case this.TYPES.HAGE:case this.TYPES.HCHR:case this.TYPES.HINT:case this.TYPES.HSTR:case this.TYPES.HMNY:case this.TYPES.HSPR:return P(i(this,u)[t],this.get(this.fallback(t)));case this.TYPES.SUM:var e=this.get(this.TYPES.HAGE),T=this.get(this.TYPES.HCHR),h=this.get(this.TYPES.HINT),S=this.get(this.TYPES.HSTR),r=this.get(this.TYPES.HMNY),c=this.get(this.TYPES.HSPR);return Math.floor(2*E(T,h,S,r,c)+e/2);case this.TYPES.TMS:return this.lsget("restartTimes")||0;case this.TYPES.EXT:return this.lsget("inheritTalent")||0;case this.TYPES.ATLT:case this.TYPES.AEVT:case this.TYPES.ACHV:return this.lsget(t)||[];case this.TYPES.CTLT:case this.TYPES.CEVT:case this.TYPES.CACHV:return this.get(this.fallback(t)).length;default:return 0}},h.fallback=function(t){switch(t){case this.TYPES.LAGE:case this.TYPES.HAGE:return this.TYPES.AGE;case this.TYPES.LCHR:case this.TYPES.HCHR:return this.TYPES.CHR;case this.TYPES.LINT:case this.TYPES.HINT:return this.TYPES.INT;case this.TYPES.LSTR:case this.TYPES.HSTR:return this.TYPES.STR;case this.TYPES.LMNY:case this.TYPES.HMNY:return this.TYPES.MNY;case this.TYPES.LSPR:case this.TYPES.HSPR:return this.TYPES.SPR;case this.TYPES.CTLT:return this.TYPES.ATLT;case this.TYPES.CEVT:return this.TYPES.AEVT;case this.TYPES.CACHV:return this.TYPES.ACHV;default:return}},h.set=function(t,s){switch(t){case this.TYPES.AGE:case this.TYPES.CHR:case this.TYPES.INT:case this.TYPES.STR:case this.TYPES.MNY:case this.TYPES.SPR:case this.TYPES.ESC:case this.TYPES.LIF:case this.TYPES.TLT:case this.TYPES.EVT:return this.hl(t,i(this,u)[t]=Y(s)),void this.achieve(t,s);case this.TYPES.TMS:return void this.lsset("restartTimes",parseInt(s)||0);case this.TYPES.EXT:return void this.lsset("inheritTalent",parseInt(s));default:return}},h.getLastRecord=function(){var t;return Y(((t={})[this.TYPES.AGE]=this.get(this.TYPES.AGE),t[this.TYPES.CHR]=this.get(this.TYPES.CHR),t[this.TYPES.INT]=this.get(this.TYPES.INT),t[this.TYPES.STR]=this.get(this.TYPES.STR),t[this.TYPES.MNY]=this.get(this.TYPES.MNY),t[this.TYPES.SPR]=this.get(this.TYPES.SPR),t))},h.change=function(t,s){if(Array.isArray(s))for(var T,h=e(s);!(T=h()).done;){var S=T.value;this.change(t,Number(S))}else switch(t){case this.TYPES.AGE:case this.TYPES.CHR:case this.TYPES.INT:case this.TYPES.STR:case this.TYPES.MNY:case this.TYPES.SPR:case this.TYPES.ESC:case this.TYPES.LIF:return void this.hl(t,i(this,u)[t]+=Number(s));case this.TYPES.TLT:case this.TYPES.EVT:var E=i(this,u)[t];if(s<0){var P=E.indexOf(s);-1!=P&&E.splice(P,1)}return E.includes(s)||E.push(s),void this.achieve(t,s);case this.TYPES.TMS:return void this.set(t,this.get(t)+parseInt(s));default:return}},h.hookSpecial=function(t){switch(t){case this.TYPES.RDM:return r(this.SPECIAL.RDM);default:return t}},h.effect=function(t){for(var s in t)this.change(this.hookSpecial(s),Number(t[s]))},h.isEnd=function(){return this.get(this.TYPES.LIF)<1},h.ageNext=function(){this.change(this.TYPES.AGE,1);var t=this.get(this.TYPES.AGE),s=this.getAgeData(t);return{age:t,event:s.event,talent:s.talent}},h.getAgeData=function(t){return Y(i(this,n)[t])},h.hl=function(t,s){var e;switch(t){case this.TYPES.AGE:e=[this.TYPES.LAGE,this.TYPES.HAGE];break;case this.TYPES.CHR:e=[this.TYPES.LCHR,this.TYPES.HCHR];break;case this.TYPES.INT:e=[this.TYPES.LINT,this.TYPES.HINT];break;case this.TYPES.STR:e=[this.TYPES.LSTR,this.TYPES.HSTR];break;case this.TYPES.MNY:e=[this.TYPES.LMNY,this.TYPES.HMNY];break;case this.TYPES.SPR:e=[this.TYPES.LSPR,this.TYPES.HSPR];break;default:return}var T=e,h=T[0],S=T[1];i(this,u)[h]=a(i(this,u)[h],s),i(this,u)[S]=P(i(this,u)[S],s)},h.achieve=function(t,s){var i;switch(t){case this.TYPES.ACHV:var e=this.lsget(t);return void this.lsset(t,(e||[]).concat([[s,Date.now()]]));case this.TYPES.TLT:i=this.TYPES.ATLT;break;case this.TYPES.EVT:i=this.TYPES.AEVT;break;default:return}var T=this.lsget(i)||[];this.lsset(i,Array.from(new Set(T.concat(s||[]).flat())))},h.lsget=function(t){var s=S.localStorage.getItem(t);if(null!=s&&"undefined"!=s)return JSON.parse(s)},h.lsset=function(t,s){S.localStorage.setItem(t,JSON.stringify(s))},t}(),default:c});h._RF.pop()}}}));
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, RichText, Node, UITransform, Size, Sprite, Component, GradeColor;
 
-System.register("chunks:///_virtual/SummaryPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./Talent.ts","./EventMessage.ts","./Life.ts","./TalentItem.ts","./PropItem.ts","./UIPanel.ts"],(function(e){"use strict";var t,r,i,n,a,l,o,s,p,c,u,m,h,b,f,d,g,y,I,T,_,P,v,L;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,i=e.initializerDefineProperty,n=e.assertThisInitialized,a=e.defineProperty},function(e){l=e.cclegacy,o=e._decorator,s=e.Node,p=e.Prefab,c=e.Button,u=e.Label,m=e.instantiate,h=e.UITransform,b=e.Vec3},function(e){f=e.CalStage,d=e.GradeColor,g=e.PropNameMap,y=e.Message},function(e){I=e.talentMgr},function(e){T=e.eventMsg},function(e){_=e.lifeMgr},function(e){P=e.TalentItem},function(e){v=e.PropItem},function(e){L=e.UIPanel}],execute:function(){var S,M,E,w,C,z,D,G,R,x,N,Y,H,B,k,A,U,O,V,F,X,j,W;l._RF.push({},"1f26bOWTsVLxaooa+ZdgSIB","SummaryPanel",void 0);var Z=o.ccclass,q=o.property,J=["CHR","INT","STR","MNY","SPR"],K=[{value:10,des:"啊。这。。。"},{value:20,des:"平平凡凡"},{value:40,des:"平平安安"},{value:80,des:"在世仙人"},{value:160,des:"超神"}];e("SummaryPanel",(S=Z("SummaryPanel"),M=q({type:s}),E=q({type:p}),w=q({type:s}),C=q({type:p}),z=q({type:c}),D=q({type:u}),G=q({type:u}),R=q({type:u}),x=q({type:u}),N=q({type:u}),S((B=t((H=function(e){function t(){for(var t,r=arguments.length,l=new Array(r),o=0;o<r;o++)l[o]=arguments[o];return t=e.call.apply(e,[this].concat(l))||this,i(n(t),"talentItemGroup",B,n(t)),i(n(t),"talentItemPrfb",k,n(t)),i(n(t),"propGroup",A,n(t)),i(n(t),"propItemPrfb",U,n(t)),i(n(t),"RestartButton",O,n(t)),i(n(t),"ageLabel",V,n(t)),i(n(t),"resetTimesLabel",F,n(t)),i(n(t),"scoreLabel",X,n(t)),i(n(t),"scoreDesLabel",j,n(t)),i(n(t),"tipsLabel",W,n(t)),a(n(t),"talentItems",[]),a(n(t),"selectedTalentIndices",[]),a(n(t),"_talentList",void 0),a(n(t),"_limitSelectedTalentNum",1),a(n(t),"_curMaxHeight",void 0),a(n(t),"_propItemsMap",new Map),t}r(t,e);var l=t.prototype;return l.start=function(){},l.init=function(){var e=this,t=_._property.get(_._property.TYPES.TLT);this._talentList=new Array(t.length);for(var r=0;r<t.length;r++){var i=t[r];this._talentList[r]=I.get(i)}this.talentItemGroup.removeAllChildren(),this.selectedTalentIndices=[],this.talentItems=[],this.tipsLabel.string="选"+this._limitSelectedTalentNum+"项天赋，可以保留到下一世";var n=_._property.get(_._property.TYPES.ESC);this.scoreLabel.string=n,this.ageLabel.string="享年"+_._property.get(_._property.TYPES.AGE)+"岁",this.resetTimesLabel.string="第"+_._property.get(_._property.TYPES.TMS)+"世代";var a=f(K,n);this.scoreDesLabel.string=K[a].des,this.scoreDesLabel.color=d[a],this._contentUITrans=this.talentItemGroup._uiProps.uiTransformComp,this._curMaxHeight=0,this._talentList.forEach((function(t,r){var i=m(e.talentItemPrfb);i.setParent(e.talentItemGroup);var n=i.getComponent(P);n.index=r,n.setData(t),e.talentItems.push(n),n.onItemClick=e.onTalentItemClicked.bind(e);var a=i.getComponent(h).contentSize.height;i.setPosition(new b(0,e._curMaxHeight-a/2,0)),e._curMaxHeight-=a,e._contentUITrans.height=-e._curMaxHeight})),this.initProp()},l.createPropItem=function(e,t){var r=m(this.propItemPrfb);r.setParent(this.propGroup);var i=r.getComponent(v);return i.setData(e,t),i},l.initProp=function(){var e=this;this.propGroup.removeAllChildren(),this._propItemsMap.clear();var t=_.getLastRecord();J.forEach((function(r){e._propItemsMap.set(r,e.createPropItem(g[r],t[r]))}))},l.updatePropData=function(){var e=this,t=_.getLastRecord();J.forEach((function(r){var i=e._propItemsMap.get(r);null==i||i.updateValue(t[r])})),this.scoreLabel.string=_._property.get(_._property.TYPES.ESC).toString()},l.onTalentItemClicked=function(e){var t=this,r=this.selectedTalentIndices.indexOf(e);r>=0?this.selectedTalentIndices.splice(r,1):(this.selectedTalentIndices.length===this._limitSelectedTalentNum&&this.selectedTalentIndices.splice(this._limitSelectedTalentNum-1,1),this.selectedTalentIndices.push(e)),this.talentItems.forEach((function(e,r){t.selectedTalentIndices.indexOf(r)>=0?e.setSelected(!0):e.setSelected(!1)}))},l.onRestartButtonClicked=function(){this.selectedTalentIndices.length>0?_._property.set(_._property.TYPES.EXT,this._talentList[this.selectedTalentIndices[0]].id):_._property.set(_._property.TYPES.EXT,0),T.emit(y.Replay)},l.onShow=function(){this.init()},t}(L)).prototype,"talentItemGroup",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=t(H.prototype,"talentItemPrfb",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),A=t(H.prototype,"propGroup",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=t(H.prototype,"propItemPrfb",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),O=t(H.prototype,"RestartButton",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),V=t(H.prototype,"ageLabel",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),F=t(H.prototype,"resetTimesLabel",[G],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),X=t(H.prototype,"scoreLabel",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),j=t(H.prototype,"scoreDesLabel",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),W=t(H.prototype,"tipsLabel",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Y=H))||Y));l._RF.pop()}}}));
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      RichText = module.RichText;
+      Node = module.Node;
+      UITransform = module.UITransform;
+      Size = module.Size;
+      Sprite = module.Sprite;
+      Component = module.Component;
+    }, function (module) {
+      GradeColor = module.GradeColor;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
 
-System.register("chunks:///_virtual/Life.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./util.ts","./property.ts","./event.ts","./Talent.ts","./achievement.ts","./ConfigManager.ts"],(function(t){"use strict";var e,r,i,n,o,s,p,a,h,c,_;return{setters:[function(t){e=t.createForOfIteratorHelperLoose,r=t.createClass,i=t.defineProperty,n=t.asyncToGenerator},function(t){o=t.cclegacy},function(t){s=t.weightRandom},function(t){p=t.Property},function(t){a=t.default},function(t){h=t.talentMgr},function(t){c=t.Achievement},function(t){_=t.default}],execute:function(){o._RF.push({},"26af1qQIDFA4rL7IzI7FUF7","Life",void 0);t("lifeMgr",new(function(){function t(){i(this,"_property",void 0),i(this,"_event",void 0),i(this,"_talent",void 0),i(this,"_achievement",void 0),i(this,"_triggerTalents",void 0),this._property=new p,this._event=new a,this._talent=h,this._achievement=new c}var o=t.prototype;return o.initial=function(){var t=n(regeneratorRuntime.mark((function t(){var e,r,i,n,o;return regeneratorRuntime.wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,Promise.all([_.readJson("age"),_.readJson("talents"),_.readJson("events"),_.readJson("achievement")]);case 2:e=t.sent,r=e[0],i=e[1],n=e[2],o=e[3],this._property.initial({age:r}),this._talent.initial({talents:i}),this._event.initial({events:n}),this._achievement.initial({achievements:o});case 11:case"end":return t.stop()}}),t,this)})));return function(){return t.apply(this,arguments)}}(),o.restart=function(t){this._triggerTalents={};var e=this.talentReplace(t.TLT);return this._property.restart(t),this.doTalent(),this._property.restartLastStep(),this._achievement.achieve(this._achievement.Opportunity.START,this._property),e},o.getTalentAllocationAddition=function(t){return this._talent.allocationAddition(t)},o.getTalentCurrentTriggerCount=function(t){return this._triggerTalents[t]||0},o.next=function(){var t=this._property.ageNext(),e=t.age,r=t.event,i=t.talent,n=this.doTalent(i),o=this.doEvent(this.random(r)),s=this._property.isEnd(),p=[].concat(n,o);return this._achievement.achieve(this._achievement.Opportunity.TRAJECTORY,this._property),{age:e,content:p,isEnd:s}},o.talentReplace=function(t){var e=this._talent.replace(t),r=[];for(var i in e){t.push(e[i]);var n=this._talent.get(i),o=this._talent.get(e[i]);r.push({type:"talentReplace",source:n,target:o})}return r},o.doTalent=function(t){var r=this;t&&this._property.change(this._property.TYPES.TLT,t),t=this._property.get(this._property.TYPES.TLT).filter((function(t){return r.getTalentCurrentTriggerCount(t)<r._talent.get(t).max_triggers}));for(var i,n=[],o=e(t);!(i=o()).done;){var s=i.value,p=this._talent.do(s,this._property);if(p){this._triggerTalents[s]=this.getTalentCurrentTriggerCount(s)+1;var a=p.effect,h=p.name,c=p.description,_=p.grade;n.push({type:this._property.TYPES.TLT,name:h,grade:_,description:c}),a&&this._property.effect(a)}}return n},o.doEvent=function(t){var e=this._event.do(t,this._property),r=e.effect,i=e.next,n=e.description,o=e.postEvent,s=e.grade,p=e.score;this._property.change(this._property.TYPES.EVT,t),this._property.effect({ESC:p}),this._property.effect(r);var a={type:this._property.TYPES.EVT,description:n,postEvent:o,grade:s};return i?[a].concat(this.doEvent(i)):[a]},o.random=function(t){var e=this;return s(t.filter((function(t){var r=t[0];return e._event.check(r,e._property)})))},o.talentRandom=function(t,e){void 0===t&&(t=10),void 0===e&&(e=!1);var r=this._property.get(this._property.TYPES.TMS),i=this._property.get(this._property.TYPES.CACHV);return this._talent.talentRandom(t,e,this.getLastExtendTalent(),{times:r,achievement:i})},o.talentExtend=function(t){this._property.set(this._property.TYPES.EXT,t)},o.getLastExtendTalent=function(){return this._property.get(this._property.TYPES.EXT)},o.getSummary=function(){return this._achievement.achieve(this._achievement.Opportunity.SUMMARY,this._property),{AGE:this._property.get(this._property.TYPES.HAGE),CHR:this._property.get(this._property.TYPES.HCHR),INT:this._property.get(this._property.TYPES.HINT),STR:this._property.get(this._property.TYPES.HSTR),MNY:this._property.get(this._property.TYPES.HMNY),SPR:this._property.get(this._property.TYPES.HSPR),SUM:this._property.get(this._property.TYPES.SUM)}},o.getLastRecord=function(){return this._property.getLastRecord()},o.exclusive=function(t,e){return this._talent.exclusive(t,e)},o.getAchievements=function(){return this._achievement.list(this._property).sort((function(t,e){var r=t.isAchieved,i=t.grade,n=t.hide,o=e.isAchieved,s=e.grade,p=e.hide;return r&&o?o-r:r||o?r?o?void 0:-1:1:n&&p?s-i:n?1:p?-1:s-i}))},o.getTotal=function(){var t=this._property.get(this._property.TYPES.TMS),e=this._property.get(this._property.TYPES.CACHV),r=this._property.get(this._property.TYPES.CTLT),i=this._property.get(this._property.TYPES.CEVT);return{times:t,achievement:e,talentRate:r/this._talent.count(),eventRate:i/this._event.count()}},r(t,[{key:"times",get:function(){var t;return(null===(t=this._property)||void 0===t?void 0:t.get(this._property.TYPES.TMS))||0},set:function(t){var e;null===(e=this._property)||void 0===e||e.set(this._property.TYPES.TMS,t),this._achievement.achieve(this._achievement.Opportunity.END,this._property)}}]),t}()));o._RF.pop()}}}));
+      cclegacy._RF.push({}, "13c8150xT9OHoVDT5Oz5bA9", "LifeTrackItem", undefined);
 
-System.register("chunks:///_virtual/AchievementItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts"],(function(e){"use strict";var t,i,r,n,l,o,a,c,s,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,r=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){l=e.cclegacy,o=e._decorator,a=e.Sprite,c=e.Label,s=e.Component},function(e){u=e.GradeColor}],execute:function(){var p,b,h,f,d,g,v,y,m,L,w;l._RF.push({},"28655SvBVlOs7BuLbbcdG1I","AchievementItem",void 0);var A=o.ccclass,z=o.property;e("AchievementItem",(p=A("AchievementItem"),b=z({type:a}),h=z({type:c}),f=z({type:c}),d=z({type:a}),p((y=t((v=function(e){function t(){for(var t,i=arguments.length,l=new Array(i),o=0;o<i;o++)l[o]=arguments[o];return t=e.call.apply(e,[this].concat(l))||this,r(n(t),"BG",y,n(t)),r(n(t),"titleLbl",m,n(t)),r(n(t),"descLbl",L,n(t)),r(n(t),"flowerTag",w,n(t)),t}i(t,e);var l=t.prototype;return l.start=function(){},l.setData=function(e){e.hide&&!e.isAchieved?(this.titleLbl.string="???",this.descLbl.string="???"):(this.titleLbl.string=e.name,this.descLbl.string=e.description),this.BG.color=u[e.grade],e.isAchieved?this.flowerTag.node.active=!0:this.flowerTag.node.active=!1},t}(s)).prototype,"BG",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),m=t(v.prototype,"titleLbl",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=t(v.prototype,"descLbl",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=t(v.prototype,"flowerTag",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),g=v))||g));l._RF.pop()}}}));
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var LifeTrackItem = exports('LifeTrackItem', (_dec = ccclass('LifeTrackItem'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: RichText
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Node
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LifeTrackItem, _Component);
 
-System.register("chunks:///_virtual/achievement.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./util.ts","./condition.ts","./EventMessage.ts"],(function(e){"use strict";var t,i,n,r,c,o,u,s,a;return{setters:[function(e){t=e.classPrivateFieldSet,i=e.classPrivateFieldGet,n=e.createForOfIteratorHelperLoose,r=e.defineProperty},function(e){c=e.cclegacy},function(e){o=e.Message},function(e){u=e.clone},function(e){s=e.checkCondition},function(e){a=e.eventMsg}],execute:function(){c._RF.push({},"2ebf1c3o/JMO46jyizTZPPt","achievement",void 0);var v=new WeakMap;e("Achievement",function(){function e(){r(this,"Opportunity",{START:"START",TRAJECTORY:"TRAJECTORY",SUMMARY:"SUMMARY",END:"END"}),v.set(this,{writable:!0,value:void 0})}var c=e.prototype;return c.initial=function(e){var n=e.achievements;for(var r in t(this,v,new Map),n){var c=n[r];i(this,v)[c.id]=c}},c.count=function(){return Object.keys(i(this,v)).length},c.list=function(e){var t=this;return Object.values(i(this,v)).map((function(i){var n=i.id;return{id:n,name:i.name,opportunity:i.opportunity,description:i.description,hide:i.hide,grade:i.grade,isAchieved:t.isAchieved(n,e)}}))},c.get=function(e){var t=i(this,v)[e];if(!t)throw new Error("[ERROR] No Achievement["+e+"]");return u(t)},c.check=function(e,t){var i=this.get(e).condition;return s(t,i)},c.isAchieved=function(e,t){for(var i,r=n(t.get(t.TYPES.ACHV)||[]);!(i=r()).done;){if(i.value[0]==e)return!0}return!1},c.achieve=function(e,t){var i=this;this.list(t).filter((function(e){return!e.isAchieved})).filter((function(t){return t.opportunity==e})).filter((function(e){var n=e.id;return i.check(n,t)})).forEach((function(e){var n=e.id;t.achieve(t.TYPES.ACHV,n),a.emit(o.Achievement,i.get(n))}))},e}());c._RF.pop()}}}));
+        function LifeTrackItem() {
+          var _this;
 
-System.register("chunks:///_virtual/TagItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var e,i,a,n,r,o,c,s,p;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,a=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){r=t.cclegacy,o=t._decorator,c=t.Label,s=t.UIOpacity,p=t.Component}],execute:function(){var u,l,y,f,g,h,m;r._RF.push({},"30215PPV8RECbcWcSvYkUZZ","TagItem",void 0);var b=o.ccclass,v=o.property;t("TagItem",(u=b("TagItem"),l=v({type:c}),y=v({type:s}),u((h=e((g=function(t){function e(){for(var e,i=arguments.length,r=new Array(i),o=0;o<i;o++)r[o]=arguments[o];return e=t.call.apply(t,[this].concat(r))||this,a(n(e),"tagName",h,n(e)),a(n(e),"uiOpacity",m,n(e)),e}i(e,t);var r=e.prototype;return r.start=function(){},r.setFontSize=function(t){this.tagName.fontSize=t},r.setOpacity=function(t){this.uiOpacity.opacity=t},r.setTagName=function(t){this.tagName.string=t},r.refresh=function(t,e){var i=this.node.position,a=t/(t-i.z),n=(i.z+e)/(2*e);this.tagName.fontSize=15*a,this.uiOpacity.opacity=255*(n+.5)},e}(p)).prototype,"tagName",[l],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),m=e(g.prototype,"uiOpacity",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),f=g))||f));r._RF.pop()}}}));
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
 
-System.register("chunks:///_virtual/TalentItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts"],(function(e){"use strict";var t,n,i,r,o,l,a,c,u,s,p,f,m;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized,o=e.defineProperty},function(e){l=e.cclegacy,a=e._decorator,c=e.Label,u=e.Sprite,s=e.Button,p=e.Color,f=e.Component},function(e){m=e.GradeColor}],execute:function(){var y,b,d,h,I,g,v,C,L;l._RF.push({},"3512a8fVOxJgIUDJCjLwZRo","TalentItem",void 0);var B=a.ccclass,D=a.property;e("TalentItem",(y=B("TalentItem"),b=D({type:c}),d=D({type:u}),h=D({type:s}),y((v=t((g=function(e){function t(){for(var t,n=arguments.length,l=new Array(n),a=0;a<n;a++)l[a]=arguments[a];return t=e.call.apply(e,[this].concat(l))||this,i(r(t),"nameLbl",v,r(t)),i(r(t),"frame",C,r(t)),i(r(t),"ItemButton",L,r(t)),o(r(t),"index",0),o(r(t),"onItemClick",null),t}n(t,e);var l=t.prototype;return l.start=function(){},l.setData=function(e){this.nameLbl.string=e.name+"("+e.description+")",this.ItemButton.normalColor=m[e.grade]},l.onButtonClick=function(){var e;null===(e=this.onItemClick)||void 0===e||e.call(this,this.index)},l.setSelected=function(e){this.frame.color=e?p.GREEN:p.WHITE},t}(f)).prototype,"nameLbl",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=t(g.prototype,"frame",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=t(g.prototype,"ItemButton",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),I=g))||I));l._RF.pop()}}}));
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-System.register("chunks:///_virtual/condition.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(r){"use strict";var e,n;return{setters:[function(r){e=r.createForOfIteratorHelperLoose},function(r){n=r.cclegacy}],execute:function(){function t(r,n){if(!Array.isArray(n))return function(r,n){var t=n.length,u=n.search(/[><\!\?=]/),s=n.substring(0,u),a=n.substring(u,u+="="==n[u+1]?2:1),i=n.substring(u,t),c=r.get(s),o="["==i[0]?JSON.parse(i):Number(i);switch(a){case">":return c>o;case"<":return c<o;case">=":return c>=o;case"<=":return c<=o;case"=":return Array.isArray(c)?c.includes(o):c==o;case"!=":return Array.isArray(c)?!c.includes(o):c==o;case"?":if(Array.isArray(c)){for(var f,l=e(c);!(f=l()).done;){var h=f.value;if(o.includes(h))return!0}return!1}return o.includes(c);case"!":if(Array.isArray(c)){for(var v,d=e(c);!(v=d()).done;){var g=v.value;if(o.includes(g))return!1}return!0}return!o.includes(c);default:return!1}}(r,n);if(0==n.length)return!0;if(1==n.length)return t(r,n[0]);for(var u=t(r,n[0]),s=1;s<n.length;s+=2)switch(n[s]){case"&":u&&(u=t(r,n[s+1]));break;case"|":if(u)return!0;u=t(r,n[s+1]);break;default:return!1}return u}r({checkCondition:function(r,e){var n=function(r){var e=[],n=r.length,t=[];t.unshift(e);for(var u=0,s=function(e){var n=r.substring(u,e).trim();u=e,n&&t[0].push(n)},a=0;a<n;a++)switch(r[a]){case" ":continue;case"(":s(a),u++;var i=[];t[0].push(i),t.unshift(i);break;case")":s(a),u++,t.shift();break;case"|":case"&":s(a),s(a+1);break;default:continue}return s(n),e}(e);return t(r,n)},extractMaxTriggers:function(r){var e=/AGE\?\[([0-9\,]+)\]/.exec(r);if(null==e)return 1;return e[1].split(",").length}}),n._RF.push({},"4613dzQqvlAubehIlfH/Drl","condition",void 0),n._RF.pop()}}}));
+          _initializerDefineProperty(_assertThisInitialized(_this), "agaLabel", _descriptor, _assertThisInitialized(_this));
 
-System.register("chunks:///_virtual/EventMessage.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var t,n;return{setters:[function(e){t=e.defineProperty},function(e){n=e.cclegacy}],execute:function(){n._RF.push({},"4e324KiHd1Mj78n/Hffy+JF","EventMessage",void 0);var i=e("EventEmitter",function(){function e(){t(this,"_listenerMap",new Map)}var n=e.prototype;return n.emit=function(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),i=1;i<t;i++)n[i-1]=arguments[i];var r=this._listenerMap.get(e);r&&r.forEach((function(e){e.apply(void 0,n)}))},n.on=function(e,t){var n=this._listenerMap.get(e);n||(n=[],this._listenerMap.set(e,n)),n.push(t)},n.off=function(e,t){var n=this._listenerMap.get(e);if(n){var i=n.indexOf(t);i>=0&&n.splice(i,1)}},e}());e("eventMsg",new i);n._RF.pop()}}}));
+          _initializerDefineProperty(_assertThisInitialized(_this), "descriptionText", _descriptor2, _assertThisInitialized(_this));
 
-System.register("chunks:///_virtual/LifeTrackPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./LifeTrackItem.ts","./EventMessage.ts","./Life.ts","./PropItem.ts","./UIPanel.ts"],(function(t){"use strict";var e,i,n,o,r,a,l,s,u,c,p,h,f,g,m,b,d,y,_,P,T,L,v,B;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,n=t.initializerDefineProperty,o=t.assertThisInitialized,r=t.defineProperty,a=t.createClass},function(t){l=t.cclegacy,s=t._decorator,u=t.Color,c=t.ScrollView,p=t.Node,h=t.Prefab,f=t.Button,g=t.Label,m=t.instantiate,b=t.Vec3,d=t.Animation},function(t){y=t.Message,_=t.PropNameMap},function(t){P=t.LifeTrackItem},function(t){T=t.eventMsg},function(t){L=t.lifeMgr},function(t){v=t.PropItem},function(t){B=t.UIPanel}],execute:function(){var S,I,k,C,w,N,A,M,E,x,z,H,G,J,O,D,R,V,Y,j,U,X,F,K,W,q,Q;l._RF.push({},"5aab2jXtf9OHJM7FC+9+iKf","LifeTrackPanel",void 0);var Z=s.ccclass,$=s.property,tt=["CHR","INT","STR","MNY","SPR"],et=new u(53,194,115);t("LifeTrackPanel",(S=Z("LifeTrackPanel"),I=$(c),k=$({type:p}),C=$({type:h}),w=$({type:p}),N=$({type:h}),A=$({type:p}),M=$({type:p}),E=$({type:p}),x=$({type:f}),z=$({type:g}),H=$({type:g}),G=$({type:p}),S((D=e((O=function(t){function e(){for(var e,i=arguments.length,a=new Array(i),l=0;l<i;l++)a[l]=arguments[l];return e=t.call.apply(t,[this].concat(a))||this,n(o(e),"scrollView",D,o(e)),n(o(e),"lifeTrackGroup",R,o(e)),n(o(e),"lifeTrackItemPrfb",V,o(e)),n(o(e),"propGroup",Y,o(e)),n(o(e),"propItemPrfb",j,o(e)),n(o(e),"nextYearButtonNode",U,o(e)),n(o(e),"autoPlayButtonNode",X,o(e)),n(o(e),"restartButtonNode",F,o(e)),n(o(e),"changeSpeedButton",K,o(e)),n(o(e),"scoreLabel",W,o(e)),n(o(e),"lianJiLabel",q,o(e)),n(o(e),"lianJiNode",Q,o(e)),r(o(e),"_autoPlayButtonLbl",void 0),r(o(e),"_autoPlayButton",void 0),r(o(e),"_changeSpeedButtonLbl",void 0),r(o(e),"_isEnd",!1),r(o(e),"_isAutoPlay",!1),r(o(e),"_triggerTime",1e3),r(o(e),"_timeScale",1),r(o(e),"_timeScaleArray",[1,2,4,8,20]),r(o(e),"_curTimeScaleIndex",0),r(o(e),"_spacing",5),r(o(e),"_curMaxHeight",0),r(o(e),"_propItemsMap",new Map),r(o(e),"_combo",0),e}i(e,t);var l=e.prototype;return l.onLoad=function(){},l.start=function(){},l.initPanel=function(){this._contentUITrans=this.lifeTrackGroup._uiProps.uiTransformComp,this._autoPlayButtonLbl=this.autoPlayButtonNode.getComponentInChildren(g),this._autoPlayButton=this.autoPlayButtonNode.getComponent(f),this._changeSpeedButtonLbl=this.changeSpeedButton.getComponentInChildren(g)},l.createLifeTrack=function(t,e,i){var n=m(this.lifeTrackItemPrfb);n.setParent(this.lifeTrackGroup);var o=n.getComponent(P);o.setData(t,e,i);var r=o.getHeight();n.setPosition(new b(0,this._curMaxHeight,0)),o.setLineLength(r+this._spacing),this._curMaxHeight-=r+this._spacing,this._contentUITrans.height=-this._curMaxHeight},l.createPropItem=function(t,e){var i=m(this.propItemPrfb);i.setParent(this.propGroup);var n=i.getComponent(v);return n.setData(t,e),n},l.onReplayButtonClicked=function(){T.emit(y.LifeTrackEnd)},l.initProp=function(){var t=this;this.propGroup.removeAllChildren(),this._propItemsMap.clear();var e=L.getLastRecord();tt.forEach((function(i){t._propItemsMap.set(i,t.createPropItem(_[i],e[i]))}))},l.updatePropData=function(){var t=this,e=L.getLastRecord();tt.forEach((function(i){var n=t._propItemsMap.get(i);null==n||n.updateValue(e[i])})),this.scoreLabel.string=L._property.get(L._property.TYPES.ESC).toString()},l.playAnimation=function(){this.scoreLabel.getComponent(d).play("scorePop");var t=this.lianJiNode.getComponent(d);t.getState("lianJiPop");this._combo>2&&(this.lianJiLabel.string="X".concat(this._combo.toString()),t.play("lianJiPop"))},l.onShow=function(t,e){this._isEnd=!1,this._isAutoPlay=!1,this._curMaxHeight=0,this._combo=0,this.initPanel(),this.nextYearButtonNode.active=!0,this.autoPlayButtonNode.active=!0,this.restartButtonNode.active=!1,this.setAutoPlayButtonState(!1),this.lifeTrackGroup.removeAllChildren();var i={};Object.assign(i,e);var n=t.map((function(t){return t.id}));i.TLT=n;L.restart(i);this.initProp(),this.triggerOneLifeTrack()},l.onNextYearButtonClicked=function(){this.triggerOneLifeTrack()},l.onAutoPlayButtonClicked=function(){this._isAutoPlay?this._isAutoPlay=!1:(this._isAutoPlay=!0,this.triggerOneLifeTrack()),this.setAutoPlayButtonState(this._isAutoPlay)},l.setAutoPlayButtonState=function(t){t?(this._autoPlayButton.normalColor=et,this.changeSpeedButton.node.active=!0,this._changeSpeedButtonLbl.string="X"+this._timeScale):(this._autoPlayButton.normalColor=u.WHITE,this.changeSpeedButton.node.active=!1)},l.triggerOneLifeTrack=function(){var t=this;if(!this._isEnd){var e=L.next();this.showOneTrackItem(e),this.updatePropData(),this.playAnimation(),this.scrollView.scrollToBottom(.5),this._isEnd=e.isEnd,this._isEnd?this.onLifeEnd():this._isAutoPlay&&setTimeout((function(){t.triggerOneLifeTrack()}),this.realTriggerTime)}},l.setCombo=function(t){this._combo=t>10?10:t<0?0:t},l.showOneTrackItem=function(t){var e,i=this,n=t.content.map((function(t){var n=t.type,o=t.description,r=t.grade,a=t.name,l=t.postEvent;switch(n){case"TLT":return"天赋【"+a+"】发动："+o;case"EVT":return e=r,r>=1?i.setCombo(i._combo+1):i.setCombo(i._combo-1),o+(l?"<br/>"+l:"")}})).join("<br/>");this.createLifeTrack(t.age+"岁 ",n,e)},l.onLifeEnd=function(){this.nextYearButtonNode.active=!1,this.autoPlayButtonNode.active=!1,this.restartButtonNode.active=!0},l.onChangeSpeedButtonClicked=function(){this._curTimeScaleIndex=++this._curTimeScaleIndex%this._timeScaleArray.length,this._timeScale=this._timeScaleArray[this._curTimeScaleIndex],this._changeSpeedButtonLbl.string="X"+this._timeScale},a(e,[{key:"realTriggerTime",get:function(){return this._triggerTime/this._timeScale}}]),e}(B)).prototype,"scrollView",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),R=e(O.prototype,"lifeTrackGroup",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),V=e(O.prototype,"lifeTrackItemPrfb",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Y=e(O.prototype,"propGroup",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),j=e(O.prototype,"propItemPrfb",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=e(O.prototype,"nextYearButtonNode",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),X=e(O.prototype,"autoPlayButtonNode",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),F=e(O.prototype,"restartButtonNode",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),K=e(O.prototype,"changeSpeedButton",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),W=e(O.prototype,"scoreLabel",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),q=e(O.prototype,"lianJiLabel",[H],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Q=e(O.prototype,"lianJiNode",[G],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),J=O))||J));l._RF.pop()}}}));
+          _initializerDefineProperty(_assertThisInitialized(_this), "descriptionBG", _descriptor3, _assertThisInitialized(_this));
 
-System.register("chunks:///_virtual/Talent.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./util.ts","./condition.ts"],(function(t){"use strict";var e,r,n,a,i,o,u,c;return{setters:[function(t){e=t.createForOfIteratorHelperLoose,r=t.defineProperty},function(t){n=t.cclegacy},function(t){a=t.getRate},function(t){i=t.clone,o=t.weightRandom},function(t){u=t.extractMaxTriggers,c=t.checkCondition}],execute:function(){n._RF.push({},"6f0e92mPVdNDZxh7eJwr3t+","Talent",void 0);var s=t("TalentManager",function(){function t(){r(this,"_talents",void 0),r(this,"_talentGradeStruct",void 0)}t.SortTalent=function(t,e){var r=t.id,n=t.grade,a=e.id,i=e.grade-n;return 0!=i?i:r-a};var n=t.prototype;return n.initial=function(t){var r=t.talents;for(var n in this._talents=new Map,r){var a=r[n].id,i=r[n];if(this._talents[a]=i,i.id=Number(a),i.grade=Number(i.grade),i.max_triggers=u(i.condition),i.replacement)for(var o in i.replacement){for(var c,s={},l=e(i.replacement[o]);!(c=l()).done;){var f=c.value;s[(f=(""+f).split("*"))[0]||0]=Number(f[1])||1}i.replacement[o]=s}}var d={};for(var v in this._talents){var h=this._talents[v],g=h.id,p=h.grade,m=h.name,_=h.description;d[p]?d[p].push({grade:p,name:m,description:_,id:g}):d[p]=[{grade:p,name:m,description:_,id:g}]}this._talentGradeStruct=d},n.count=function(){return Object.keys(this._talents).length},n.check=function(t,e){var r=this.get(t).condition;return c(e,r)},n.get=function(t){var e=this._talents[t];if(!e)throw new Error("[ERROR] No Talent["+t+"]");return i(e)},n.information=function(t){var e=this.get(t);return{grade:e.grade,name:e.name,description:e.description}},n.exclusive=function(t,r){var n=this.get(r).exclusive;if(!n)return null;for(var a,i=e(t);!(a=i()).done;)for(var o,u=a.value,c=e(n);!(o=c()).done;){if(u==o.value)return u}return null},n.talentRandom=function(t,e,r,n){var o=void 0===n?{}:n,u=o.times,c=void 0===u?0:u,s=o.achievement,l=void 0===s?0:s,f={1:100,2:10,3:1},d={1:0,2:0,3:0},v=a("times",c),h=a("achievement",l);for(var g in v)d[g]+=v[g];for(var p in h)d[p]+=h[p];for(var m in d)f[m]*=1+d[m];var _=0;_=r?t-1:t;var x,y,M=new Array(_);e?(M[0]=3,x=1):x=0;for(var R=x;R<M.length;R++)M[R]=(y=void 0,y=Math.floor(1e3*Math.random()),(y-=f[3])<0?3:(y-=f[2])<0?2:(y-=f[1])<0?1:0);for(var b=i(this._talentGradeStruct),w=0;w<M.length;w++){for(var N=M[w];0==b[N].length;)N--;var T=b[N].length,A=Math.floor(Math.random()*T)%T,S=b[N].splice(A,1);M[w]=S[0]}return r&&M.splice(0,0,this._talents[r]),M},n.allocationAddition=function(t){if(Array.isArray(t)){for(var r,n=0,a=e(t);!(r=a()).done;){var i=r.value;n+=this.allocationAddition(i)}return n}return Number(this.get(t).status)||0},n.do=function(t,e){var r=this.get(t),n=r.effect,a=r.condition,i=r.grade,o=r.name,u=r.description;return a&&!c(e,a)?null:{effect:n,grade:i,name:o,description:u}},n.replace=function(t){for(var r,n=this,a=function t(e,r){var a=function(t,e){var r=n.get(t).replacement;if(!r)return null;var a=[];if(r.grade&&n.forEach((function(t){var i=t.id,o=t.grade;r.grade[o]&&(n.exclusive(e,i)||a.push([i,r.grade[o]]))})),r.talent)for(var i in r.talent){var o=Number(i);n.exclusive(e,o)||a.push([o,r.talent[o]])}return a}(e,r);if(!a)return e;var i=o(a);return t(i,r.concat(i))},u=i(t),c={},s=e(t);!(r=s()).done;){var l=r.value,f=a(l,u);f!=l&&(c[l]=f,u.push(f))}return c},n.forEach=function(t){if("function"==typeof t)for(var e in this._talents)t(i(this._talents[e]),e)},t}());t("talentMgr",new s);n._RF.pop()}}}));
+          _initializerDefineProperty(_assertThisInitialized(_this), "lineNode", _descriptor4, _assertThisInitialized(_this));
 
-System.register("chunks:///_virtual/GameManager.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./EventMessage.ts","./ConfigManager.ts","./Life.ts","./SummaryPanel.ts","./LifeTrackPanel.ts","./AchievementHint.ts","./AchievementPanel.ts","./DistributePropPanel.ts","./SelectTalentPanel.ts","./StartMenuPanel.ts"],(function(e){"use strict";var t,n,a,i,l,r,o,c,u,s,p,f,m,h,d,P,b,y,v,g,S,w,T;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,a=e.initializerDefineProperty,i=e.assertThisInitialized,l=e.defineProperty,r=e.asyncToGenerator},function(e){o=e.cclegacy,c=e._decorator,u=e.Node,s=e.Button,p=e.sys,f=e.Component},function(e){m=e.Message},function(e){h=e.eventMsg},function(e){d=e.default},function(e){P=e.lifeMgr},function(e){b=e.SummaryPanel},function(e){y=e.LifeTrackPanel},function(e){v=e.AchievementHint},function(e){g=e.AchievementPanel},function(e){S=e.DistributePropPanel},function(e){w=e.SelectTalentPanel},function(e){T=e.StartMenuPanel}],execute:function(){var B,k,M,R,L,E,_,O,z,D,N,C,j,A,G,H,x,U,I,J,W,F,K;o._RF.push({},"6f8c8q9ZkpDqKjGhsV04tDD","GameManager",void 0);var q=c.ccclass,V=c.property;e("GameManager",(B=q("GameManager"),k=V({type:v}),M=V({type:u}),R=V({type:u}),L=V({type:s}),E=V({type:T}),_=V({type:g}),O=V({type:w}),z=V({type:S}),D=V({type:y}),N=V({type:b}),B((A=t((j=function(e){function t(){for(var t,n=arguments.length,r=new Array(n),o=0;o<n;o++)r[o]=arguments[o];return t=e.call.apply(e,[this].concat(r))||this,a(i(t),"achievementHint",A,i(t)),a(i(t),"homeButtonNode",G,i(t)),a(i(t),"achievementButtonNode",H,i(t)),a(i(t),"clearButton",x,i(t)),a(i(t),"startMenuPanel",U,i(t)),a(i(t),"achievementPanel",I,i(t)),a(i(t),"selectTalentPanel",J,i(t)),a(i(t),"distributePropPanel",W,i(t)),a(i(t),"lifeTrackPanel",F,i(t)),a(i(t),"summaryPanel",K,i(t)),l(i(t),"_selectedTalentList",void 0),t}n(t,e);var o=t.prototype;return o.start=function(){this.init()},o.init=function(){var e=r(regeneratorRuntime.mark((function e(){var t,n,a=this;return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,Promise.all([P.initial(),d.readJson("happy_life"),d.readJson("specialthanks")]);case 2:t=e.sent,n=t[1],t[2],h.on(m.StartMenu,(function(){a.startMenuPanel.show(n),a.selectTalentPanel.hide(),a.distributePropPanel.hide(),a.lifeTrackPanel.hide(),a.homeButtonNode.active=!1,a.achievementButtonNode.active=!0})),h.on(m.StartGame,(function(){a.startMenuPanel.hide(),a.homeButtonNode.active=!0,a.achievementButtonNode.active=!1,a.openSelectTalentPanel()})),h.on(m.TalentSelectEnd,(function(e){a._selectedTalentList=e,a.selectTalentPanel.hide(),a.distributePropPanel.show(e)})),h.on(m.DistributePropEnd,(function(e){a.distributePropPanel.hide(),a.lifeTrackPanel.show(a._selectedTalentList,e)})),h.on(m.LifeTrackEnd,(function(){a.lifeTrackPanel.hide(),a.summaryPanel.show()})),h.on(m.Replay,(function(){a.summaryPanel.hide(),P.times++,a.openSelectTalentPanel()})),h.on(m.Achievement,(function(e){a.achievementHint.show(e)})),h.emit(m.StartMenu);case 13:case"end":return e.stop()}}),e)})));return function(){return e.apply(this,arguments)}}(),o.openSelectTalentPanel=function(){this.selectTalentPanel.show()},o.save=function(){if(p.platform===p.Platform.MOBILE_BROWSER||p.platform===p.Platform.DESKTOP_BROWSER){var e={};Object.keys(localStorage).filter((function(e){return"goog"!=e.substr(0,4)})).forEach((function(t){return e[t]=localStorage[t]}));var t=new Blob([JSON.stringify(e)],{type:"application/json"});t=(t.slice||t.webkitSlice||t.mozSlice).call(t,0,t.size,"application/octet-stream");var n=document.createElementNS("http://www.w3.org/1999/xhtml","a");n.href=URL.createObjectURL(t),n.download="Remake_save_"+(new Date).toISOString().replace(":",".")+".json",document.body.appendChild(n),n.click(),document.body.removeChild(n),URL.revokeObjectURL(n.href)}},o.load=function(){var e=this;if(p.platform===p.Platform.MOBILE_BROWSER||p.platform===p.Platform.DESKTOP_BROWSER){var t=document.createElement("input");t.type="file",t.name="file",t.accept="application/json",t.style="display: none;",t.append("body"),t.click(),t.addEventListener("change",(function(t){var n=t.target.files[0];if(n){var a=new FileReader;a.onload=function(){var t=JSON.parse(a.result);for(var n in t)localStorage[n]=t[n];e.achievementHint.show("加载存档成功")},a.readAsText(n)}}))}},o.onClearButtonClicked=function(){localStorage.clear()},o.onHomeButtonClicked=function(){h.emit(m.StartMenu)},o.onGithubButtonClicked=function(){p.openURL("https://github.com/gameall3d/LifeRestart_Cocos")},o.onOpenAchievementButtonClicked=function(){this.achievementPanel.show()},t}(f)).prototype,"achievementHint",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),G=t(j.prototype,"homeButtonNode",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),H=t(j.prototype,"achievementButtonNode",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),x=t(j.prototype,"clearButton",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=t(j.prototype,"startMenuPanel",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),I=t(j.prototype,"achievementPanel",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),J=t(j.prototype,"selectTalentPanel",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),W=t(j.prototype,"distributePropPanel",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),F=t(j.prototype,"lifeTrackPanel",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),K=t(j.prototype,"summaryPanel",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=j))||C));o._RF.pop()}}}));
+          return _this;
+        }
 
-System.register("chunks:///_virtual/ConfigManager.ts",["cc"],(function(n){"use strict";var e,o;return{setters:[function(n){e=n.cclegacy,o=n.resources}],execute:function(){e._RF.push({},"75637qSsT9DBJznyRJRalfo","ConfigManager",void 0);n("default",function(){function n(){}return n.readJson=function(n){return new Promise((function(e,r){o.load(n,(function(n,o){n?(console.error(n),r(n)):e(o.json)}))}))},n}());e._RF.pop()}}}));
+        var _proto = LifeTrackItem.prototype;
 
-System.register("chunks:///_virtual/StatisticsItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts"],(function(t){"use strict";var e,i,r,n,l,o,s,a,c,u;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,r=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){l=t.cclegacy,o=t._decorator,s=t.Sprite,a=t.Label,c=t.Component},function(t){u=t.GradeColor}],execute:function(){var p,b,f,y,h,g,d,m,L;l._RF.push({},"79c45lYN21I3Jzf9KxHQghc","StatisticsItem",void 0);var v=o.ccclass,z=o.property;t("StatisticsItem",(p=v("StatisticsItem"),b=z({type:s}),f=z({type:a}),y=z({type:a}),p((d=e((g=function(t){function e(){for(var e,i=arguments.length,l=new Array(i),o=0;o<i;o++)l[o]=arguments[o];return e=t.call.apply(t,[this].concat(l))||this,r(n(e),"BG",d,n(e)),r(n(e),"titleLbl",m,n(e)),r(n(e),"descLbl",L,n(e)),e}i(e,t);var l=e.prototype;return l.start=function(){},l.setData=function(t,e,i){this.titleLbl.string=t,this.descLbl.string=e,this.BG.color=u[i]},e}(c)).prototype,"BG",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),m=e(g.prototype,"titleLbl",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),L=e(g.prototype,"descLbl",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),h=g))||h));l._RF.pop()}}}));
+        _proto.start = function start() {// [3]
+        };
 
-System.register("chunks:///_virtual/AchievementPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./Life.ts","./UIPanel.ts","./AchievementItem.ts","./StatisticsItem.ts"],(function(t){"use strict";var e,i,a,n,r,s,o,c,u,l,h,m,p,b,f,v,I;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,a=t.initializerDefineProperty,n=t.assertThisInitialized,r=t.defineProperty},function(t){s=t.cclegacy,o=t._decorator,c=t.Node,u=t.Prefab,l=t.Button,h=t.instantiate},function(t){m=t.getGrade,p=t.getRate},function(t){b=t.lifeMgr},function(t){f=t.UIPanel},function(t){v=t.AchievementItem},function(t){I=t.StatisticsItem}],execute:function(){var g,y,d,_,B,P,A,G,S,w,L,R,z,D,T,C,k,U,j;s._RF.push({},"7baefjqdLRKUrgY5285bpeS","AchievementPanel",void 0);var M=o.ccclass,H=o.property;t("AchievementPanel",(g=M("AchievementPanel"),y=H({type:c}),d=H({type:u}),_=H({type:c}),B=H({type:u}),P=H({type:l}),A=H({type:l}),G=H({type:l}),S=H({type:l}),g((R=e((L=function(t){function e(){for(var e,i=arguments.length,s=new Array(i),o=0;o<i;o++)s[o]=arguments[o];return e=t.call.apply(t,[this].concat(s))||this,a(n(e),"achievementItemsGroup",R,n(e)),a(n(e),"achievementItemPrfb",z,n(e)),a(n(e),"statisticsItemsGroup",D,n(e)),a(n(e),"statisticsItemPrfb",T,n(e)),a(n(e),"tabButton0",C,n(e)),a(n(e),"tabButton1",k,n(e)),a(n(e),"tabButton2",U,n(e)),a(n(e),"tabButton3",j,n(e)),r(n(e),"_tabButtonList",void 0),r(n(e),"_itemHeight",100),r(n(e),"_spacingY",0),r(n(e),"_achievementList",void 0),e}i(e,t);var s=e.prototype;return s.start=function(){this._contentUITrans=this.achievementItemsGroup._uiProps.uiTransformComp},s.createAchievementItem=function(t){var e=h(this.achievementItemPrfb);e.setParent(this.achievementItemsGroup),e.getComponent(v).setData(t);var i=this.achievementItemsGroup.children.length;this._contentUITrans.height=i*this._itemHeight+this._spacingY*(i-1)},s.createStatisticsItem=function(t,e,i){var a=h(this.statisticsItemPrfb);a.setParent(this.statisticsItemsGroup),a.getComponent(I).setData(t,e,i)},s.initAchievementData=function(){this._achievementList=b.getAchievements()},s.onTabButtonClicked=function(t,e){var i=this;e=Number(e);for(var a=0;a<this._tabButtonList.length;a++){var n=this._tabButtonList[a];e!=a?n.interactable=!0:n.interactable=!1}this.achievementItemsGroup.removeAllChildren(),this._achievementList.filter((function(t){return t.grade==e})).forEach((function(t){var e=t.name,a=t.description,n=t.hide,r=t.grade,s=t.isAchieved;i.createAchievementItem({name:e,description:a,hide:n,grade:r,isAchieved:s})}))},s.onShow=function(){this._tabButtonList=[this.tabButton0,this.tabButton1,this.tabButton2,this.tabButton3],this._contentUITrans=this.achievementItemsGroup._uiProps.uiTransformComp,this.generateStatisticsData(),this.initAchievementData(),this.onTabButtonClicked(null,3)},s.generateStatisticsData=function(){this.statisticsItemsGroup.removeAllChildren();var t=b.getTotal(),e=t.times,i=t.achievement,a=t.talentRate,n=t.eventRate;this.createStatisticsItem("已重开"+e+"次",""+this.formatRate("times",e),m("times",e)),this.createStatisticsItem("成就达成"+i+"个",""+this.formatRate("achievement",i),m("achievement",i)),this.createStatisticsItem("事件收集率",Math.floor(100*n)+"%",m("eventRate",n)),this.createStatisticsItem("天赋收集率",Math.floor(100*a)+"%",m("talentRate",a))},s.formatRate=function(t,e){var i=p(t,e),a=Object.keys(i)[0];switch(parseInt(a)){case 0:a="白色";break;case 1:a="蓝色";break;case 2:a="紫色";break;case 3:a="橙色"}var n=Object.values(i)[0];return 0==n?"抽到"+a+"概率无变化":"抽到"+a+"概率提升"+100*n+"%"},e}(f)).prototype,"achievementItemsGroup",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),z=e(L.prototype,"achievementItemPrfb",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),D=e(L.prototype,"statisticsItemsGroup",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=e(L.prototype,"statisticsItemPrfb",[B],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=e(L.prototype,"tabButton0",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=e(L.prototype,"tabButton1",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=e(L.prototype,"tabButton2",[G],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),j=e(L.prototype,"tabButton3",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=L))||w));s._RF.pop()}}}));
+        _proto.setData = function setData(age, description, finalGrade) {
+          this.agaLabel.string = age;
+          this.descriptionText.string = description;
+          var height = this.getHeight();
+          var descriptionBGTrans = this.descriptionBG.getComponent(UITransform);
+          var size = descriptionBGTrans.contentSize;
+          descriptionBGTrans.contentSize = new Size(size.width, height);
+          var bgSprite = this.descriptionBG.getComponent(Sprite);
+          bgSprite.color = GradeColor[finalGrade];
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
 
-System.register("chunks:///_virtual/Defines.ts",["cc"],(function(e){"use strict";var t,n;return{setters:[function(e){t=e.cclegacy,n=e.Color}],execute:function(){e({CalStage:function(e,t){for(var n=0;n<e.length;n++){var r=e[n];if(t<r.value)return n}return e.length},ConfigProp:void 0,getGrade:function(e,t){switch(e){case"times":case"achievement":return t>=100?3:t>=50?2:t>=10?1:0;case"talentRate":return t>=.9?3:t>=.6?2:t>=.3?1:0;case"eventRate":return t>=.6?3:t>=.4?2:t>=.2?1:0;default:return 0}},getRate:function(e,t){switch(e){case"times":return t>=100?{2:2.5}:t>=70?{2:2}:t>=50?{2:1.5}:t>=30?{2:1}:t>=10?{2:.5}:{2:0};case"achievement":return t>=100?{3:2.5}:t>=70?{3:2}:t>=50?{3:1.5}:t>=30?{3:1}:t>=10?{3:.5}:{3:0};default:return{}}}}),t._RF.push({},"85642Y205BHnpSvNRHQB1ax","Defines",void 0);var r;e("Message",{TalentSelectEnd:"TalentSelectEnd",DistributePropEnd:"DistributePropEnd",LifeTrackEnd:"LifeTrackEnd",Replay:"Replay",StartGame:"StartGame",Achievement:"Achievement",StartMenu:"StartMenu"});!function(e){e[e.CHR=0]="CHR",e[e.INT=1]="INT",e[e.STR=2]="STR",e[e.MNY=3]="MNY",e[e.SPR=4]="SPR"}(r||(r=e("ConfigProp",{})));e("PropNameMap",{CHR:"颜值",INT:"智力",STR:"体质",MNY:"家境",SPR:"快乐"}),e("GradeColor",[(new n).fromHEX("#464646"),(new n).fromHEX("#7ea5ec"),(new n).fromHEX("#e2a7ff"),(new n).fromHEX("#ffa07a"),(new n).fromHEX("#f77323"),(new n).fromHEX("#be2525"),(new n).fromHEX("#ffc600")]);t._RF.pop()}}}));
+        _proto.getHeight = function getHeight() {
+          var size = this.descriptionText.getComponent(UITransform).contentSize;
+          return size.height;
+        };
 
-System.register("chunks:///_virtual/summary.ts",["cc"],(function(e){"use strict";var g;return{setters:[function(e){g=e.cclegacy}],execute:function(){e("summary",(function(e,g){var r=d[e].length;for(;r--;){var u=d[e][r],a=u.min,n=u.judge,i=u.grade;if(null==a||g>=a)return{judge:n,grade:i}}})),g._RF.push({},"8ea86yHpORGZ7iSw1xGvH8J","summary",void 0);var d={CHR:[{judge:"地狱",grade:0},{min:1,judge:"折磨",grade:0},{min:2,judge:"不佳",grade:0},{min:4,judge:"普通",grade:0},{min:7,judge:"优秀",grade:1},{min:9,judge:"罕见",grade:2},{min:11,judge:"逆天",grade:3}],MNY:[{judge:"地狱",grade:0},{min:1,judge:"折磨",grade:0},{min:2,judge:"不佳",grade:0},{min:4,judge:"普通",grade:0},{min:7,judge:"优秀",grade:1},{min:9,judge:"罕见",grade:2},{min:11,judge:"逆天",grade:3}],SPR:[{judge:"地狱",grade:0},{min:1,judge:"折磨",grade:0},{min:2,judge:"不幸",grade:0},{min:4,judge:"普通",grade:0},{min:7,judge:"幸福",grade:1},{min:9,judge:"极乐",grade:2},{min:11,judge:"天命",grade:3}],INT:[{judge:"地狱",grade:0},{min:1,judge:"折磨",grade:0},{min:2,judge:"不佳",grade:0},{min:4,judge:"普通",grade:0},{min:7,judge:"优秀",grade:1},{min:9,judge:"罕见",grade:2},{min:11,judge:"逆天",grade:3},{min:21,judge:"识海",grade:3},{min:131,judge:"元神",grade:3},{min:501,judge:"仙魂",grade:3}],STR:[{judge:"地狱",grade:0},{min:1,judge:"折磨",grade:0},{min:2,judge:"不佳",grade:0},{min:4,judge:"普通",grade:0},{min:7,judge:"优秀",grade:1},{min:9,judge:"罕见",grade:2},{min:11,judge:"逆天",grade:3},{min:21,judge:"凝气",grade:3},{min:101,judge:"筑基",grade:3},{min:401,judge:"金丹",grade:3},{min:1001,judge:"元婴",grade:3},{min:2001,judge:"仙体",grade:3}],AGE:[{judge:"胎死腹中",grade:0},{min:1,judge:"早夭",grade:0},{min:10,judge:"少年",grade:0},{min:18,judge:"盛年",grade:0},{min:40,judge:"中年",grade:0},{min:60,judge:"花甲",grade:1},{min:70,judge:"古稀",grade:1},{min:80,judge:"杖朝",grade:2},{min:90,judge:"南山",grade:2},{min:95,judge:"不老",grade:3},{min:100,judge:"修仙",grade:3},{min:500,judge:"仙寿",grade:3}],SUM:[{judge:"地狱",grade:0},{min:41,judge:"折磨",grade:0},{min:50,judge:"不佳",grade:0},{min:60,judge:"普通",grade:0},{min:80,judge:"优秀",grade:1},{min:100,judge:"罕见",grade:2},{min:110,judge:"逆天",grade:3},{min:120,judge:"传说",grade:3}]};g._RF.pop()}}}));
+        _proto.setLineLength = function setLineLength(length) {
+          var lineNodeTrans = this.lineNode.getComponent(UITransform);
+          var size = lineNodeTrans.contentSize;
+          lineNodeTrans.contentSize = new Size(size.width, length);
+        };
 
-System.register("chunks:///_virtual/PropItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(e){"use strict";var t,r,i,n,a,o,l,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,i=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){a=e.cclegacy,o=e._decorator,l=e.Label,u=e.Component}],execute:function(){var c,p,s,b,f,y,m;a._RF.push({},"928255UO/ZP+ZHuVTFkrvgo","PropItem",void 0);var v=o.ccclass,g=o.property;e("PropItem",(c=v("PropItem"),p=g({type:l}),s=g({type:l}),c((y=t((f=function(e){function t(){for(var t,r=arguments.length,a=new Array(r),o=0;o<r;o++)a[o]=arguments[o];return t=e.call.apply(e,[this].concat(a))||this,i(n(t),"nameLbl",y,n(t)),i(n(t),"valueLbl",m,n(t)),t}r(t,e);var a=t.prototype;return a.start=function(){},a.setData=function(e,t){this.nameLbl.string=e,this.updateValue(t)},a.updateValue=function(e){this.valueLbl.string=e.toString()},t}(u)).prototype,"nameLbl",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),m=t(f.prototype,"valueLbl",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=f))||b));a._RF.pop()}}}));
+        return LifeTrackItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "agaLabel", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "descriptionText", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "descriptionBG", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "lineNode", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
 
-System.register("chunks:///_virtual/DistributePropItem.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var i,e,n,o,r,l,s,u,c,a,p;return{setters:[function(t){i=t.applyDecoratedDescriptor,e=t.inheritsLoose,n=t.initializerDefineProperty,o=t.assertThisInitialized,r=t.defineProperty,l=t.createClass},function(t){s=t.cclegacy,u=t._decorator,c=t.Label,a=t.EditBox,p=t.Component}],execute:function(){var d,f,h,b,y,v,B;s._RF.push({},"97386ft0aBMH5dxsVX1kPDt","DistributePropItem",void 0);var g=u.ccclass,k=u.property;t("DistributePropItem",(d=g("DistributePropItem"),f=k({type:c}),h=k({type:a}),d((v=i((y=function(t){function i(){for(var i,e=arguments.length,l=new Array(e),s=0;s<e;s++)l[s]=arguments[s];return i=t.call.apply(t,[this].concat(l))||this,n(o(i),"titleLbl",v,o(i)),n(o(i),"pointEditBox",B,o(i)),r(o(i),"onAddButtonClick",void 0),r(o(i),"onReduceButtonClick",void 0),r(o(i),"key",void 0),r(o(i),"_point",0),i}e(i,t);var s=i.prototype;return s.setTitle=function(t){this.titleLbl.string=t},s.start=function(){},s.onAddButtonClicked=function(){var t;null===(t=this.onAddButtonClick)||void 0===t||t.call(this,this)},s.onReduceButtonClicked=function(){var t;null===(t=this.onReduceButtonClick)||void 0===t||t.call(this,this)},l(i,[{key:"point",get:function(){return this._point},set:function(t){this._point=t,this.pointEditBox.string=this._point.toString()}}]),i}(p)).prototype,"titleLbl",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),B=i(y.prototype,"pointEditBox",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=y))||b));s._RF.pop()}}}));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/AchievementHint.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts"],(function(t){"use strict";var e,n,i,r,o,a,c,l,s,p,u,h;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,r=t.assertThisInitialized,o=t.defineProperty},function(t){a=t.cclegacy,c=t._decorator,l=t.Label,s=t.Sprite,p=t.Animation,u=t.Component},function(t){h=t.GradeColor}],execute:function(){var f,m,v,y,g;a._RF.push({},"a7684CddlxIA6F0uCsqK1Kh","AchievementHint",void 0);var d=c.ccclass,b=c.property;t("AchievementHint",(f=d("AchievementHint"),m=b({type:l}),f((g=e((y=function(t){function e(){for(var e,n=arguments.length,a=new Array(n),c=0;c<n;c++)a[c]=arguments[c];return e=t.call.apply(t,[this].concat(a))||this,i(r(e),"contentLbl",g,r(e)),o(r(e),"_isShowing",!1),o(r(e),"_timer",null),e}n(e,t);var a=e.prototype;return a.start=function(){},a.show=function(t,e){this.contentLbl.string=t.name,this.getComponent(s).color=h[t.grade];var n=this.getComponent(p);n.getState("lianJiPop");n.play("lianJiPop")},e}(u)).prototype,"contentLbl",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),v=y))||v));a._RF.pop()}}}));
+System.register("chunks:///_virtual/property.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './util.ts'], function (exports) {
+  'use strict';
 
-System.register("chunks:///_virtual/event.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./util.ts","./condition.ts"],(function(e){"use strict";var t,n,r,i,o,c;return{setters:[function(e){t=e.classPrivateFieldSet,n=e.classPrivateFieldGet,r=e.createForOfIteratorHelperLoose},function(e){i=e.cclegacy},function(e){o=e.clone},function(e){c=e.checkCondition}],execute:function(){i._RF.push({},"b1ad8S5yrpNyLB2b+dSbwqq","event",void 0);var a=new WeakMap;e("default",function(){function e(){a.set(this,{writable:!0,value:void 0})}var i=e.prototype;return i.initial=function(e){var r=e.events;for(var i in t(this,a,new Map),r){var o=r[i].id,c=r[i];n(this,a)[o]=c,c.branch&&(c.branch=c.branch.map((function(e){return(e=e.split(":"))[1]=Number(e[1]),e})))}},i.count=function(){return Object.keys(n(this,a)).length},i.check=function(e,t){var n=this.get(e),r=n.include,i=n.exclude;return!n.NoRandom&&((!i||!c(t,i))&&(!r||c(t,r)))},i.get=function(e){var t=n(this,a)[e];if(!t)throw new Error("[ERROR] No Event["+e+"]");return o(t)},i.information=function(e){return{description:this.get(e).event}},i.do=function(e,t){var n=this.get(e),i=n.effect,o=n.branch,a=n.event,u=n.postEvent,s=n.grade,f=n.score;if(f||(f=1),s||(s=1),o)for(var v,l=r(o);!(v=l()).done;){var d=v.value,h=d[0],p=d[1];if(c(t,h))return{effect:i,next:p,description:a,grade:s,score:f}}return{effect:i,postEvent:u,description:a,grade:s,score:f}},e}());i._RF.pop()}}}));
+  var _classPrivateFieldSet, _classPrivateFieldGet, _createForOfIteratorHelperLoose, _defineProperty, cclegacy, sys, sum, max, min, clone, listRandom;
 
-System.register("chunks:///_virtual/DistributePropPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./EventMessage.ts","./Life.ts","./UIPanel.ts","./DistributePropItem.ts"],(function(t){"use strict";var i,e,o,n,r,s,a,u,p,l,c,f,P,d,b,h,m,I;return{setters:[function(t){i=t.applyDecoratedDescriptor,e=t.inheritsLoose,o=t.initializerDefineProperty,n=t.assertThisInitialized,r=t.defineProperty},function(t){s=t.cclegacy,a=t._decorator,u=t.Node,p=t.Prefab,l=t.Label,c=t.Button,f=t.instantiate},function(t){P=t.PropNameMap,d=t.Message},function(t){b=t.eventMsg},function(t){h=t.lifeMgr},function(t){m=t.UIPanel},function(t){I=t.DistributePropItem}],execute:function(){var g,y,M,v,L,k,B,A,D,C,R;s._RF.push({},"b4a3eoREDRPQZL9VkpDb8rf","DistributePropPanel",void 0);var w=a.ccclass,z=a.property,E=["CHR","INT","STR","MNY"];t("DistributePropPanel",(g=w("DistributePropPanel"),y=z({type:u}),M=z({type:p}),v=z({type:l}),L=z({type:c}),g((A=i((B=function(t){function i(){for(var i,e=arguments.length,s=new Array(e),a=0;a<e;a++)s[a]=arguments[a];return i=t.call.apply(t,[this].concat(s))||this,o(n(i),"propGroup",A,n(i)),o(n(i),"distributePropItemPrfb",D,n(i)),o(n(i),"totalPointsLbl",C,n(i)),o(n(i),"AddPropButton",R,n(i)),r(n(i),"totalPoints",20),r(n(i),"distributePropItemsMap",new Map),i}e(i,t);var s=i.prototype;return s.start=function(){},s.init=function(t){var i=this;this.AddPropButton.interactable=!0,this.propGroup.removeAllChildren(),this.distributePropItemsMap.clear(),E.forEach((function(t){i.distributePropItemsMap.set(t,i.createPropItem(t,P[t]))})),this.totalPoints+=h.getTalentAllocationAddition(t.map((function(t){return t.id}))),this.updateLeftPoints()},s.createPropItem=function(t,i){var e=f(this.distributePropItemPrfb);e.setParent(this.propGroup);var o=e.getComponent(I);return o.setTitle(i),o.key=t,o.point=0,o.onAddButtonClick=this.onItemAddButtonClick.bind(this),o.onReduceButtonClick=this.onItemReduceButtonClick.bind(this),o},s.getLeftPoints=function(){var t=Array.from(this.distributePropItemsMap.values()).reduce((function(t,i){return t+i.point}),0);return this.totalPoints-t},s.onItemAddButtonClick=function(t){this.getLeftPoints()>0&&(t.point+=1,this.updateLeftPoints())},s.onItemReduceButtonClick=function(t){t.point>0&&(t.point-=1,this.updateLeftPoints())},s.updateLeftPoints=function(){this.totalPointsLbl.string=this.getLeftPoints().toString()},s.onCheckButtonClicked=function(){var t=this,i={SPR:5};E.forEach((function(e){i[e]=t.distributePropItemsMap.get(e).point})),b.emit(d.DistributePropEnd,i)},s.onRandomDistributeButtonClicked=function(){for(var t=this,i=this.totalPoints,e=[10,10,10,10];i>0;)for(var o=Math.round(Math.random()*(Math.min(i,10)-1))+1;;){var n=Math.floor(4*Math.random())%4;if(!(e[n]-o<0)){e[n]-=o,i-=o;break}}Array.from(this.distributePropItemsMap.keys()).forEach((function(i,o){t.distributePropItemsMap.get(i).point=10-e[o]})),this.updateLeftPoints()},s.onAddPropButtonClicked=function(){this.totalPoints+=4,this.AddPropButton.interactable=!1,this.updateLeftPoints()},s.onShow=function(t){this.init(t)},i}(m)).prototype,"propGroup",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),D=i(B.prototype,"distributePropItemPrfb",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=i(B.prototype,"totalPointsLbl",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),R=i(B.prototype,"AddPropButton",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=B))||k));s._RF.pop()}}}));
+  return {
+    setters: [function (module) {
+      _classPrivateFieldSet = module.classPrivateFieldSet;
+      _classPrivateFieldGet = module.classPrivateFieldGet;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      sys = module.sys;
+    }, function (module) {
+      sum = module.sum;
+      max = module.max;
+      min = module.min;
+      clone = module.clone;
+      listRandom = module.listRandom;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "146017WEUlI/LkSWRI1dalX", "property", undefined);
 
-System.register("chunks:///_virtual/SelectTalentPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./Defines.ts","./Talent.ts","./EventMessage.ts","./Life.ts","./TalentItem.ts","./UIPanel.ts"],(function(t){"use strict";var e,n,i,l,a,s,r,o,c,u,h,d,p,f,b,m,T,g,I,y;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,l=t.assertThisInitialized,a=t.defineProperty},function(t){s=t.cclegacy,r=t._decorator,o=t.Node,c=t.Prefab,u=t.Button,h=t.Label,d=t.instantiate,p=t.UITransform,f=t.Vec3},function(t){b=t.Message},function(t){m=t.TalentManager},function(t){T=t.eventMsg},function(t){g=t.lifeMgr},function(t){I=t.TalentItem},function(t){y=t.UIPanel}],execute:function(){var B,_,v,S,k,C,P,w,L,N,z,M,A,D,R,x,G,H,E,U,F,O,j,K,V;s._RF.push({},"c4d7b4gRL9Ga7bKz0sZBuMA","SelectTalentPanel",void 0);var Z=r.ccclass,q=r.property;t("SelectTalentPanel",(B=Z("SelectTalentPanel"),_=q({type:o}),v=q({type:o}),S=q({type:o}),k=q({type:c}),C=q({type:u}),P=q({type:u}),w=q({type:u}),L=q({type:u}),N=q({type:u}),z=q({type:h}),M=q({type:h}),B((R=e((D=function(t){function e(){for(var e,n=arguments.length,s=new Array(n),r=0;r<n;r++)s[r]=arguments[r];return e=t.call.apply(t,[this].concat(s))||this,i(l(e),"talentItemGroup",R,l(e)),i(l(e),"step1Node",x,l(e)),i(l(e),"step2Node",G,l(e)),i(l(e),"talentItemPrfb",H,l(e)),i(l(e),"checkButton",E,l(e)),i(l(e),"DrawButton",U,l(e)),i(l(e),"AdvDrawButton",F,l(e)),i(l(e),"AddChoiceButton",O,l(e)),i(l(e),"RefreshButton",j,l(e)),i(l(e),"checkButtonLbl",K,l(e)),i(l(e),"tips",V,l(e)),a(l(e),"talentItems",[]),a(l(e),"selectedTalentIndices",[]),a(l(e),"_talentList",void 0),a(l(e),"_limitSelectedTalentNum",3),a(l(e),"_curMaxHeight",void 0),e}n(e,t);var s=e.prototype;return s.start=function(){},s.init=function(){this.AddChoiceButton.interactable=!0,this.RefreshButton.interactable=!0,this.checkButton.interactable=!0,this._contentUITrans=this.talentItemGroup._uiProps.uiTransformComp,this._talentList=[],this.refreshPanel()},s.refreshPanel=function(){var t=this;this._talentList.length<=0?(this.step1Node.active=!0,this.step2Node.active=!1):(this.step1Node.active=!1,this.step2Node.active=!0,this.talentItems=[],this.selectedTalentIndices=[],this.talentItemGroup.removeAllChildren(),this._curMaxHeight=0,this._talentList.forEach((function(e,n){var i=d(t.talentItemPrfb);i.setParent(t.talentItemGroup);var l=i.getComponent(I);l.index=n,l.setData(e),t.talentItems.push(l),l.onItemClick=t.onTalentItemClicked.bind(t);var a=i.getComponent(p).contentSize.height;i.setPosition(new f(0,t._curMaxHeight-a/2,0)),t._curMaxHeight-=a,t._contentUITrans.height=-t._curMaxHeight})),this.updateTalentCheckState())},s.updateTalentCheckState=function(){if(this.tips.string="最多选择"+this._limitSelectedTalentNum+"个天赋",this.selectedTalentIndices.length===this._limitSelectedTalentNum)this.checkButtonLbl.string="完成",this.checkButton.interactable=!0;else{var t=this._limitSelectedTalentNum-this.selectedTalentIndices.length;this.checkButtonLbl.string="还差"+t+"个天赋",this.checkButton.interactable=!1}},s.onTalentItemClicked=function(t){var e=this,n=this.selectedTalentIndices.indexOf(t);n>=0?this.selectedTalentIndices.splice(n,1):(this.selectedTalentIndices.length===this._limitSelectedTalentNum&&this.selectedTalentIndices.splice(this._limitSelectedTalentNum-1,1),this.selectedTalentIndices.push(t)),this.talentItems.forEach((function(t,n){e.selectedTalentIndices.indexOf(n)>=0?t.setSelected(!0):t.setSelected(!1)})),this.updateTalentCheckState()},s.onCheckButtonClicked=function(){var t=this,e=[];this.selectedTalentIndices.forEach((function(n){e.push(t._talentList[n])})),T.emit(b.TalentSelectEnd,e)},s.onDrawButtonClicked=function(){this._talentList=g.talentRandom().sort(m.SortTalent),this.refreshPanel()},s.onAdvDrawButtonClicked=function(){this._talentList=g.talentRandom(40,!1).sort(m.SortTalent),this.refreshPanel()},s.onAddChoiceButtonClicked=function(){this._limitSelectedTalentNum+=2,this.AddChoiceButton.interactable=!1,this.updateTalentCheckState()},s.onRefreshButtonClicked=function(){this._talentList=g.talentRandom(this._talentList.length,!0).sort(m.SortTalent),this.RefreshButton.interactable=!1,this.refreshPanel()},s.onShow=function(){this.init()},e}(y)).prototype,"talentItemGroup",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),x=e(D.prototype,"step1Node",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),G=e(D.prototype,"step2Node",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),H=e(D.prototype,"talentItemPrfb",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),E=e(D.prototype,"checkButton",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),U=e(D.prototype,"DrawButton",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),F=e(D.prototype,"AdvDrawButton",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),O=e(D.prototype,"AddChoiceButton",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),j=e(D.prototype,"RefreshButton",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),K=e(D.prototype,"checkButtonLbl",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),V=e(D.prototype,"tips",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),A=D))||A));s._RF.pop()}}}));
+      var _ageData = new WeakMap();
 
-System.register("chunks:///_virtual/util.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(r){"use strict";var t,n;return{setters:[function(r){t=r.createForOfIteratorHelperLoose},function(r){n=r.cclegacy}],execute:function(){function e(){for(var r=0,t=arguments.length,n=new Array(t),e=0;e<t;e++)n[e]=arguments[e];return n.flat().forEach((function(t){return r+=t})),r}r({average:function(){for(var r=arguments.length,t=new Array(r),n=0;n<r;n++)t[n]=arguments[n];var a=e.apply(void 0,t);return a/t.flat().length},clone:function r(t){switch(typeof t){case"object":if(Array.isArray(t))return t.map((function(t){return r(t)}));var n={};for(var e in t)n[e]=r(t[e]);return n;default:return t}},listRandom:function(r){return r[Math.floor(Math.random()*r.length)]},max:function(){for(var r=arguments.length,t=new Array(r),n=0;n<r;n++)t[n]=arguments[n];return Math.max.apply(Math,t.flat())},min:function(){for(var r=arguments.length,t=new Array(r),n=0;n<r;n++)t[n]=arguments[n];return Math.min.apply(Math,t.flat())},sum:e,weightRandom:function(r){for(var n,e=0,a=t(r);!(n=a()).done;){var o=n.value[1];e+=o}for(var u,f=Math.random()*e,i=t(r);!(u=i()).done;){var l=u.value,c=l[0],h=l[1];if((f-=h)<0)return c}return r[r.length-1]}}),n._RF.push({},"cbaaf06ZhFAdKhR7JtE1ykV","util",void 0),n._RF.pop()}}}));
+      var _data = new WeakMap();
 
-System.register("chunks:///_virtual/UIPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc"],(function(t){"use strict";var n,e,o,i;return{setters:[function(t){n=t.inheritsLoose},function(t){e=t.cclegacy,o=t._decorator,i=t.Component}],execute:function(){var c;e._RF.push({},"d4254NMR3hCDYP9uPC5N4jf","UIPanel",void 0);var r=o.ccclass;o.property,t("UIPanel",r("UIPanel")(c=function(t){function e(){return t.apply(this,arguments)||this}n(e,t);var o=e.prototype;return o.show=function(){this.node.active=!0,this.onShow.apply(this,arguments)},o.onShow=function(){},o.hide=function(){this.node.active=!1},e}(i))||c);e._RF.pop()}}}));
+      var Property = function (v) {
+        return exports({
+          Property: v,
+          default: v
+        }), v;
+      }( /*#__PURE__*/function () {
+        function Property() {
+          _defineProperty(this, "TYPES", {
+            // 本局
+            AGE: "AGE",
+            // 年龄 age AGE
+            CHR: "CHR",
+            // 颜值 charm CHR
+            INT: "INT",
+            // 智力 intelligence INT
+            STR: "STR",
+            // 体质 strength STR
+            MNY: "MNY",
+            // 家境 money MNY
+            SPR: "SPR",
+            // 快乐 spirit SPR
+            ESC: "ESC",
+            // 事件分 event score ESC
+            LIF: "LIF",
+            // 生命 life LIFE
+            TLT: "TLT",
+            // 天赋 talent TLT
+            EVT: "EVT",
+            // 事件 event EVT
+            TMS: "TMS",
+            // 次数 times TMS
+            // Auto calc
+            LAGE: "LAGE",
+            // 最低年龄 Low Age
+            HAGE: "HAGE",
+            // 最高年龄 High Age
+            LCHR: "LCHR",
+            // 最低颜值 Low Charm
+            HCHR: "HCHR",
+            // 最高颜值 High Charm
+            LINT: "LINT",
+            // 最低智力 Low Intelligence
+            HINT: "HINT",
+            // 最高智力 High Intelligence
+            LSTR: "LSTR",
+            // 最低体质 Low Strength
+            HSTR: "HSTR",
+            // 最高体质 High Strength
+            LMNY: "LMNY",
+            // 最低家境 Low Money
+            HMNY: "HMNY",
+            // 最高家境 High Money
+            LSPR: "LSPR",
+            // 最低快乐 Low Spirit
+            HSPR: "HSPR",
+            // 最高快乐 High Spirit
+            SUM: "SUM",
+            // 总评 summary SUM
+            EXT: "EXT",
+            // 继承天赋
+            // 总计
+            // Achievement Total
+            ATLT: "ATLT",
+            // 拥有过的天赋 Achieve Talent
+            AEVT: "AEVT",
+            // 触发过的事件 Achieve Event
+            ACHV: "ACHV",
+            // 达成的成就 Achievement
+            CTLT: "RTLT",
+            // 天赋选择数 Count Talent
+            CEVT: "REVT",
+            // 事件收集数 Count Event
+            CACHV: "CACHV",
+            // 成就达成数 Count Achievement
+            // SPECIAL
+            RDM: 'RDM' // 随机属性 random RDM
 
-System.register("chunks:///_virtual/StartMenuPanel.ts",["./_rollupPluginModLoBabelHelpers.js","cc","./EventMessage.ts","./UIPanel.ts","./TagItem.ts"],(function(t){"use strict";var e,a,n,i,o,r,s,l,c,u,h,f,g;return{setters:[function(t){e=t.applyDecoratedDescriptor,a=t.inheritsLoose,n=t.initializerDefineProperty,i=t.assertThisInitialized,o=t.defineProperty},function(t){r=t.cclegacy,s=t._decorator,l=t.Prefab,c=t.Node,u=t.instantiate},function(t){h=t.eventMsg},function(t){f=t.UIPanel},function(t){g=t.TagItem}],execute:function(){var p,d,M,P,_,m,v;r._RF.push({},"ff68dOP4v5KTacY3/xxvNmR","StartMenuPanel",void 0);var y=s.ccclass,I=s.property,b=200,C=Math.PI/180;t("StartMenuPanel",(p=y("StartMenuPanel"),d=I({type:l}),M=I({type:c}),p((m=e((_=function(t){function e(){for(var e,a=arguments.length,r=new Array(a),s=0;s<a;s++)r[s]=arguments[s];return e=t.call.apply(t,[this].concat(r))||this,n(i(e),"tagLabelPrfb",m,i(e)),n(i(e),"tagCloud",v,i(e)),o(i(e),"_tagItems",[]),o(i(e),"_angleX",0),o(i(e),"_angleY",0),o(i(e),"_isAutoRotY",!0),e}a(e,t);var r=e.prototype;return r.onStartButtonClicked=function(){h.emit("StartGame")},r.onShow=function(t){this.createTagCloud(t)},r.createTagCloud=function(t){this._tagItems=[],this.tagCloud.removeAllChildren();for(var e=t.length,a=0;a<e;a++){var n=(2*(a+1)-1)/e-1,i=Math.acos(n),o=i*Math.sqrt(e*Math.PI),r=b*Math.sin(i)*Math.cos(o),s=b*Math.sin(i)*Math.sin(o),l=b*Math.cos(i),c=u(this.tagLabelPrfb);c.setParent(this.tagCloud),c.setPosition(r,s,l);var h=c.getComponent(g);this._tagItems.push(h),h.setTagName(t[a]),h.refresh(400,b)}},r.rotateX=function(){var t=Math.cos(this._angleX),e=Math.sin(this._angleX);this._tagItems.forEach((function(a){var n=a.node.position,i=n.y*t-n.z*e,o=n.z*t+n.y*e;a.node.setPosition(n.x,i,o)}))},r.rotateY=function(){var t=Math.cos(this._angleY),e=Math.sin(this._angleY);this._tagItems.forEach((function(a){var n=a.node.position,i=n.x*t-n.z*e,o=n.z*t+n.x*e;a.node.setPosition(i,n.y,o)}))},r.rotateItems=function(){this.rotateX(),this.rotateY(),this._tagItems.forEach((function(t){t.refresh(400,b)}))},r.update=function(t){this._isAutoRotY&&(this._angleY=t*C*5,this.rotateItems())},e}(f)).prototype,"tagLabelPrfb",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),v=e(_.prototype,"tagCloud",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),P=_))||P));r._RF.pop()}}}));
+          });
 
-System.register("chunks:///_virtual/main",["./Defines.ts","./LifeTrackItem.ts","./util.ts","./property.ts","./condition.ts","./event.ts","./Talent.ts","./EventMessage.ts","./achievement.ts","./ConfigManager.ts","./Life.ts","./TalentItem.ts","./PropItem.ts","./UIPanel.ts","./SummaryPanel.ts","./AchievementItem.ts","./TagItem.ts","./LifeTrackPanel.ts","./AchievementHint.ts","./StatisticsItem.ts","./AchievementPanel.ts","./DistributePropItem.ts","./DistributePropPanel.ts","./SelectTalentPanel.ts","./StartMenuPanel.ts","./GameManager.ts","./summary.ts"],(function(){"use strict";return{setters:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],execute:function(){}}}));
+          _defineProperty(this, "SPECIAL", {
+            RDM: [// 随机属性 random RDM
+            this.TYPES.CHR, this.TYPES.INT, this.TYPES.STR, this.TYPES.MNY, this.TYPES.SPR]
+          });
+
+          _ageData.set(this, {
+            writable: true,
+            value: void 0
+          });
+
+          _data.set(this, {
+            writable: true,
+            value: {}
+          });
+        }
+
+        var _proto = Property.prototype;
+
+        _proto.initial = function initial(_ref) {
+          var age = _ref.age;
+
+          _classPrivateFieldSet(this, _ageData, new Map());
+
+          for (var key in age) {
+            var _event, _talent;
+
+            var a = age[key].age;
+            var _age$key = age[key],
+                event = _age$key.event,
+                talent = _age$key.talent;
+            if (!Array.isArray(event)) event = ((_event = event) === null || _event === void 0 ? void 0 : _event.split(',')) || [];
+            event = event.map(function (v) {
+              var value = ("" + v).split('*').map(function (n) {
+                return Number(n);
+              });
+              if (value.length == 1) value.push(1);
+              return value;
+            });
+            if (!Array.isArray(talent)) talent = ((_talent = talent) === null || _talent === void 0 ? void 0 : _talent.split(',')) || [];
+            talent = talent.map(function (v) {
+              return Number(v);
+            }); //不知道他保留干嘛，后期可能会用？他想改#ageData，直接赋值给age，无语
+
+            _classPrivateFieldGet(this, _ageData)[a] = {
+              event: event,
+              talent: talent
+            };
+          } //部分需要init但是不能restart的数据在此重置
+          // this.#data = {
+          //     [this.TYPES.EXT]: 0
+          // };
+
+        };
+
+        _proto.restart = function restart(data) {
+          var _classPrivateFieldSet2;
+
+          _classPrivateFieldSet(this, _data, (_classPrivateFieldSet2 = {}, _classPrivateFieldSet2[this.TYPES.AGE] = -1, _classPrivateFieldSet2[this.TYPES.CHR] = 0, _classPrivateFieldSet2[this.TYPES.INT] = 0, _classPrivateFieldSet2[this.TYPES.STR] = 0, _classPrivateFieldSet2[this.TYPES.MNY] = 0, _classPrivateFieldSet2[this.TYPES.SPR] = 0, _classPrivateFieldSet2[this.TYPES.ESC] = 0, _classPrivateFieldSet2[this.TYPES.LIF] = 1, _classPrivateFieldSet2[this.TYPES.TLT] = [], _classPrivateFieldSet2[this.TYPES.EVT] = [], _classPrivateFieldSet2[this.TYPES.LAGE] = Infinity, _classPrivateFieldSet2[this.TYPES.LCHR] = Infinity, _classPrivateFieldSet2[this.TYPES.LINT] = Infinity, _classPrivateFieldSet2[this.TYPES.LSTR] = Infinity, _classPrivateFieldSet2[this.TYPES.LSPR] = Infinity, _classPrivateFieldSet2[this.TYPES.LMNY] = Infinity, _classPrivateFieldSet2[this.TYPES.HAGE] = -Infinity, _classPrivateFieldSet2[this.TYPES.HCHR] = -Infinity, _classPrivateFieldSet2[this.TYPES.HINT] = -Infinity, _classPrivateFieldSet2[this.TYPES.HSTR] = -Infinity, _classPrivateFieldSet2[this.TYPES.HMNY] = -Infinity, _classPrivateFieldSet2[this.TYPES.HSPR] = -Infinity, _classPrivateFieldSet2));
+
+          for (var key in data) {
+            this.change(key, data[key]);
+          }
+        };
+
+        _proto.restartLastStep = function restartLastStep() {
+          _classPrivateFieldGet(this, _data)[this.TYPES.LAGE] = this.get(this.TYPES.AGE);
+          _classPrivateFieldGet(this, _data)[this.TYPES.LCHR] = this.get(this.TYPES.CHR);
+          _classPrivateFieldGet(this, _data)[this.TYPES.LINT] = this.get(this.TYPES.INT);
+          _classPrivateFieldGet(this, _data)[this.TYPES.LSTR] = this.get(this.TYPES.STR);
+          _classPrivateFieldGet(this, _data)[this.TYPES.LSPR] = this.get(this.TYPES.SPR);
+          _classPrivateFieldGet(this, _data)[this.TYPES.LMNY] = this.get(this.TYPES.MNY);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HAGE] = this.get(this.TYPES.AGE);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HCHR] = this.get(this.TYPES.CHR);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HINT] = this.get(this.TYPES.INT);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HSTR] = this.get(this.TYPES.STR);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HMNY] = this.get(this.TYPES.MNY);
+          _classPrivateFieldGet(this, _data)[this.TYPES.HSPR] = this.get(this.TYPES.SPR);
+        };
+
+        _proto.get = function get(prop) {
+          switch (prop) {
+            case this.TYPES.AGE:
+            case this.TYPES.CHR:
+            case this.TYPES.INT:
+            case this.TYPES.STR:
+            case this.TYPES.MNY:
+            case this.TYPES.SPR:
+            case this.TYPES.ESC:
+            case this.TYPES.LIF:
+            case this.TYPES.TLT:
+            case this.TYPES.EVT:
+              var data = _classPrivateFieldGet(this, _data)[prop];
+
+              return clone(data);
+
+            case this.TYPES.LAGE:
+            case this.TYPES.LCHR:
+            case this.TYPES.LINT:
+            case this.TYPES.LSTR:
+            case this.TYPES.LMNY:
+            case this.TYPES.LSPR:
+              return min(_classPrivateFieldGet(this, _data)[prop], this.get(this.fallback(prop)));
+
+            case this.TYPES.HAGE:
+            case this.TYPES.HCHR:
+            case this.TYPES.HINT:
+            case this.TYPES.HSTR:
+            case this.TYPES.HMNY:
+            case this.TYPES.HSPR:
+              return max(_classPrivateFieldGet(this, _data)[prop], this.get(this.fallback(prop)));
+
+            case this.TYPES.SUM:
+              var HAGE = this.get(this.TYPES.HAGE);
+              var HCHR = this.get(this.TYPES.HCHR);
+              var HINT = this.get(this.TYPES.HINT);
+              var HSTR = this.get(this.TYPES.HSTR);
+              var HMNY = this.get(this.TYPES.HMNY);
+              var HSPR = this.get(this.TYPES.HSPR);
+              return Math.floor(sum(HCHR, HINT, HSTR, HMNY, HSPR) * 2 + HAGE / 2);
+
+            case this.TYPES.TMS:
+              return this.lsget('restartTimes') || 0;
+
+            case this.TYPES.EXT:
+              return this.lsget('inheritTalent') || 0;
+
+            case this.TYPES.ATLT:
+            case this.TYPES.AEVT:
+            case this.TYPES.ACHV:
+              return this.lsget(prop) || [];
+
+            case this.TYPES.CTLT:
+            case this.TYPES.CEVT:
+            case this.TYPES.CACHV:
+              return this.get(this.fallback(prop)).length;
+
+            default:
+              return 0;
+          }
+        };
+
+        _proto.fallback = function fallback(prop) {
+          switch (prop) {
+            case this.TYPES.LAGE:
+            case this.TYPES.HAGE:
+              return this.TYPES.AGE;
+
+            case this.TYPES.LCHR:
+            case this.TYPES.HCHR:
+              return this.TYPES.CHR;
+
+            case this.TYPES.LINT:
+            case this.TYPES.HINT:
+              return this.TYPES.INT;
+
+            case this.TYPES.LSTR:
+            case this.TYPES.HSTR:
+              return this.TYPES.STR;
+
+            case this.TYPES.LMNY:
+            case this.TYPES.HMNY:
+              return this.TYPES.MNY;
+
+            case this.TYPES.LSPR:
+            case this.TYPES.HSPR:
+              return this.TYPES.SPR;
+
+            case this.TYPES.CTLT:
+              return this.TYPES.ATLT;
+
+            case this.TYPES.CEVT:
+              return this.TYPES.AEVT;
+
+            case this.TYPES.CACHV:
+              return this.TYPES.ACHV;
+
+            default:
+              return;
+          }
+        };
+
+        _proto.set = function set(prop, value) {
+          switch (prop) {
+            case this.TYPES.AGE:
+            case this.TYPES.CHR:
+            case this.TYPES.INT:
+            case this.TYPES.STR:
+            case this.TYPES.MNY:
+            case this.TYPES.SPR:
+            case this.TYPES.ESC:
+            case this.TYPES.LIF:
+            case this.TYPES.TLT:
+            case this.TYPES.EVT:
+              // case this.TYPES.EXT:
+              this.hl(prop, _classPrivateFieldGet(this, _data)[prop] = clone(value));
+              this.achieve(prop, value);
+              return;
+
+            case this.TYPES.TMS:
+              this.lsset('restartTimes', parseInt(value) || 0);
+              return;
+
+            case this.TYPES.EXT:
+              this.lsset('inheritTalent', parseInt(value));
+              return;
+
+            default:
+              return;
+          }
+        };
+
+        _proto.getLastRecord = function getLastRecord() {
+          var _clone;
+
+          return clone((_clone = {}, _clone[this.TYPES.AGE] = this.get(this.TYPES.AGE), _clone[this.TYPES.CHR] = this.get(this.TYPES.CHR), _clone[this.TYPES.INT] = this.get(this.TYPES.INT), _clone[this.TYPES.STR] = this.get(this.TYPES.STR), _clone[this.TYPES.MNY] = this.get(this.TYPES.MNY), _clone[this.TYPES.SPR] = this.get(this.TYPES.SPR), _clone));
+        };
+
+        _proto.change = function change(prop, value) {
+          if (Array.isArray(value)) {
+            for (var _iterator = _createForOfIteratorHelperLoose(value), _step; !(_step = _iterator()).done;) {
+              var v = _step.value;
+              this.change(prop, Number(v));
+            }
+
+            return;
+          }
+
+          switch (prop) {
+            case this.TYPES.AGE:
+            case this.TYPES.CHR:
+            case this.TYPES.INT:
+            case this.TYPES.STR:
+            case this.TYPES.MNY:
+            case this.TYPES.SPR:
+            case this.TYPES.ESC:
+            case this.TYPES.LIF:
+              this.hl(prop, _classPrivateFieldGet(this, _data)[prop] += Number(value));
+              return;
+
+            case this.TYPES.TLT:
+            case this.TYPES.EVT:
+              var _v = _classPrivateFieldGet(this, _data)[prop];
+
+              if (value < 0) {
+                var index = _v.indexOf(value);
+
+                if (index != -1) _v.splice(index, 1);
+              }
+
+              if (!_v.includes(value)) _v.push(value);
+              this.achieve(prop, value);
+              return;
+
+            case this.TYPES.TMS:
+              this.set(prop, this.get(prop) + parseInt(value));
+              return;
+
+            default:
+              return;
+          }
+        };
+
+        _proto.hookSpecial = function hookSpecial(prop) {
+          switch (prop) {
+            case this.TYPES.RDM:
+              return listRandom(this.SPECIAL.RDM);
+
+            default:
+              return prop;
+          }
+        };
+
+        _proto.effect = function effect(effects) {
+          for (var prop in effects) {
+            this.change(this.hookSpecial(prop), Number(effects[prop]));
+          }
+        };
+
+        _proto.isEnd = function isEnd() {
+          return this.get(this.TYPES.LIF) < 1;
+        };
+
+        _proto.ageNext = function ageNext() {
+          this.change(this.TYPES.AGE, 1);
+          var age = this.get(this.TYPES.AGE);
+
+          var _this$getAgeData = this.getAgeData(age),
+              event = _this$getAgeData.event,
+              talent = _this$getAgeData.talent;
+
+          return {
+            age: age,
+            event: event,
+            talent: talent
+          };
+        };
+
+        _proto.getAgeData = function getAgeData(age) {
+          return clone(_classPrivateFieldGet(this, _ageData)[age]);
+        } //high low
+        ;
+
+        _proto.hl = function hl(prop, value) {
+          var keys;
+
+          switch (prop) {
+            case this.TYPES.AGE:
+              keys = [this.TYPES.LAGE, this.TYPES.HAGE];
+              break;
+
+            case this.TYPES.CHR:
+              keys = [this.TYPES.LCHR, this.TYPES.HCHR];
+              break;
+
+            case this.TYPES.INT:
+              keys = [this.TYPES.LINT, this.TYPES.HINT];
+              break;
+
+            case this.TYPES.STR:
+              keys = [this.TYPES.LSTR, this.TYPES.HSTR];
+              break;
+
+            case this.TYPES.MNY:
+              keys = [this.TYPES.LMNY, this.TYPES.HMNY];
+              break;
+
+            case this.TYPES.SPR:
+              keys = [this.TYPES.LSPR, this.TYPES.HSPR];
+              break;
+
+            default:
+              return;
+          }
+
+          var _keys = keys,
+              l = _keys[0],
+              h = _keys[1];
+          _classPrivateFieldGet(this, _data)[l] = min(_classPrivateFieldGet(this, _data)[l], value);
+          _classPrivateFieldGet(this, _data)[h] = max(_classPrivateFieldGet(this, _data)[h], value);
+        };
+
+        _proto.achieve = function achieve(prop, newData) {
+          var key;
+
+          switch (prop) {
+            //[[id,time],[id,time]]
+            case this.TYPES.ACHV:
+              var _lastData = this.lsget(prop);
+
+              this.lsset(prop, (_lastData || []).concat([[newData, Date.now()]]));
+              return;
+
+            case this.TYPES.TLT:
+              key = this.TYPES.ATLT;
+              break;
+
+            case this.TYPES.EVT:
+              key = this.TYPES.AEVT;
+              break;
+
+            default:
+              return;
+          }
+
+          var lastData = this.lsget(key) || [];
+          this.lsset(key, Array.from(new Set(lastData.concat(newData || []).flat())));
+        };
+
+        _proto.lsget = function lsget(key) {
+          // return;
+          var data = sys.localStorage.getItem(key);
+          if (data == null || data == "undefined") return;
+          return JSON.parse(data);
+        };
+
+        _proto.lsset = function lsset(key, value) {
+          sys.localStorage.setItem(key, JSON.stringify(value));
+        };
+
+        return Property;
+      }());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './PropItem.ts', './UIPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, CalStage, GradeColor, PropNameMap, Message, talentMgr, eventMsg, lifeMgr, TalentItem, PropItem, UIPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Button = module.Button;
+      Label = module.Label;
+      instantiate = module.instantiate;
+      UITransform = module.UITransform;
+      Vec3 = module.Vec3;
+    }, function (module) {
+      CalStage = module.CalStage;
+      GradeColor = module.GradeColor;
+      PropNameMap = module.PropNameMap;
+      Message = module.Message;
+    }, function (module) {
+      talentMgr = module.talentMgr;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      TalentItem = module.TalentItem;
+    }, function (module) {
+      PropItem = module.PropItem;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _temp;
+
+      cclegacy._RF.push({}, "1f26bOWTsVLxaooa+ZdgSIB", "SummaryPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var showPropKeys = ['CHR', 'INT', 'STR', 'MNY', 'SPR'];
+      var SCORE_DES_LIST = [{
+        value: 10,
+        des: "啊。这。。。"
+      }, {
+        value: 20,
+        des: "平平凡凡"
+      }, {
+        value: 40,
+        des: "平平安安"
+      }, {
+        value: 80,
+        des: "在世仙人"
+      }, {
+        value: 160,
+        des: "超神"
+      }];
+      var SummaryPanel = exports('SummaryPanel', (_dec = ccclass('SummaryPanel'), _dec2 = property({
+        type: Node
+      }), _dec3 = property({
+        type: Prefab
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Prefab
+      }), _dec6 = property({
+        type: Button
+      }), _dec7 = property({
+        type: Label
+      }), _dec8 = property({
+        type: Label
+      }), _dec9 = property({
+        type: Label
+      }), _dec10 = property({
+        type: Label
+      }), _dec11 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(SummaryPanel, _UIPanel);
+
+        function SummaryPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemGroup", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemPrfb", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propGroup", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propItemPrfb", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "RestartButton", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "ageLabel", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "resetTimesLabel", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "scoreLabel", _descriptor8, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "scoreDesLabel", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tipsLabel", _descriptor10, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "talentItems", []);
+
+          _defineProperty(_assertThisInitialized(_this), "selectedTalentIndices", []);
+
+          _defineProperty(_assertThisInitialized(_this), "_talentList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_limitSelectedTalentNum", 1);
+
+          _defineProperty(_assertThisInitialized(_this), "_curMaxHeight", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_propItemsMap", new Map());
+
+          return _this;
+        }
+
+        var _proto = SummaryPanel.prototype;
+
+        _proto.start = function start() {};
+
+        _proto.init = function init() {
+          var _this2 = this;
+
+          var talentIdList = lifeMgr._property.get(lifeMgr._property.TYPES.TLT);
+
+          this._talentList = new Array(talentIdList.length);
+
+          for (var i = 0; i < talentIdList.length; i++) {
+            var talentId = talentIdList[i];
+            this._talentList[i] = talentMgr.get(talentId);
+          }
+
+          this.talentItemGroup.removeAllChildren();
+          this.selectedTalentIndices = [];
+          this.talentItems = [];
+          this.tipsLabel.string = "\u9009" + this._limitSelectedTalentNum + "\u9879\u5929\u8D4B\uFF0C\u53EF\u4EE5\u4FDD\u7559\u5230\u4E0B\u4E00\u4E16";
+
+          var score = lifeMgr._property.get(lifeMgr._property.TYPES.ESC);
+
+          this.scoreLabel.string = score;
+          this.ageLabel.string = "\u4EAB\u5E74" + lifeMgr._property.get(lifeMgr._property.TYPES.AGE) + "\u5C81";
+          this.resetTimesLabel.string = "\u7B2C" + lifeMgr._property.get(lifeMgr._property.TYPES.TMS) + "\u4E16\u4EE3";
+          var stage = CalStage(SCORE_DES_LIST, score);
+          this.scoreDesLabel.string = SCORE_DES_LIST[stage].des;
+          this.scoreDesLabel.color = GradeColor[stage];
+          this._contentUITrans = this.talentItemGroup._uiProps.uiTransformComp;
+          this._curMaxHeight = 0;
+
+          this._talentList.forEach(function (talentInfo, index) {
+            var itemNode = instantiate(_this2.talentItemPrfb);
+            itemNode.setParent(_this2.talentItemGroup);
+            var item = itemNode.getComponent(TalentItem);
+            item.index = index;
+            item.setData(talentInfo);
+
+            _this2.talentItems.push(item);
+
+            item.onItemClick = _this2.onTalentItemClicked.bind(_this2);
+            var itemHeight = itemNode.getComponent(UITransform).contentSize.height;
+            itemNode.setPosition(new Vec3(0, _this2._curMaxHeight - itemHeight / 2, 0));
+            _this2._curMaxHeight -= itemHeight;
+            _this2._contentUITrans.height = -_this2._curMaxHeight;
+          });
+
+          this.initProp();
+        };
+
+        _proto.createPropItem = function createPropItem(name, value) {
+          var itemNode = instantiate(this.propItemPrfb);
+          itemNode.setParent(this.propGroup);
+          var item = itemNode.getComponent(PropItem);
+          item.setData(name, value);
+          return item;
+        };
+
+        _proto.initProp = function initProp() {
+          var _this3 = this;
+
+          this.propGroup.removeAllChildren();
+
+          this._propItemsMap.clear();
+
+          var property = lifeMgr.getLastRecord();
+          showPropKeys.forEach(function (key) {
+            _this3._propItemsMap.set(key, _this3.createPropItem(PropNameMap[key], property[key]));
+          });
+        };
+
+        _proto.updatePropData = function updatePropData() {
+          var _this4 = this;
+
+          var property = lifeMgr.getLastRecord();
+          showPropKeys.forEach(function (key) {
+            var item = _this4._propItemsMap.get(key);
+
+            item === null || item === void 0 ? void 0 : item.updateValue(property[key]);
+          });
+          this.scoreLabel.string = lifeMgr._property.get(lifeMgr._property.TYPES.ESC).toString();
+        };
+
+        _proto.onTalentItemClicked = function onTalentItemClicked(itemIndex) {
+          var _this5 = this;
+
+          var idx = this.selectedTalentIndices.indexOf(itemIndex);
+
+          if (idx >= 0) {
+            this.selectedTalentIndices.splice(idx, 1);
+          } else {
+            // 超过数量则替换掉上个选择的对象
+            if (this.selectedTalentIndices.length === this._limitSelectedTalentNum) {
+              this.selectedTalentIndices.splice(this._limitSelectedTalentNum - 1, 1);
+            }
+
+            this.selectedTalentIndices.push(itemIndex);
+          }
+
+          this.talentItems.forEach(function (item, index) {
+            if (_this5.selectedTalentIndices.indexOf(index) >= 0) {
+              item.setSelected(true);
+            } else {
+              item.setSelected(false);
+            }
+          });
+        };
+
+        _proto.onRestartButtonClicked = function onRestartButtonClicked() {
+          if (this.selectedTalentIndices.length > 0) {
+            lifeMgr._property.set(lifeMgr._property.TYPES.EXT, this._talentList[this.selectedTalentIndices[0]].id);
+          } else {
+            lifeMgr._property.set(lifeMgr._property.TYPES.EXT, 0);
+          }
+
+          eventMsg.emit(Message.Replay);
+        };
+
+        _proto.onShow = function onShow() {
+          this.init();
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        return SummaryPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "talentItemGroup", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "talentItemPrfb", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "propGroup", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "propItemPrfb", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "RestartButton", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "ageLabel", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "resetTimesLabel", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "scoreLabel", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "scoreDesLabel", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "tipsLabel", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Life.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './util.ts', './property.ts', './event.ts', './Talent.ts', './achievement.ts', './ConfigManager.ts'], function (exports) {
+  'use strict';
+
+  var _createForOfIteratorHelperLoose, _createClass, _defineProperty, _asyncToGenerator, cclegacy, weightRandom, Property, Event, talentMgr, Achievement, ConfigManager;
+
+  return {
+    setters: [function (module) {
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+      _createClass = module.createClass;
+      _defineProperty = module.defineProperty;
+      _asyncToGenerator = module.asyncToGenerator;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      weightRandom = module.weightRandom;
+    }, function (module) {
+      Property = module.Property;
+    }, function (module) {
+      Event = module.default;
+    }, function (module) {
+      talentMgr = module.talentMgr;
+    }, function (module) {
+      Achievement = module.Achievement;
+    }, function (module) {
+      ConfigManager = module.default;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "26af1qQIDFA4rL7IzI7FUF7", "Life", undefined);
+
+      var LifeManager = /*#__PURE__*/function () {
+        function LifeManager() {
+          _defineProperty(this, "_property", void 0);
+
+          _defineProperty(this, "_event", void 0);
+
+          _defineProperty(this, "_talent", void 0);
+
+          _defineProperty(this, "_achievement", void 0);
+
+          _defineProperty(this, "_triggerTalents", void 0);
+
+          this._property = new Property();
+          this._event = new Event();
+          this._talent = talentMgr;
+          this._achievement = new Achievement();
+        } //非属性的全局变量
+
+
+        var _proto = LifeManager.prototype;
+
+        _proto.initial = /*#__PURE__*/function () {
+          var _initial = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _yield$Promise$all, age, talents, events, achievements;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return Promise.all([ConfigManager.readJson('age'), ConfigManager.readJson('talents'), ConfigManager.readJson('events'), ConfigManager.readJson('achievement')]);
+
+                  case 2:
+                    _yield$Promise$all = _context.sent;
+                    age = _yield$Promise$all[0];
+                    talents = _yield$Promise$all[1];
+                    events = _yield$Promise$all[2];
+                    achievements = _yield$Promise$all[3];
+
+                    this._property.initial({
+                      age: age
+                    });
+
+                    this._talent.initial({
+                      talents: talents
+                    });
+
+                    this._event.initial({
+                      events: events
+                    });
+
+                    this._achievement.initial({
+                      achievements: achievements
+                    });
+
+                  case 11:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+
+          function initial() {
+            return _initial.apply(this, arguments);
+          }
+
+          return initial;
+        }();
+
+        _proto.restart = function restart(allocation) {
+          this._triggerTalents = {};
+          var contents = this.talentReplace(allocation.TLT);
+
+          this._property.restart(allocation);
+
+          this.doTalent();
+
+          this._property.restartLastStep();
+
+          this._achievement.achieve(this._achievement.Opportunity.START, this._property);
+
+          return contents;
+        };
+
+        _proto.getTalentAllocationAddition = function getTalentAllocationAddition(talents) {
+          return this._talent.allocationAddition(talents);
+        };
+
+        _proto.getTalentCurrentTriggerCount = function getTalentCurrentTriggerCount(talentId) {
+          return this._triggerTalents[talentId] || 0;
+        };
+
+        _proto.next = function next() {
+          var _this$_property$ageNe = this._property.ageNext(),
+              age = _this$_property$ageNe.age,
+              event = _this$_property$ageNe.event,
+              talent = _this$_property$ageNe.talent;
+
+          var talentContent = this.doTalent(talent);
+          var eventContent = this.doEvent(this.random(event));
+
+          var isEnd = this._property.isEnd();
+
+          var content = [].concat(talentContent, eventContent);
+
+          this._achievement.achieve(this._achievement.Opportunity.TRAJECTORY, this._property);
+
+          return {
+            age: age,
+            content: content,
+            isEnd: isEnd
+          };
+        };
+
+        _proto.talentReplace = function talentReplace(talents) {
+          var result = this._talent.replace(talents);
+
+          var contents = [];
+
+          for (var id in result) {
+            talents.push(result[id]);
+
+            var source = this._talent.get(id);
+
+            var target = this._talent.get(result[id]);
+
+            contents.push({
+              type: 'talentReplace',
+              source: source,
+              target: target
+            });
+          }
+
+          return contents;
+        };
+
+        _proto.doTalent = function doTalent(talents) {
+          var _this = this;
+
+          if (talents) this._property.change(this._property.TYPES.TLT, talents);
+          talents = this._property.get(this._property.TYPES.TLT).filter(function (talentId) {
+            return _this.getTalentCurrentTriggerCount(talentId) < _this._talent.get(talentId).max_triggers;
+          });
+          var contents = [];
+
+          for (var _iterator = _createForOfIteratorHelperLoose(talents), _step; !(_step = _iterator()).done;) {
+            var talentId = _step.value;
+
+            var result = this._talent["do"](talentId, this._property);
+
+            if (!result) continue;
+            this._triggerTalents[talentId] = this.getTalentCurrentTriggerCount(talentId) + 1;
+            var effect = result.effect,
+                name = result.name,
+                description = result.description,
+                grade = result.grade;
+            contents.push({
+              type: this._property.TYPES.TLT,
+              name: name,
+              grade: grade,
+              description: description
+            });
+            if (!effect) continue;
+
+            this._property.effect(effect);
+          }
+
+          return contents;
+        };
+
+        _proto.doEvent = function doEvent(eventId) {
+          var _this$_event$do = this._event["do"](eventId, this._property),
+              effect = _this$_event$do.effect,
+              next = _this$_event$do.next,
+              description = _this$_event$do.description,
+              postEvent = _this$_event$do.postEvent,
+              grade = _this$_event$do.grade,
+              score = _this$_event$do.score;
+
+          this._property.change(this._property.TYPES.EVT, eventId);
+
+          this._property.effect({
+            ESC: score
+          });
+
+          this._property.effect(effect);
+
+          var content = {
+            type: this._property.TYPES.EVT,
+            description: description,
+            postEvent: postEvent,
+            grade: grade
+          };
+          if (next) return [content].concat(this.doEvent(next));
+          return [content];
+        };
+
+        _proto.random = function random(events) {
+          var _this2 = this;
+
+          return weightRandom(events.filter(function (_ref) {
+            var eventId = _ref[0];
+            return _this2._event.check(eventId, _this2._property);
+          }));
+        };
+
+        _proto.talentRandom = function talentRandom(num, protect) {
+          if (num === void 0) {
+            num = 10;
+          }
+
+          if (protect === void 0) {
+            protect = false;
+          }
+
+          var times = this._property.get(this._property.TYPES.TMS);
+
+          var achievement = this._property.get(this._property.TYPES.CACHV);
+
+          return this._talent.talentRandom(num, protect, this.getLastExtendTalent(), {
+            times: times,
+            achievement: achievement
+          });
+        };
+
+        _proto.talentExtend = function talentExtend(talentId) {
+          this._property.set(this._property.TYPES.EXT, talentId);
+        };
+
+        _proto.getLastExtendTalent = function getLastExtendTalent() {
+          return this._property.get(this._property.TYPES.EXT);
+        };
+
+        _proto.getSummary = function getSummary() {
+          this._achievement.achieve(this._achievement.Opportunity.SUMMARY, this._property);
+
+          return {
+            AGE: this._property.get(this._property.TYPES.HAGE),
+            CHR: this._property.get(this._property.TYPES.HCHR),
+            INT: this._property.get(this._property.TYPES.HINT),
+            STR: this._property.get(this._property.TYPES.HSTR),
+            MNY: this._property.get(this._property.TYPES.HMNY),
+            SPR: this._property.get(this._property.TYPES.HSPR),
+            SUM: this._property.get(this._property.TYPES.SUM)
+          };
+        };
+
+        _proto.getLastRecord = function getLastRecord() {
+          return this._property.getLastRecord();
+        };
+
+        _proto.exclusive = function exclusive(talents, _exclusive) {
+          return this._talent.exclusive(talents, _exclusive);
+        };
+
+        _proto.getAchievements = function getAchievements() {
+          // const ticks = {};
+          // this._property
+          //     .get(this._property.TYPES.ACHV)
+          //     .forEach(([id, tick]) => ticks[id] = tick);
+          return this._achievement.list(this._property).sort(function (_ref2, _ref3) {
+            var a = _ref2.isAchieved,
+                ag = _ref2.grade,
+                ah = _ref2.hide;
+            var b = _ref3.isAchieved,
+                bg = _ref3.grade,
+                bh = _ref3.hide;
+            if (a && b) return b - a;
+
+            if (!a && !b) {
+              if (ah && bh) return bg - ag;
+              if (ah) return 1;
+              if (bh) return -1;
+              return bg - ag;
+            }
+
+            if (!a) return 1;
+            if (!b) return -1;
+          });
+        };
+
+        _proto.getTotal = function getTotal() {
+          var TMS = this._property.get(this._property.TYPES.TMS);
+
+          var CACHV = this._property.get(this._property.TYPES.CACHV);
+
+          var CTLT = this._property.get(this._property.TYPES.CTLT);
+
+          var CEVT = this._property.get(this._property.TYPES.CEVT);
+
+          var totalTalent = this._talent.count();
+
+          var totalEvent = this._event.count();
+
+          return {
+            times: TMS,
+            achievement: CACHV,
+            talentRate: CTLT / totalTalent,
+            eventRate: CEVT / totalEvent
+          };
+        };
+
+        _createClass(LifeManager, [{
+          key: "times",
+          get: function get() {
+            var _this$_property;
+
+            return ((_this$_property = this._property) === null || _this$_property === void 0 ? void 0 : _this$_property.get(this._property.TYPES.TMS)) || 0;
+          },
+          set: function set(v) {
+            var _this$_property2;
+
+            ((_this$_property2 = this._property) === null || _this$_property2 === void 0 ? void 0 : _this$_property2.set(this._property.TYPES.TMS, v)) || 0;
+
+            this._achievement.achieve(this._achievement.Opportunity.END, this._property);
+          }
+        }]);
+
+        return LifeManager;
+      }();
+
+      var lifeMgr = exports('lifeMgr', new LifeManager());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/AchievementItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Sprite, Label, Component, GradeColor;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Sprite = module.Sprite;
+      Label = module.Label;
+      Component = module.Component;
+    }, function (module) {
+      GradeColor = module.GradeColor;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
+
+      cclegacy._RF.push({}, "28655SvBVlOs7BuLbbcdG1I", "AchievementItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var AchievementItem = exports('AchievementItem', (_dec = ccclass('AchievementItem'), _dec2 = property({
+        type: Sprite
+      }), _dec3 = property({
+        type: Label
+      }), _dec4 = property({
+        type: Label
+      }), _dec5 = property({
+        type: Sprite
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(AchievementItem, _Component);
+
+        function AchievementItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "BG", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "titleLbl", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "descLbl", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "flowerTag", _descriptor4, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = AchievementItem.prototype; // [1]
+        // dummy = '';
+        // [2]
+        // @property
+        // serializableDummy = 0;
+
+        _proto.start = function start() {// [3]
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.setData = function setData(data) {
+          if (data.hide && !data.isAchieved) {
+            this.titleLbl.string = "???";
+            this.descLbl.string = "???";
+          } else {
+            this.titleLbl.string = data.name;
+            this.descLbl.string = data.description;
+          }
+
+          this.BG.color = GradeColor[data.grade];
+
+          if (data.isAchieved) {
+            this.flowerTag.node.active = true;
+          } else {
+            this.flowerTag.node.active = false;
+          }
+        };
+
+        return AchievementItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "BG", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "titleLbl", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "descLbl", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "flowerTag", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/achievement.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './util.ts', './condition.ts', './EventMessage.ts'], function (exports) {
+  'use strict';
+
+  var _classPrivateFieldSet, _classPrivateFieldGet, _createForOfIteratorHelperLoose, _defineProperty, cclegacy, Message, clone, checkCondition, eventMsg;
+
+  return {
+    setters: [function (module) {
+      _classPrivateFieldSet = module.classPrivateFieldSet;
+      _classPrivateFieldGet = module.classPrivateFieldGet;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      Message = module.Message;
+    }, function (module) {
+      clone = module.clone;
+    }, function (module) {
+      checkCondition = module.checkCondition;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "2ebf1c3o/JMO46jyizTZPPt", "achievement", undefined);
+
+      var _achievements = new WeakMap();
+
+      var Achievement = exports('Achievement', /*#__PURE__*/function () {
+        function Achievement() {
+          _defineProperty(this, "Opportunity", {
+            START: "START",
+            // 分配完成点数，点击开始新人生后
+            TRAJECTORY: "TRAJECTORY",
+            // 每一年的人生经历中
+            SUMMARY: "SUMMARY",
+            // 人生结束，点击人生总结后
+            END: "END" // 游戏完成，点击重开 重开次数在这之后才会+1
+
+          });
+
+          _achievements.set(this, {
+            writable: true,
+            value: void 0
+          });
+        } // 时机
+
+
+        var _proto = Achievement.prototype;
+
+        _proto.initial = function initial(_ref) {
+          var achievements = _ref.achievements;
+
+          _classPrivateFieldSet(this, _achievements, new Map());
+
+          for (var key in achievements) {
+            var achievement = achievements[key];
+            _classPrivateFieldGet(this, _achievements)[achievement.id] = achievement;
+          }
+        };
+
+        _proto.count = function count() {
+          return Object.keys(_classPrivateFieldGet(this, _achievements)).length;
+        };
+
+        _proto.list = function list(property) {
+          var _this = this;
+
+          return Object.values(_classPrivateFieldGet(this, _achievements)).map(function (_ref2) {
+            var id = _ref2.id,
+                name = _ref2.name,
+                opportunity = _ref2.opportunity,
+                description = _ref2.description,
+                hide = _ref2.hide,
+                grade = _ref2.grade;
+            return {
+              id: id,
+              name: name,
+              opportunity: opportunity,
+              description: description,
+              hide: hide,
+              grade: grade,
+              isAchieved: _this.isAchieved(id, property)
+            };
+          });
+        };
+
+        _proto.get = function get(achievementId) {
+          var achievement = _classPrivateFieldGet(this, _achievements)[achievementId];
+
+          if (!achievement) throw new Error("[ERROR] No Achievement[" + achievementId + "]");
+          return clone(achievement);
+        };
+
+        _proto.check = function check(achievementId, property) {
+          var _this$get = this.get(achievementId),
+              condition = _this$get.condition;
+
+          return checkCondition(property, condition);
+        };
+
+        _proto.isAchieved = function isAchieved(achievementId, property) {
+          for (var _iterator = _createForOfIteratorHelperLoose(property.get(property.TYPES.ACHV) || []), _step; !(_step = _iterator()).done;) {
+            var _step$value = _step.value,
+                achieved = _step$value[0];
+            if (achieved == achievementId) return true;
+          }
+
+          return false;
+        };
+
+        _proto.achieve = function achieve(opportunity, property) {
+          var _this2 = this;
+
+          this.list(property).filter(function (_ref3) {
+            var isAchieved = _ref3.isAchieved;
+            return !isAchieved;
+          }).filter(function (_ref4) {
+            var o = _ref4.opportunity;
+            return o == opportunity;
+          }).filter(function (_ref5) {
+            var id = _ref5.id;
+            return _this2.check(id, property);
+          }).forEach(function (_ref6) {
+            var id = _ref6.id;
+            property.achieve(property.TYPES.ACHV, id);
+            eventMsg.emit(Message.Achievement, _this2.get(id));
+          });
+        };
+
+        return Achievement;
+      }());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TagItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, UIOpacity, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      UIOpacity = module.UIOpacity;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _temp;
+
+      cclegacy._RF.push({}, "30215PPV8RECbcWcSvYkUZZ", "TagItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var TagItem = exports('TagItem', (_dec = ccclass('TagItem'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: UIOpacity
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(TagItem, _Component);
+
+        function TagItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tagName", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "uiOpacity", _descriptor2, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = TagItem.prototype;
+
+        _proto.start = function start() {// [3]
+        };
+
+        _proto.setFontSize = function setFontSize(size) {
+          this.tagName.fontSize = size;
+        };
+
+        _proto.setOpacity = function setOpacity(op) {
+          this.uiOpacity.opacity = op;
+        };
+
+        _proto.setTagName = function setTagName(name) {
+          this.tagName.string = name;
+        };
+
+        _proto.refresh = function refresh(fallLength, radius) {
+          var pos = this.node.position;
+          var scale = fallLength / (fallLength - pos.z);
+          var alpha = (pos.z + radius) / (radius * 2);
+          this.tagName.fontSize = 15 * scale;
+          this.uiOpacity.opacity = (alpha + 0.5) * 255;
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        return TagItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "tagName", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "uiOpacity", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Label, Sprite, Button, Color, Component, GradeColor;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Sprite = module.Sprite;
+      Button = module.Button;
+      Color = module.Color;
+      Component = module.Component;
+    }, function (module) {
+      GradeColor = module.GradeColor;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _temp;
+
+      cclegacy._RF.push({}, "3512a8fVOxJgIUDJCjLwZRo", "TalentItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var TalentItem = exports('TalentItem', (_dec = ccclass('TalentItem'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: Sprite
+      }), _dec4 = property({
+        type: Button
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(TalentItem, _Component);
+
+        function TalentItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "nameLbl", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "frame", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "ItemButton", _descriptor3, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "index", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "onItemClick", null);
+
+          return _this;
+        }
+
+        var _proto = TalentItem.prototype;
+
+        _proto.start = function start() {// [3]
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.setData = function setData(data) {
+          this.nameLbl.string = data.name + ("(" + data.description + ")");
+          this.ItemButton.normalColor = GradeColor[data.grade];
+        };
+
+        _proto.onButtonClick = function onButtonClick() {
+          var _this$onItemClick;
+
+          (_this$onItemClick = this.onItemClick) === null || _this$onItemClick === void 0 ? void 0 : _this$onItemClick.call(this, this.index);
+        };
+
+        _proto.setSelected = function setSelected(selected) {
+          if (selected) {
+            this.frame.color = Color.GREEN;
+          } else {
+            this.frame.color = Color.WHITE;
+          }
+        };
+
+        return TalentItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "nameLbl", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "frame", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "ItemButton", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/condition.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _createForOfIteratorHelperLoose, cclegacy;
+
+  return {
+    setters: [function (module) {
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      exports({
+        checkCondition: checkCondition,
+        extractMaxTriggers: extractMaxTriggers
+      });
+
+      cclegacy._RF.push({}, "4613dzQqvlAubehIlfH/Drl", "condition", undefined);
+
+      function parseCondition(condition) {
+        var conditions = [];
+        var length = condition.length;
+        var stack = [];
+        stack.unshift(conditions);
+        var cursor = 0;
+
+        var catchString = function catchString(i) {
+          var str = condition.substring(cursor, i).trim();
+          cursor = i;
+          if (str) stack[0].push(str);
+        };
+
+        for (var i = 0; i < length; i++) {
+          switch (condition[i]) {
+            case ' ':
+              continue;
+
+            case '(':
+              catchString(i);
+              cursor++;
+              var sub = [];
+              stack[0].push(sub);
+              stack.unshift(sub);
+              break;
+
+            case ')':
+              catchString(i);
+              cursor++;
+              stack.shift();
+              break;
+
+            case '|':
+            case '&':
+              catchString(i);
+              catchString(i + 1);
+              break;
+
+            default:
+              continue;
+          }
+        }
+
+        catchString(length);
+        return conditions;
+      }
+
+      function checkCondition(property, condition) {
+        var conditions = parseCondition(condition);
+        return checkParsedConditions(property, conditions);
+      }
+
+      function checkParsedConditions(property, conditions) {
+        if (!Array.isArray(conditions)) return checkProp(property, conditions);
+        if (conditions.length == 0) return true;
+        if (conditions.length == 1) return checkParsedConditions(property, conditions[0]);
+        var ret = checkParsedConditions(property, conditions[0]);
+
+        for (var i = 1; i < conditions.length; i += 2) {
+          switch (conditions[i]) {
+            case '&':
+              if (ret) ret = checkParsedConditions(property, conditions[i + 1]);
+              break;
+
+            case '|':
+              if (ret) return true;
+              ret = checkParsedConditions(property, conditions[i + 1]);
+              break;
+
+            default:
+              return false;
+          }
+        }
+
+        return ret;
+      }
+
+      function checkProp(property, condition) {
+        var length = condition.length;
+        var i = condition.search(/[><\!\?=]/);
+        var prop = condition.substring(0, i);
+        var symbol = condition.substring(i, i += condition[i + 1] == '=' ? 2 : 1);
+        var d = condition.substring(i, length);
+        var propData = property.get(prop);
+        var conditionData = d[0] == '[' ? JSON.parse(d) : Number(d);
+
+        switch (symbol) {
+          case '>':
+            return propData > conditionData;
+
+          case '<':
+            return propData < conditionData;
+
+          case '>=':
+            return propData >= conditionData;
+
+          case '<=':
+            return propData <= conditionData;
+
+          case '=':
+            if (Array.isArray(propData)) return propData.includes(conditionData);
+            return propData == conditionData;
+
+          case '!=':
+            if (Array.isArray(propData)) return !propData.includes(conditionData);
+            return propData == conditionData;
+
+          case '?':
+            if (Array.isArray(propData)) {
+              for (var _iterator = _createForOfIteratorHelperLoose(propData), _step; !(_step = _iterator()).done;) {
+                var p = _step.value;
+                if (conditionData.includes(p)) return true;
+              }
+
+              return false;
+            }
+
+            return conditionData.includes(propData);
+
+          case '!':
+            if (Array.isArray(propData)) {
+              for (var _iterator2 = _createForOfIteratorHelperLoose(propData), _step2; !(_step2 = _iterator2()).done;) {
+                var _p = _step2.value;
+                if (conditionData.includes(_p)) return false;
+              }
+
+              return true;
+            }
+
+            return !conditionData.includes(propData);
+
+          default:
+            return false;
+        }
+      }
+
+      function extractMaxTriggers(condition) {
+        // Assuming only age related talents can be triggered multiple times.
+        var RE_AGE_CONDITION = /AGE\?\[([0-9\,]+)\]/;
+        var match_object = RE_AGE_CONDITION.exec(condition);
+
+        if (match_object == null) {
+          // Not age related, single trigger.
+          return 1;
+        }
+
+        var age_list = match_object[1].split(",");
+        return age_list.length;
+      }
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EventMessage.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _defineProperty, cclegacy;
+
+  return {
+    setters: [function (module) {
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "4e324KiHd1Mj78n/Hffy+JF", "EventMessage", undefined);
+
+      var EventEmitter = exports('EventEmitter', /*#__PURE__*/function () {
+        function EventEmitter() {
+          _defineProperty(this, "_listenerMap", new Map());
+        }
+
+        var _proto = EventEmitter.prototype;
+
+        _proto.emit = function emit(name) {
+          for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            args[_key - 1] = arguments[_key];
+          }
+
+          var funcList = this._listenerMap.get(name);
+
+          if (funcList) {
+            funcList.forEach(function (func) {
+              func.apply(void 0, args);
+            });
+          }
+        };
+
+        _proto.on = function on(name, func) {
+          var funcList = this._listenerMap.get(name);
+
+          if (!funcList) {
+            funcList = [];
+
+            this._listenerMap.set(name, funcList);
+          }
+
+          funcList.push(func);
+        };
+
+        _proto.off = function off(name, func) {
+          var funcList = this._listenerMap.get(name);
+
+          if (funcList) {
+            var idx = funcList.indexOf(func);
+
+            if (idx >= 0) {
+              funcList.splice(idx, 1);
+            }
+          }
+        };
+
+        return EventEmitter;
+      }());
+      var eventMsg = exports('eventMsg', new EventEmitter());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './LifeTrackItem.ts', './EventMessage.ts', './Life.ts', './PropItem.ts', './UIPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Color, ScrollView, Node, Prefab, Button, Label, instantiate, Vec3, Animation, Message, PropNameMap, LifeTrackItem, eventMsg, lifeMgr, PropItem, UIPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Color = module.Color;
+      ScrollView = module.ScrollView;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Button = module.Button;
+      Label = module.Label;
+      instantiate = module.instantiate;
+      Vec3 = module.Vec3;
+      Animation = module.Animation;
+    }, function (module) {
+      Message = module.Message;
+      PropNameMap = module.PropNameMap;
+    }, function (module) {
+      LifeTrackItem = module.LifeTrackItem;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      PropItem = module.PropItem;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _temp;
+
+      cclegacy._RF.push({}, "5aab2jXtf9OHJM7FC+9+iKf", "LifeTrackPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var showPropKeys = ['CHR', 'INT', 'STR', 'MNY', 'SPR'];
+      var autoPlayColor = new Color(53, 194, 115);
+      var COMBO_LEVEL = 1;
+      var LifeTrackPanel = exports('LifeTrackPanel', (_dec = ccclass('LifeTrackPanel'), _dec2 = property(ScrollView), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Prefab
+      }), _dec5 = property({
+        type: Node
+      }), _dec6 = property({
+        type: Prefab
+      }), _dec7 = property({
+        type: Node
+      }), _dec8 = property({
+        type: Node
+      }), _dec9 = property({
+        type: Node
+      }), _dec10 = property({
+        type: Button
+      }), _dec11 = property({
+        type: Label
+      }), _dec12 = property({
+        type: Label
+      }), _dec13 = property({
+        type: Node
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(LifeTrackPanel, _UIPanel);
+
+        function LifeTrackPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "scrollView", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lifeTrackGroup", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lifeTrackItemPrfb", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propGroup", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propItemPrfb", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "nextYearButtonNode", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "autoPlayButtonNode", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "restartButtonNode", _descriptor8, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "changeSpeedButton", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "scoreLabel", _descriptor10, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lianJiLabel", _descriptor11, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lianJiNode", _descriptor12, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_autoPlayButtonLbl", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_autoPlayButton", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_changeSpeedButtonLbl", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_isEnd", false);
+
+          _defineProperty(_assertThisInitialized(_this), "_isAutoPlay", false);
+
+          _defineProperty(_assertThisInitialized(_this), "_triggerTime", 1000);
+
+          _defineProperty(_assertThisInitialized(_this), "_timeScale", 1);
+
+          _defineProperty(_assertThisInitialized(_this), "_timeScaleArray", [1, 2, 4, 8, 20]);
+
+          _defineProperty(_assertThisInitialized(_this), "_curTimeScaleIndex", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_spacing", 5);
+
+          _defineProperty(_assertThisInitialized(_this), "_curMaxHeight", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_propItemsMap", new Map());
+
+          _defineProperty(_assertThisInitialized(_this), "_combo", 0);
+
+          return _this;
+        }
+
+        var _proto = LifeTrackPanel.prototype;
+
+        _proto.onLoad = function onLoad() {// this._contentUITrans = this.lifeTrackGroup._uiProps.uiTransformComp;
+        };
+
+        _proto.start = function start() {};
+
+        _proto.initPanel = function initPanel() {
+          this._contentUITrans = this.lifeTrackGroup._uiProps.uiTransformComp;
+          this._autoPlayButtonLbl = this.autoPlayButtonNode.getComponentInChildren(Label);
+          this._autoPlayButton = this.autoPlayButtonNode.getComponent(Button);
+          this._changeSpeedButtonLbl = this.changeSpeedButton.getComponentInChildren(Label);
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.createLifeTrack = function createLifeTrack(age, description, finalGrade) {
+          var itemNode = instantiate(this.lifeTrackItemPrfb);
+          itemNode.setParent(this.lifeTrackGroup);
+          var item = itemNode.getComponent(LifeTrackItem);
+          item.setData(age, description, finalGrade);
+          var itemHeight = item.getHeight();
+          itemNode.setPosition(new Vec3(0, this._curMaxHeight, 0));
+          item.setLineLength(itemHeight + this._spacing);
+          this._curMaxHeight -= itemHeight + this._spacing;
+          this._contentUITrans.height = -this._curMaxHeight;
+        };
+
+        _proto.createPropItem = function createPropItem(name, value) {
+          var itemNode = instantiate(this.propItemPrfb);
+          itemNode.setParent(this.propGroup);
+          var item = itemNode.getComponent(PropItem);
+          item.setData(name, value);
+          return item;
+        };
+
+        _proto.onReplayButtonClicked = function onReplayButtonClicked() {
+          eventMsg.emit(Message.LifeTrackEnd);
+        };
+
+        _proto.initProp = function initProp() {
+          var _this2 = this;
+
+          this.propGroup.removeAllChildren();
+
+          this._propItemsMap.clear();
+
+          var property = lifeMgr.getLastRecord();
+          showPropKeys.forEach(function (key) {
+            _this2._propItemsMap.set(key, _this2.createPropItem(PropNameMap[key], property[key]));
+          });
+        };
+
+        _proto.updatePropData = function updatePropData() {
+          var _this3 = this;
+
+          var property = lifeMgr.getLastRecord();
+          showPropKeys.forEach(function (key) {
+            var item = _this3._propItemsMap.get(key);
+
+            item === null || item === void 0 ? void 0 : item.updateValue(property[key]);
+          });
+          this.scoreLabel.string = lifeMgr._property.get(lifeMgr._property.TYPES.ESC).toString();
+        };
+
+        _proto.playAnimation = function playAnimation() {
+          var labelAni = this.scoreLabel.getComponent(Animation);
+          labelAni.play("scorePop");
+          var scoreAni = this.lianJiNode.getComponent(Animation);
+          var scoreAniState = scoreAni.getState("lianJiPop");
+
+          if (this._combo > 2) {
+            this.lianJiLabel.string = "X".concat(this._combo.toString());
+            scoreAni.play("lianJiPop");
+          } // scoreAniState.setTime(0.0);
+
+        };
+
+        _proto.onShow = function onShow(selectedTalentList, propData) {
+          this._isEnd = false;
+          this._isAutoPlay = false;
+          this._curMaxHeight = 0;
+          this._combo = 0; // bug:start不执行，先放这里
+
+          this.initPanel();
+          this.nextYearButtonNode.active = true;
+          this.autoPlayButtonNode.active = true;
+          this.restartButtonNode.active = false;
+          this.setAutoPlayButtonState(false);
+          this.lifeTrackGroup.removeAllChildren();
+          var initData = {};
+          Object.assign(initData, propData);
+          var selectedTalentIds = selectedTalentList.map(function (talentInfo) {
+            return talentInfo.id;
+          });
+          initData.TLT = selectedTalentIds;
+          var contents = lifeMgr.restart(initData);
+          this.initProp();
+          this.triggerOneLifeTrack();
+        };
+
+        _proto.onNextYearButtonClicked = function onNextYearButtonClicked() {
+          this.triggerOneLifeTrack();
+        };
+
+        _proto.onAutoPlayButtonClicked = function onAutoPlayButtonClicked() {
+          if (this._isAutoPlay) {
+            this._isAutoPlay = false;
+          } else {
+            this._isAutoPlay = true;
+            this.triggerOneLifeTrack();
+          }
+
+          this.setAutoPlayButtonState(this._isAutoPlay);
+        };
+
+        _proto.setAutoPlayButtonState = function setAutoPlayButtonState(isPlaying) {
+          if (isPlaying) {
+            this._autoPlayButton.normalColor = autoPlayColor;
+            this.changeSpeedButton.node.active = true;
+            this._changeSpeedButtonLbl.string = "X" + this._timeScale;
+          } else {
+            this._autoPlayButton.normalColor = Color.WHITE;
+            this.changeSpeedButton.node.active = false;
+          }
+        };
+
+        _proto.triggerOneLifeTrack = function triggerOneLifeTrack() {
+          var _this4 = this;
+
+          if (!this._isEnd) {
+            var track = lifeMgr.next();
+            this.showOneTrackItem(track);
+            this.updatePropData();
+            this.playAnimation();
+            this.scrollView.scrollToBottom(0.5);
+            this._isEnd = track.isEnd;
+
+            if (this._isEnd) {
+              this.onLifeEnd();
+            } else {
+              if (this._isAutoPlay) {
+                setTimeout(function () {
+                  _this4.triggerOneLifeTrack();
+                }, this.realTriggerTime);
+              }
+            }
+          }
+        };
+
+        _proto.setCombo = function setCombo(combo) {
+          if (combo > 10) {
+            this._combo = 10;
+          } else if (combo < 0) {
+            this._combo = 0;
+          } else {
+            this._combo = combo;
+          }
+        };
+
+        _proto.showOneTrackItem = function showOneTrackItem(track) {
+          var _this5 = this;
+
+          var finalGrade;
+          var contentText = track.content.map(function (_ref) {
+            var type = _ref.type,
+                description = _ref.description,
+                grade = _ref.grade,
+                name = _ref.name,
+                postEvent = _ref.postEvent;
+
+            switch (type) {
+              case 'TLT':
+                return "\u5929\u8D4B\u3010" + name + "\u3011\u53D1\u52A8\uFF1A" + description;
+
+              case 'EVT':
+                finalGrade = grade;
+
+                if (grade >= COMBO_LEVEL) {
+                  _this5.setCombo(_this5._combo + 1);
+                } else {
+                  _this5.setCombo(_this5._combo - 1);
+                }
+
+                return description + (postEvent ? "<br/>" + postEvent : '');
+            }
+          }).join('<br/>');
+          this.createLifeTrack(track.age + "\u5C81 ", contentText, finalGrade);
+        };
+
+        _proto.onLifeEnd = function onLifeEnd() {
+          this.nextYearButtonNode.active = false;
+          this.autoPlayButtonNode.active = false;
+          this.restartButtonNode.active = true;
+        };
+
+        _proto.onChangeSpeedButtonClicked = function onChangeSpeedButtonClicked() {
+          this._curTimeScaleIndex = ++this._curTimeScaleIndex % this._timeScaleArray.length;
+          this._timeScale = this._timeScaleArray[this._curTimeScaleIndex];
+          this._changeSpeedButtonLbl.string = "X" + this._timeScale;
+        };
+
+        _createClass(LifeTrackPanel, [{
+          key: "realTriggerTime",
+          get: function get() {
+            return this._triggerTime / this._timeScale;
+          }
+        }]);
+
+        return LifeTrackPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "scrollView", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "lifeTrackGroup", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "lifeTrackItemPrfb", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "propGroup", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "propItemPrfb", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "nextYearButtonNode", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "autoPlayButtonNode", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "restartButtonNode", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "changeSpeedButton", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "scoreLabel", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "lianJiLabel", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "lianJiNode", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './util.ts', './condition.ts'], function (exports) {
+  'use strict';
+
+  var _createForOfIteratorHelperLoose, _defineProperty, cclegacy, getRate, clone, weightRandom, extractMaxTriggers, checkCondition;
+
+  return {
+    setters: [function (module) {
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      getRate = module.getRate;
+    }, function (module) {
+      clone = module.clone;
+      weightRandom = module.weightRandom;
+    }, function (module) {
+      extractMaxTriggers = module.extractMaxTriggers;
+      checkCondition = module.checkCondition;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "6f0e92mPVdNDZxh7eJwr3t+", "Talent", undefined);
+
+      var TalentManager = exports('TalentManager', /*#__PURE__*/function () {
+        function TalentManager() {
+          _defineProperty(this, "_talents", void 0);
+
+          _defineProperty(this, "_talentGradeStruct", void 0);
+        }
+
+        TalentManager.SortTalent = function SortTalent(_ref, _ref2) {
+          var aId = _ref.id,
+              aG = _ref.grade;
+          var bId = _ref2.id,
+              bG = _ref2.grade;
+          var gradeDiff = bG - aG;
+          if (gradeDiff != 0) return gradeDiff;
+          return aId - bId;
+        };
+
+        var _proto = TalentManager.prototype;
+
+        _proto.initial = function initial(_ref3) {
+          var talents = _ref3.talents;
+          this._talents = new Map();
+
+          for (var key in talents) {
+            var id = talents[key].id;
+            var talent = talents[key];
+            this._talents[id] = talent;
+            talent.id = Number(id);
+            talent.grade = Number(talent.grade);
+            talent.max_triggers = extractMaxTriggers(talent.condition);
+
+            if (talent.replacement) {
+              for (var _key in talent.replacement) {
+                var obj = {};
+
+                for (var _iterator = _createForOfIteratorHelperLoose(talent.replacement[_key]), _step; !(_step = _iterator()).done;) {
+                  var value = _step.value;
+                  value = ("" + value).split('*');
+                  obj[value[0] || 0] = Number(value[1]) || 1;
+                }
+
+                talent.replacement[_key] = obj;
+              }
+            }
+          }
+
+          var talentGradeStruct = {};
+
+          for (var talentId in this._talents) {
+            var _this$_talents$talent = this._talents[talentId],
+                _id = _this$_talents$talent.id,
+                grade = _this$_talents$talent.grade,
+                name = _this$_talents$talent.name,
+                description = _this$_talents$talent.description;
+            if (!talentGradeStruct[grade]) talentGradeStruct[grade] = [{
+              grade: grade,
+              name: name,
+              description: description,
+              id: _id
+            }];else talentGradeStruct[grade].push({
+              grade: grade,
+              name: name,
+              description: description,
+              id: _id
+            });
+          }
+
+          this._talentGradeStruct = talentGradeStruct;
+        };
+
+        _proto.count = function count() {
+          return Object.keys(this._talents).length;
+        };
+
+        _proto.check = function check(talentId, property) {
+          var _this$get = this.get(talentId),
+              condition = _this$get.condition;
+
+          return checkCondition(property, condition);
+        };
+
+        _proto.get = function get(talentId) {
+          var talent = this._talents[talentId];
+          if (!talent) throw new Error("[ERROR] No Talent[" + talentId + "]");
+          return clone(talent);
+        };
+
+        _proto.information = function information(talentId) {
+          var _this$get2 = this.get(talentId),
+              grade = _this$get2.grade,
+              name = _this$get2.name,
+              description = _this$get2.description;
+
+          return {
+            grade: grade,
+            name: name,
+            description: description
+          };
+        };
+
+        _proto.exclusive = function exclusive(talents, exclusiveId) {
+          var _this$get3 = this.get(exclusiveId),
+              exclusive = _this$get3.exclusive;
+
+          if (!exclusive) return null;
+
+          for (var _iterator2 = _createForOfIteratorHelperLoose(talents), _step2; !(_step2 = _iterator2()).done;) {
+            var talent = _step2.value;
+
+            for (var _iterator3 = _createForOfIteratorHelperLoose(exclusive), _step3; !(_step3 = _iterator3()).done;) {
+              var e = _step3.value;
+              if (talent == e) return talent;
+            }
+          }
+
+          return null;
+        };
+
+        _proto.talentRandom = function talentRandom(num, protect, includeId, _temp) {
+          var _ref4 = _temp === void 0 ? {} : _temp,
+              _ref4$times = _ref4.times,
+              times = _ref4$times === void 0 ? 0 : _ref4$times,
+              _ref4$achievement = _ref4.achievement,
+              achievement = _ref4$achievement === void 0 ? 0 : _ref4$achievement; //基本概率
+
+
+          var rate = {
+            1: 100,
+            2: 10,
+            3: 1
+          }; //加强概率
+
+          var rateAddition = {
+            1: 0,
+            2: 0,
+            3: 0
+          };
+          var timesRate = getRate('times', times);
+          var achievementRate = getRate('achievement', achievement);
+
+          for (var grade in timesRate) {
+            rateAddition[grade] += timesRate[grade];
+          }
+
+          for (var _grade in achievementRate) {
+            rateAddition[_grade] += achievementRate[_grade];
+          }
+
+          for (var _grade2 in rateAddition) {
+            rate[_grade2] *= 1 + rateAddition[_grade2];
+          }
+
+          var randomGrade = function randomGrade() {
+            var randomNumber = Math.floor(Math.random() * 1000);
+            if ((randomNumber -= rate[3]) < 0) return 3;
+            if ((randomNumber -= rate[2]) < 0) return 2;
+            if ((randomNumber -= rate[1]) < 0) return 1;
+            return 0;
+          };
+
+          var tLen = 0; // 1000, 100, 10, 1
+
+          if (includeId) {
+            tLen = num - 1;
+          } else {
+            tLen = num;
+          }
+
+          var talentArr = new Array(tLen);
+          var startId;
+
+          if (protect) {
+            talentArr[0] = 3;
+            startId = 1;
+          } else {
+            startId = 0;
+          }
+
+          for (var i = startId; i < talentArr.length; i++) {
+            talentArr[i] = randomGrade();
+          }
+
+          var talentGradeStruct = clone(this._talentGradeStruct); // talentArr.map(
+          //     (grade, i)=>{
+          //         while(talentGradeStruct[grade].length == 0) grade--;
+          //         const length = talentGradeStruct[grade].length;
+          //         const random = Math.floor(Math.random()*length) % length;
+          //         var data = talentGradeStruct[grade].splice(random,1);
+          //         return 10;
+          //         // return data[0];
+          //     }
+          // );
+
+          for (var _i = 0; _i < talentArr.length; _i++) {
+            var _grade3 = talentArr[_i];
+
+            while (talentGradeStruct[_grade3].length == 0) {
+              _grade3--;
+            }
+
+            var length = talentGradeStruct[_grade3].length;
+            var random = Math.floor(Math.random() * length) % length;
+
+            var data = talentGradeStruct[_grade3].splice(random, 1);
+
+            talentArr[_i] = data[0];
+          }
+
+          if (includeId) {
+            talentArr.splice(0, 0, this._talents[includeId]);
+          }
+
+          return talentArr;
+        };
+
+        _proto.allocationAddition = function allocationAddition(talents) {
+          if (Array.isArray(talents)) {
+            var addition = 0;
+
+            for (var _iterator4 = _createForOfIteratorHelperLoose(talents), _step4; !(_step4 = _iterator4()).done;) {
+              var talent = _step4.value;
+              addition += this.allocationAddition(talent);
+            }
+
+            return addition;
+          }
+
+          return Number(this.get(talents).status) || 0;
+        };
+
+        _proto["do"] = function _do(talentId, property) {
+          var _this$get4 = this.get(talentId),
+              effect = _this$get4.effect,
+              condition = _this$get4.condition,
+              grade = _this$get4.grade,
+              name = _this$get4.name,
+              description = _this$get4.description;
+
+          if (condition && !checkCondition(property, condition)) return null;
+          return {
+            effect: effect,
+            grade: grade,
+            name: name,
+            description: description
+          };
+        };
+
+        _proto.replace = function replace(talents) {
+          var _this = this;
+
+          var getReplaceList = function getReplaceList(talent, talents) {
+            var _this$get5 = _this.get(talent),
+                replacement = _this$get5.replacement;
+
+            if (!replacement) return null;
+            var list = [];
+
+            if (replacement.grade) {
+              _this.forEach(function (_ref5) {
+                var id = _ref5.id,
+                    grade = _ref5.grade;
+                if (!replacement.grade[grade]) return;
+                if (_this.exclusive(talents, id)) return;
+                list.push([id, replacement.grade[grade]]);
+              });
+            }
+
+            if (replacement.talent) {
+              for (var talentId in replacement.talent) {
+                var id = Number(talentId);
+                if (_this.exclusive(talents, id)) continue;
+                list.push([id, replacement.talent[id]]);
+              }
+            }
+
+            return list;
+          };
+
+          var replace = function replace(talent, talents) {
+            var replaceList = getReplaceList(talent, talents);
+            if (!replaceList) return talent;
+            var rand = weightRandom(replaceList);
+            return replace(rand, talents.concat(rand));
+          };
+
+          var newTalents = clone(talents);
+          var result = {};
+
+          for (var _iterator5 = _createForOfIteratorHelperLoose(talents), _step5; !(_step5 = _iterator5()).done;) {
+            var talent = _step5.value;
+            var replaceId = replace(talent, newTalents);
+
+            if (replaceId != talent) {
+              result[talent] = replaceId;
+              newTalents.push(replaceId);
+            }
+          }
+
+          return result;
+        };
+
+        _proto.forEach = function forEach(callback) {
+          if (typeof callback != 'function') return;
+
+          for (var id in this._talents) {
+            callback(clone(this._talents[id]), id);
+          }
+        };
+
+        return TalentManager;
+      }());
+      var talentMgr = exports('talentMgr', new TalentManager());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/GameManager.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './EventMessage.ts', './ConfigManager.ts', './Life.ts', './SummaryPanel.ts', './LifeTrackPanel.ts', './AchievementHint.ts', './AchievementPanel.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './StartMenuPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _asyncToGenerator, cclegacy, _decorator, Node, Button, sys, Component, setDisplayStats, Message, eventMsg, ConfigManager, lifeMgr, SummaryPanel, LifeTrackPanel, AchievementHint, AchievementPanel, DistributePropPanel, SelectTalentPanel, StartMenuPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+      _asyncToGenerator = module.asyncToGenerator;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Button = module.Button;
+      sys = module.sys;
+      Component = module.Component;
+      setDisplayStats = module.setDisplayStats;
+    }, function (module) {
+      Message = module.Message;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      ConfigManager = module.default;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      SummaryPanel = module.SummaryPanel;
+    }, function (module) {
+      LifeTrackPanel = module.LifeTrackPanel;
+    }, function (module) {
+      AchievementHint = module.AchievementHint;
+    }, function (module) {
+      AchievementPanel = module.AchievementPanel;
+    }, function (module) {
+      DistributePropPanel = module.DistributePropPanel;
+    }, function (module) {
+      SelectTalentPanel = module.SelectTalentPanel;
+    }, function (module) {
+      StartMenuPanel = module.StartMenuPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _temp;
+
+      cclegacy._RF.push({}, "6f8c8q9ZkpDqKjGhsV04tDD", "GameManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var GameManager = exports('GameManager', (_dec = ccclass('GameManager'), _dec2 = property({
+        type: AchievementHint
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Button
+      }), _dec6 = property({
+        type: StartMenuPanel
+      }), _dec7 = property({
+        type: AchievementPanel
+      }), _dec8 = property({
+        type: SelectTalentPanel
+      }), _dec9 = property({
+        type: DistributePropPanel
+      }), _dec10 = property({
+        type: LifeTrackPanel
+      }), _dec11 = property({
+        type: SummaryPanel
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(GameManager, _Component);
+
+        function GameManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementHint", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "homeButtonNode", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementButtonNode", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "clearButton", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "startMenuPanel", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementPanel", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "selectTalentPanel", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropPanel", _descriptor8, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lifeTrackPanel", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "summaryPanel", _descriptor10, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_selectedTalentList", void 0);
+
+          return _this;
+        }
+
+        var _proto = GameManager.prototype;
+
+        _proto.start = function start() {
+          this.init();
+        };
+
+        _proto.init = /*#__PURE__*/function () {
+          var _init = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this2 = this;
+
+            var _yield$Promise$all, happyLife, specialthanks;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    setDisplayStats(false);
+                    _context.next = 3;
+                    return Promise.all([lifeMgr.initial(), ConfigManager.readJson('happy_life'), ConfigManager.readJson('specialthanks')]);
+
+                  case 3:
+                    _yield$Promise$all = _context.sent;
+                    happyLife = _yield$Promise$all[1];
+                    specialthanks = _yield$Promise$all[2];
+                    eventMsg.on(Message.StartMenu, function () {
+                      _this2.startMenuPanel.show(happyLife);
+
+                      _this2.selectTalentPanel.hide();
+
+                      _this2.distributePropPanel.hide();
+
+                      _this2.lifeTrackPanel.hide();
+
+                      _this2.homeButtonNode.active = false;
+                      _this2.achievementButtonNode.active = true;
+                    });
+                    eventMsg.on(Message.StartGame, function () {
+                      _this2.startMenuPanel.hide();
+
+                      _this2.homeButtonNode.active = true;
+                      _this2.achievementButtonNode.active = false;
+
+                      _this2.openSelectTalentPanel();
+                    });
+                    eventMsg.on(Message.TalentSelectEnd, function (selectedTalentList) {
+                      _this2._selectedTalentList = selectedTalentList;
+
+                      _this2.selectTalentPanel.hide();
+
+                      _this2.distributePropPanel.show(selectedTalentList);
+                    });
+                    eventMsg.on(Message.DistributePropEnd, function (propData) {
+                      _this2.distributePropPanel.hide();
+
+                      _this2.lifeTrackPanel.show(_this2._selectedTalentList, propData);
+                    });
+                    eventMsg.on(Message.LifeTrackEnd, function () {
+                      _this2.lifeTrackPanel.hide();
+
+                      _this2.summaryPanel.show();
+                    });
+                    eventMsg.on(Message.Replay, function () {
+                      _this2.summaryPanel.hide();
+
+                      lifeMgr.times++;
+
+                      _this2.openSelectTalentPanel();
+                    }); // achievement
+
+                    eventMsg.on(Message.Achievement, function (achievementData) {
+                      _this2.achievementHint.show(achievementData);
+                    }); // start
+
+                    eventMsg.emit(Message.StartMenu);
+
+                  case 14:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          function init() {
+            return _init.apply(this, arguments);
+          }
+
+          return init;
+        }();
+
+        _proto.openSelectTalentPanel = function openSelectTalentPanel() {
+          this.selectTalentPanel.show();
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.save = function save() {
+          if (sys.platform === sys.Platform.MOBILE_BROWSER || sys.platform === sys.Platform.DESKTOP_BROWSER) {
+            var data = {};
+            Object.keys(localStorage).filter(function (v) {
+              return v.substr(0, 4) != 'goog';
+            }).forEach(function (key) {
+              return data[key] = localStorage[key];
+            });
+            var blob = new Blob([JSON.stringify(data)], {
+              type: 'application/json'
+            }); // @ts-ignore
+
+            var slice = blob.slice || blob.webkitSlice || blob.mozSlice;
+            blob = slice.call(blob, 0, blob.size, 'application/octet-stream');
+            var a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+            a.href = URL.createObjectURL(blob);
+            a.download = "Remake_save_" + new Date().toISOString().replace(':', '.') + ".json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+          }
+        };
+
+        _proto.load = function load() {
+          var _this3 = this;
+
+          if (sys.platform === sys.Platform.MOBILE_BROWSER || sys.platform === sys.Platform.DESKTOP_BROWSER) {
+            var file = document.createElement('input');
+            file.type = 'file';
+            file.name = 'file';
+            file.accept = "application/json"; // @ts-ignore
+
+            file.style = "display: none;";
+            file.append('body');
+            file.click();
+            file.addEventListener('change', function (e) {
+              // @ts-ignore
+              var file = e.target.files[0];
+              if (!file) return;
+              var reader = new FileReader();
+
+              reader.onload = function () {
+                var data = JSON.parse(reader.result);
+
+                for (var key in data) {
+                  localStorage[key] = data[key];
+                }
+
+                _this3.achievementHint.show('加载存档成功');
+              };
+
+              reader.readAsText(file);
+            });
+          }
+        };
+
+        _proto.onClearButtonClicked = function onClearButtonClicked() {
+          localStorage.clear();
+        };
+
+        _proto.onHomeButtonClicked = function onHomeButtonClicked() {
+          eventMsg.emit(Message.StartMenu);
+        };
+
+        _proto.onGithubButtonClicked = function onGithubButtonClicked() {
+          sys.openURL("https://github.com/gameall3d/LifeRestart_Cocos");
+        };
+
+        _proto.onOpenAchievementButtonClicked = function onOpenAchievementButtonClicked() {
+          this.achievementPanel.show();
+        };
+
+        return GameManager;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementHint", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "homeButtonNode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "achievementButtonNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "clearButton", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "startMenuPanel", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "achievementPanel", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "selectTalentPanel", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "distributePropPanel", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "lifeTrackPanel", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "summaryPanel", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ConfigManager.ts", ['cc'], function (exports) {
+  'use strict';
+
+  var cclegacy, resources;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      resources = module.resources;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "75637qSsT9DBJznyRJRalfo", "ConfigManager", undefined);
+
+      var ConfigManager = exports('default', /*#__PURE__*/function () {
+        function ConfigManager() {}
+
+        ConfigManager.readJson = function readJson(path) {
+          return new Promise(function (resolve, reject) {
+            resources.load(path, function (err, jsonObj) {
+              if (err) {
+                console.error(err);
+                reject(err);
+              } else {
+                resolve(jsonObj.json);
+              }
+            });
+          });
+        };
+
+        return ConfigManager;
+      }());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Sprite, Label, Component, GradeColor;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Sprite = module.Sprite;
+      Label = module.Label;
+      Component = module.Component;
+    }, function (module) {
+      GradeColor = module.GradeColor;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _temp;
+
+      cclegacy._RF.push({}, "79c45lYN21I3Jzf9KxHQghc", "StatisticsItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var StatisticsItem = exports('StatisticsItem', (_dec = ccclass('StatisticsItem'), _dec2 = property({
+        type: Sprite
+      }), _dec3 = property({
+        type: Label
+      }), _dec4 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(StatisticsItem, _Component);
+
+        function StatisticsItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "BG", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "titleLbl", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "descLbl", _descriptor3, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = StatisticsItem.prototype;
+
+        _proto.start = function start() {// [3]
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.setData = function setData(title, desc, grade) {
+          this.titleLbl.string = title;
+          this.descLbl.string = desc;
+          this.BG.color = GradeColor[grade];
+        };
+
+        return StatisticsItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "BG", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "titleLbl", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "descLbl", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Life.ts', './UIPanel.ts', './AchievementItem.ts', './StatisticsItem.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, instantiate, getGrade, getRate, lifeMgr, UIPanel, AchievementItem, StatisticsItem;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Button = module.Button;
+      instantiate = module.instantiate;
+    }, function (module) {
+      getGrade = module.getGrade;
+      getRate = module.getRate;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
+      AchievementItem = module.AchievementItem;
+    }, function (module) {
+      StatisticsItem = module.StatisticsItem;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _temp;
+
+      cclegacy._RF.push({}, "7baefjqdLRKUrgY5285bpeS", "AchievementPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var AchievementPanel = exports('AchievementPanel', (_dec = ccclass('AchievementPanel'), _dec2 = property({
+        type: Node
+      }), _dec3 = property({
+        type: Prefab
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Prefab
+      }), _dec6 = property({
+        type: Button
+      }), _dec7 = property({
+        type: Button
+      }), _dec8 = property({
+        type: Button
+      }), _dec9 = property({
+        type: Button
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(AchievementPanel, _UIPanel);
+
+        function AchievementPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementItemsGroup", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementItemPrfb", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "statisticsItemsGroup", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "statisticsItemPrfb", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tabButton0", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tabButton1", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tabButton2", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tabButton3", _descriptor8, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_tabButtonList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_itemHeight", 100);
+
+          _defineProperty(_assertThisInitialized(_this), "_spacingY", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_achievementList", void 0);
+
+          return _this;
+        }
+
+        var _proto = AchievementPanel.prototype;
+
+        _proto.start = function start() {
+          // [3]
+          this._contentUITrans = this.achievementItemsGroup._uiProps.uiTransformComp;
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.createAchievementItem = function createAchievementItem(data) {
+          var itemNode = instantiate(this.achievementItemPrfb);
+          itemNode.setParent(this.achievementItemsGroup);
+          var item = itemNode.getComponent(AchievementItem);
+          item.setData(data);
+          var itemNum = this.achievementItemsGroup.children.length;
+          this._contentUITrans.height = itemNum * this._itemHeight + this._spacingY * (itemNum - 1);
+        };
+
+        _proto.createStatisticsItem = function createStatisticsItem(title, desc, grade) {
+          var itemNode = instantiate(this.statisticsItemPrfb);
+          itemNode.setParent(this.statisticsItemsGroup);
+          var item = itemNode.getComponent(StatisticsItem);
+          item.setData(title, desc, grade);
+        };
+
+        _proto.initAchievementData = function initAchievementData() {
+          this._achievementList = lifeMgr.getAchievements();
+        };
+
+        _proto.onTabButtonClicked = function onTabButtonClicked(touchEvent, data) {
+          var _this2 = this;
+
+          data = Number(data);
+
+          for (var i = 0; i < this._tabButtonList.length; i++) {
+            var element = this._tabButtonList[i];
+
+            if (data == i) {
+              element.interactable = false;
+              continue;
+            }
+
+            element.interactable = true;
+          }
+
+          this.achievementItemsGroup.removeAllChildren();
+
+          this._achievementList.filter(function (_ref) {
+            var grade = _ref.grade;
+            return grade == data;
+          }).forEach(function (_ref2) {
+            var name = _ref2.name,
+                description = _ref2.description,
+                hide = _ref2.hide,
+                grade = _ref2.grade,
+                isAchieved = _ref2.isAchieved;
+
+            _this2.createAchievementItem({
+              name: name,
+              description: description,
+              hide: hide,
+              grade: grade,
+              isAchieved: isAchieved
+            });
+          });
+        };
+
+        _proto.onShow = function onShow() {
+          this._tabButtonList = [this.tabButton0, this.tabButton1, this.tabButton2, this.tabButton3];
+          this._contentUITrans = this.achievementItemsGroup._uiProps.uiTransformComp;
+          this.generateStatisticsData();
+          this.initAchievementData();
+          this.onTabButtonClicked(null, 3);
+        };
+
+        _proto.generateStatisticsData = function generateStatisticsData() {
+          this.statisticsItemsGroup.removeAllChildren();
+
+          var _lifeMgr$getTotal = lifeMgr.getTotal(),
+              times = _lifeMgr$getTotal.times,
+              achievement = _lifeMgr$getTotal.achievement,
+              talentRate = _lifeMgr$getTotal.talentRate,
+              eventRate = _lifeMgr$getTotal.eventRate;
+
+          this.createStatisticsItem("\u5DF2\u91CD\u5F00" + times + "\u6B21", "" + this.formatRate('times', times), getGrade('times', times));
+          this.createStatisticsItem("\u6210\u5C31\u8FBE\u6210" + achievement + "\u4E2A", "" + this.formatRate('achievement', achievement), getGrade('achievement', achievement));
+          this.createStatisticsItem("\u4E8B\u4EF6\u6536\u96C6\u7387", Math.floor(eventRate * 100) + "%", getGrade('eventRate', eventRate));
+          this.createStatisticsItem("\u5929\u8D4B\u6536\u96C6\u7387", Math.floor(talentRate * 100) + "%", getGrade('talentRate', talentRate));
+        };
+
+        _proto.formatRate = function formatRate(type, value) {
+          var rate = getRate(type, value);
+          var color = Object.keys(rate)[0];
+
+          switch (parseInt(color)) {
+            case 0:
+              color = '白色';
+              break;
+
+            case 1:
+              color = '蓝色';
+              break;
+
+            case 2:
+              color = '紫色';
+              break;
+
+            case 3:
+              color = '橙色';
+              break;
+          }
+
+          var r = Object.values(rate)[0]; // switch(parseInt(r)) {
+          //     case 1: r = '不变'; break;
+          //     case 2: r = '翻倍'; break;
+          //     case 3: r = '三倍'; break;
+          //     case 4: r = '四倍'; break;
+          //     case 5: r = '五倍'; break;
+          //     case 6: r = '六倍'; break;
+          //     default: break;
+          // }
+
+          if (r == 0) {
+            return "\u62BD\u5230" + color + "\u6982\u7387\u65E0\u53D8\u5316";
+          }
+
+          return "\u62BD\u5230" + color + "\u6982\u7387\u63D0\u5347" + r * 100 + "%";
+        };
+
+        return AchievementPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementItemsGroup", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "achievementItemPrfb", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "statisticsItemsGroup", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "statisticsItemPrfb", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "tabButton0", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "tabButton1", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "tabButton2", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "tabButton3", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Defines.ts", ['cc'], function (exports) {
+  'use strict';
+
+  var cclegacy, Color;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      Color = module.Color;
+    }],
+    execute: function () {
+      exports({
+        CalStage: CalStage,
+        ConfigProp: void 0,
+        getGrade: getGrade,
+        getRate: getRate
+      });
+
+      cclegacy._RF.push({}, "85642Y205BHnpSvNRHQB1ax", "Defines", undefined);
+
+      var Message = exports('Message', {
+        TalentSelectEnd: 'TalentSelectEnd',
+        DistributePropEnd: 'DistributePropEnd',
+        LifeTrackEnd: 'LifeTrackEnd',
+        Replay: 'Replay',
+        StartGame: 'StartGame',
+        Achievement: 'Achievement',
+        StartMenu: 'StartMenu'
+      });
+      var ConfigProp;
+
+      (function (ConfigProp) {
+        ConfigProp[ConfigProp["CHR"] = 0] = "CHR";
+        ConfigProp[ConfigProp["INT"] = 1] = "INT";
+        ConfigProp[ConfigProp["STR"] = 2] = "STR";
+        ConfigProp[ConfigProp["MNY"] = 3] = "MNY";
+        ConfigProp[ConfigProp["SPR"] = 4] = "SPR";
+      })(ConfigProp || (ConfigProp = exports('ConfigProp', {})));
+
+      var PropNameMap = exports('PropNameMap', {
+        CHR: '颜值',
+        INT: '智力',
+        STR: '体质',
+        MNY: '家境',
+        SPR: '快乐'
+      });
+      var GradeColor = exports('GradeColor', [new Color().fromHEX('#464646'), new Color().fromHEX('#7ea5ec'), new Color().fromHEX('#e2a7ff'), new Color().fromHEX('#ffa07a'), new Color().fromHEX('#f77323'), new Color().fromHEX('#be2525'), new Color().fromHEX('#ffc600')]);
+
+      function CalStage(list, value) {
+        for (var i = 0; i < list.length; i++) {
+          var element = list[i];
+
+          if (value < element.value) {
+            return i;
+          }
+        }
+
+        return list.length;
+      }
+
+      function getRate(type, value) {
+        switch (type) {
+          case 'times':
+            if (value >= 100) return {
+              2: 2.5
+            };
+            if (value >= 70) return {
+              2: 2
+            };
+            if (value >= 50) return {
+              2: 1.5
+            };
+            if (value >= 30) return {
+              2: 1
+            };
+            if (value >= 10) return {
+              2: 0.5
+            };
+            return {
+              2: 0
+            };
+
+          case 'achievement':
+            if (value >= 100) return {
+              3: 2.5
+            };
+            if (value >= 70) return {
+              3: 2
+            };
+            if (value >= 50) return {
+              3: 1.5
+            };
+            if (value >= 30) return {
+              3: 1
+            };
+            if (value >= 10) return {
+              3: 0.5
+            };
+            return {
+              3: 0
+            };
+
+          default:
+            return {};
+        }
+      }
+
+      function getGrade(type, value) {
+        switch (type) {
+          case 'times':
+          case 'achievement':
+            if (value >= 100) return 3;
+            if (value >= 50) return 2;
+            if (value >= 10) return 1;
+            return 0;
+
+          case 'talentRate':
+            if (value >= 0.9) return 3;
+            if (value >= 0.6) return 2;
+            if (value >= 0.3) return 1;
+            return 0;
+
+          case 'eventRate':
+            if (value >= 0.6) return 3;
+            if (value >= 0.4) return 2;
+            if (value >= 0.2) return 1;
+            return 0;
+
+          default:
+            return 0;
+        }
+      }
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/summary.ts", ['cc'], function (exports) {
+  'use strict';
+
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      exports('summary', summary);
+
+      cclegacy._RF.push({}, "8ea86yHpORGZ7iSw1xGvH8J", "summary", undefined);
+
+      var data = {
+        "CHR": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 2,
+          "judge": "不佳",
+          "grade": 0
+        }, {
+          "min": 4,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 7,
+          "judge": "优秀",
+          "grade": 1
+        }, {
+          "min": 9,
+          "judge": "罕见",
+          "grade": 2
+        }, {
+          "min": 11,
+          "judge": "逆天",
+          "grade": 3
+        }],
+        "MNY": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 2,
+          "judge": "不佳",
+          "grade": 0
+        }, {
+          "min": 4,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 7,
+          "judge": "优秀",
+          "grade": 1
+        }, {
+          "min": 9,
+          "judge": "罕见",
+          "grade": 2
+        }, {
+          "min": 11,
+          "judge": "逆天",
+          "grade": 3
+        }],
+        "SPR": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 2,
+          "judge": "不幸",
+          "grade": 0
+        }, {
+          "min": 4,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 7,
+          "judge": "幸福",
+          "grade": 1
+        }, {
+          "min": 9,
+          "judge": "极乐",
+          "grade": 2
+        }, {
+          "min": 11,
+          "judge": "天命",
+          "grade": 3
+        }],
+        "INT": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 2,
+          "judge": "不佳",
+          "grade": 0
+        }, {
+          "min": 4,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 7,
+          "judge": "优秀",
+          "grade": 1
+        }, {
+          "min": 9,
+          "judge": "罕见",
+          "grade": 2
+        }, {
+          "min": 11,
+          "judge": "逆天",
+          "grade": 3
+        }, {
+          "min": 21,
+          "judge": "识海",
+          "grade": 3
+        }, {
+          "min": 131,
+          "judge": "元神",
+          "grade": 3
+        }, {
+          "min": 501,
+          "judge": "仙魂",
+          "grade": 3
+        }],
+        "STR": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 2,
+          "judge": "不佳",
+          "grade": 0
+        }, {
+          "min": 4,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 7,
+          "judge": "优秀",
+          "grade": 1
+        }, {
+          "min": 9,
+          "judge": "罕见",
+          "grade": 2
+        }, {
+          "min": 11,
+          "judge": "逆天",
+          "grade": 3
+        }, {
+          "min": 21,
+          "judge": "凝气",
+          "grade": 3
+        }, {
+          "min": 101,
+          "judge": "筑基",
+          "grade": 3
+        }, {
+          "min": 401,
+          "judge": "金丹",
+          "grade": 3
+        }, {
+          "min": 1001,
+          "judge": "元婴",
+          "grade": 3
+        }, {
+          "min": 2001,
+          "judge": "仙体",
+          "grade": 3
+        }],
+        "AGE": [{
+          "judge": "胎死腹中",
+          "grade": 0
+        }, {
+          "min": 1,
+          "judge": "早夭",
+          "grade": 0
+        }, {
+          "min": 10,
+          "judge": "少年",
+          "grade": 0
+        }, {
+          "min": 18,
+          "judge": "盛年",
+          "grade": 0
+        }, {
+          "min": 40,
+          "judge": "中年",
+          "grade": 0
+        }, {
+          "min": 60,
+          "judge": "花甲",
+          "grade": 1
+        }, {
+          "min": 70,
+          "judge": "古稀",
+          "grade": 1
+        }, {
+          "min": 80,
+          "judge": "杖朝",
+          "grade": 2
+        }, {
+          "min": 90,
+          "judge": "南山",
+          "grade": 2
+        }, {
+          "min": 95,
+          "judge": "不老",
+          "grade": 3
+        }, {
+          "min": 100,
+          "judge": "修仙",
+          "grade": 3
+        }, {
+          "min": 500,
+          "judge": "仙寿",
+          "grade": 3
+        }],
+        "SUM": [{
+          "judge": "地狱",
+          "grade": 0
+        }, {
+          "min": 41,
+          "judge": "折磨",
+          "grade": 0
+        }, {
+          "min": 50,
+          "judge": "不佳",
+          "grade": 0
+        }, {
+          "min": 60,
+          "judge": "普通",
+          "grade": 0
+        }, {
+          "min": 80,
+          "judge": "优秀",
+          "grade": 1
+        }, {
+          "min": 100,
+          "judge": "罕见",
+          "grade": 2
+        }, {
+          "min": 110,
+          "judge": "逆天",
+          "grade": 3
+        }, {
+          "min": 120,
+          "judge": "传说",
+          "grade": 3
+        }]
+      };
+
+      function summary(type, value) {
+        var length = data[type].length;
+
+        while (length--) {
+          var _data$type$length = data[type][length],
+              min = _data$type$length.min,
+              judge = _data$type$length.judge,
+              grade = _data$type$length.grade;
+          if (min == void 0 || value >= min) return {
+            judge: judge,
+            grade: grade
+          };
+        }
+      }
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _temp;
+
+      cclegacy._RF.push({}, "928255UO/ZP+ZHuVTFkrvgo", "PropItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var PropItem = exports('PropItem', (_dec = ccclass('PropItem'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(PropItem, _Component);
+
+        function PropItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "nameLbl", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "valueLbl", _descriptor2, _assertThisInitialized(_this));
+
+          return _this;
+        }
+
+        var _proto = PropItem.prototype;
+
+        _proto.start = function start() {// [3]
+        };
+
+        _proto.setData = function setData(name, value) {
+          this.nameLbl.string = name;
+          this.updateValue(value);
+        };
+
+        _proto.updateValue = function updateValue(value) {
+          this.valueLbl.string = value.toString();
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        return PropItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "nameLbl", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "valueLbl", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Label, EditBox, Component;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      EditBox = module.EditBox;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _temp;
+
+      cclegacy._RF.push({}, "97386ft0aBMH5dxsVX1kPDt", "DistributePropItem", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var DistributePropItem = exports('DistributePropItem', (_dec = ccclass('DistributePropItem'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: EditBox
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DistributePropItem, _Component);
+
+        function DistributePropItem() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "titleLbl", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "pointEditBox", _descriptor2, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "onAddButtonClick", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "onReduceButtonClick", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "key", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_point", 0);
+
+          return _this;
+        }
+
+        var _proto = DistributePropItem.prototype;
+
+        _proto.setTitle = function setTitle(title) {
+          this.titleLbl.string = title;
+        };
+
+        _proto.start = function start() {// [3]
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.onAddButtonClicked = function onAddButtonClicked() {
+          var _this$onAddButtonClic;
+
+          (_this$onAddButtonClic = this.onAddButtonClick) === null || _this$onAddButtonClic === void 0 ? void 0 : _this$onAddButtonClic.call(this, this);
+        };
+
+        _proto.onReduceButtonClicked = function onReduceButtonClicked() {
+          var _this$onReduceButtonC;
+
+          (_this$onReduceButtonC = this.onReduceButtonClick) === null || _this$onReduceButtonC === void 0 ? void 0 : _this$onReduceButtonC.call(this, this);
+        };
+
+        _createClass(DistributePropItem, [{
+          key: "point",
+          get: function get() {
+            return this._point;
+          },
+          set: function set(value) {
+            this._point = value;
+            this.pointEditBox.string = this._point.toString();
+          }
+        }]);
+
+        return DistributePropItem;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "titleLbl", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "pointEditBox", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/AchievementHint.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Label, Sprite, Animation, Component, GradeColor;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Sprite = module.Sprite;
+      Animation = module.Animation;
+      Component = module.Component;
+    }, function (module) {
+      GradeColor = module.GradeColor;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _temp;
+
+      cclegacy._RF.push({}, "a7684CddlxIA6F0uCsqK1Kh", "AchievementHint", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var AchievementHint = exports('AchievementHint', (_dec = ccclass('AchievementHint'), _dec2 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(AchievementHint, _Component);
+
+        function AchievementHint() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "contentLbl", _descriptor, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_isShowing", false);
+
+          _defineProperty(_assertThisInitialized(_this), "_timer", null);
+
+          return _this;
+        }
+
+        var _proto = AchievementHint.prototype;
+
+        _proto.start = function start() {// [3]
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.show = function show(achievementData, time) {
+          this.contentLbl.string = achievementData.name;
+          var bg = this.getComponent(Sprite);
+          bg.color = GradeColor[achievementData.grade];
+          var scoreAni = this.getComponent(Animation);
+          var scoreAniState = scoreAni.getState("lianJiPop");
+          scoreAni.play("lianJiPop");
+        };
+
+        return AchievementHint;
+      }(Component), _temp), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "contentLbl", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/event.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './util.ts', './condition.ts'], function (exports) {
+  'use strict';
+
+  var _classPrivateFieldSet, _classPrivateFieldGet, _createForOfIteratorHelperLoose, cclegacy, clone, checkCondition;
+
+  return {
+    setters: [function (module) {
+      _classPrivateFieldSet = module.classPrivateFieldSet;
+      _classPrivateFieldGet = module.classPrivateFieldGet;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      clone = module.clone;
+    }, function (module) {
+      checkCondition = module.checkCondition;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "b1ad8S5yrpNyLB2b+dSbwqq", "event", undefined);
+
+      var _events = new WeakMap();
+
+      var Event = exports('default', /*#__PURE__*/function () {
+        function Event() {
+          _events.set(this, {
+            writable: true,
+            value: void 0
+          });
+        }
+
+        var _proto = Event.prototype;
+
+        _proto.initial = function initial(_ref) {
+          var events = _ref.events;
+
+          _classPrivateFieldSet(this, _events, new Map());
+
+          for (var key in events) {
+            var id = events[key].id;
+            var event = events[key];
+            _classPrivateFieldGet(this, _events)[id] = event;
+            if (!event.branch) continue;
+            event.branch = event.branch.map(function (b) {
+              b = b.split(':');
+              b[1] = Number(b[1]);
+              return b;
+            });
+          }
+        };
+
+        _proto.count = function count() {
+          return Object.keys(_classPrivateFieldGet(this, _events)).length;
+        };
+
+        _proto.check = function check(eventId, property) {
+          var _this$get = this.get(eventId),
+              include = _this$get.include,
+              exclude = _this$get.exclude,
+              NoRandom = _this$get.NoRandom;
+
+          if (NoRandom) return false;
+          if (exclude && checkCondition(property, exclude)) return false;
+          if (include) return checkCondition(property, include);
+          return true;
+        };
+
+        _proto.get = function get(eventId) {
+          var event = _classPrivateFieldGet(this, _events)[eventId];
+
+          if (!event) throw new Error("[ERROR] No Event[" + eventId + "]");
+          return clone(event);
+        };
+
+        _proto.information = function information(eventId) {
+          var _this$get2 = this.get(eventId),
+              description = _this$get2.event;
+
+          return {
+            description: description
+          };
+        };
+
+        _proto["do"] = function _do(eventId, property) {
+          var _this$get3 = this.get(eventId),
+              effect = _this$get3.effect,
+              branch = _this$get3.branch,
+              description = _this$get3.event,
+              postEvent = _this$get3.postEvent,
+              grade = _this$get3.grade,
+              score = _this$get3.score;
+
+          if (!score) {
+            score = 1;
+          }
+
+          if (!grade) {
+            grade = 1;
+          }
+
+          if (branch) {
+            for (var _iterator = _createForOfIteratorHelperLoose(branch), _step; !(_step = _iterator()).done;) {
+              var _step$value = _step.value,
+                  cond = _step$value[0],
+                  next = _step$value[1];
+              if (checkCondition(property, cond)) return {
+                effect: effect,
+                next: next,
+                description: description,
+                grade: grade,
+                score: score
+              };
+            }
+          }
+
+          return {
+            effect: effect,
+            postEvent: postEvent,
+            description: description,
+            grade: grade,
+            score: score
+          };
+        };
+
+        return Event;
+      }());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './EventMessage.ts', './Life.ts', './UIPanel.ts', './DistributePropItem.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Label, Button, instantiate, PropNameMap, Message, eventMsg, lifeMgr, UIPanel, DistributePropItem;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Label = module.Label;
+      Button = module.Button;
+      instantiate = module.instantiate;
+    }, function (module) {
+      PropNameMap = module.PropNameMap;
+      Message = module.Message;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
+      DistributePropItem = module.DistributePropItem;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
+
+      cclegacy._RF.push({}, "b4a3eoREDRPQZL9VkpDb8rf", "DistributePropPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var distributePropKeys = ['CHR', 'INT', 'STR', 'MNY'];
+      var DistributePropPanel = exports('DistributePropPanel', (_dec = ccclass('DistributePropPanel'), _dec2 = property({
+        type: Node
+      }), _dec3 = property({
+        type: Prefab
+      }), _dec4 = property({
+        type: Label
+      }), _dec5 = property({
+        type: Button
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(DistributePropPanel, _UIPanel);
+
+        function DistributePropPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propGroup", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropItemPrfb", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "totalPointsLbl", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "AddPropButton", _descriptor4, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "totalPoints", 20);
+
+          _defineProperty(_assertThisInitialized(_this), "distributePropItemsMap", new Map());
+
+          return _this;
+        }
+
+        var _proto = DistributePropPanel.prototype;
+
+        _proto.start = function start() {// [3]
+        };
+
+        _proto.init = function init(selectedTalentList) {
+          var _this2 = this;
+
+          this.AddPropButton.interactable = true;
+          this.propGroup.removeAllChildren();
+          this.distributePropItemsMap.clear();
+          distributePropKeys.forEach(function (key) {
+            _this2.distributePropItemsMap.set(key, _this2.createPropItem(key, PropNameMap[key]));
+          }); // calculate total points
+
+          this.totalPoints += lifeMgr.getTalentAllocationAddition(selectedTalentList.map(function (_ref) {
+            var id = _ref.id;
+            return id;
+          }));
+          this.updateLeftPoints();
+        };
+
+        _proto.createPropItem = function createPropItem(key, name) {
+          var itemNode = instantiate(this.distributePropItemPrfb);
+          itemNode.setParent(this.propGroup);
+          var item = itemNode.getComponent(DistributePropItem);
+          item.setTitle(name);
+          item.key = key;
+          item.point = 0;
+          item.onAddButtonClick = this.onItemAddButtonClick.bind(this);
+          item.onReduceButtonClick = this.onItemReduceButtonClick.bind(this);
+          return item;
+        };
+
+        _proto.getLeftPoints = function getLeftPoints() {
+          var usedPoints = Array.from(this.distributePropItemsMap.values()).reduce(function (pre, cur) {
+            return pre + cur.point;
+          }, 0);
+          return this.totalPoints - usedPoints;
+        };
+
+        _proto.onItemAddButtonClick = function onItemAddButtonClick(item) {
+          if (this.getLeftPoints() > 0) {
+            item.point += 1;
+            this.updateLeftPoints();
+          }
+        };
+
+        _proto.onItemReduceButtonClick = function onItemReduceButtonClick(item) {
+          if (item.point > 0) {
+            item.point -= 1;
+            this.updateLeftPoints();
+          }
+        };
+
+        _proto.updateLeftPoints = function updateLeftPoints() {
+          this.totalPointsLbl.string = this.getLeftPoints().toString();
+        };
+
+        _proto.onCheckButtonClicked = function onCheckButtonClicked() {
+          var _this3 = this;
+
+          var propData = {
+            SPR: 5
+          };
+          distributePropKeys.forEach(function (key) {
+            propData[key] = _this3.distributePropItemsMap.get(key).point;
+          });
+          eventMsg.emit(Message.DistributePropEnd, propData);
+        };
+
+        _proto.onRandomDistributeButtonClicked = function onRandomDistributeButtonClicked() {
+          var _this4 = this;
+
+          var t = this.totalPoints;
+          var arr = [10, 10, 10, 10];
+
+          while (t > 0) {
+            var sub = Math.round(Math.random() * (Math.min(t, 10) - 1)) + 1;
+
+            while (true) {
+              var select = Math.floor(Math.random() * 4) % 4;
+              if (arr[select] - sub < 0) continue;
+              arr[select] -= sub;
+              t -= sub;
+              break;
+            }
+          }
+
+          Array.from(this.distributePropItemsMap.keys()).forEach(function (key, index) {
+            var item = _this4.distributePropItemsMap.get(key);
+
+            item.point = 10 - arr[index];
+          });
+          this.updateLeftPoints();
+        };
+
+        _proto.onAddPropButtonClicked = function onAddPropButtonClicked() {
+          this.totalPoints += 4;
+          this.AddPropButton.interactable = false;
+          this.updateLeftPoints();
+        };
+
+        _proto.onShow = function onShow(selectedTalentList) {
+          this.init(selectedTalentList);
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        return DistributePropPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "propGroup", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "distributePropItemPrfb", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "totalPointsLbl", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "AddPropButton", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './UIPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, Message, TalentManager, eventMsg, lifeMgr, TalentItem, UIPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      Button = module.Button;
+      Label = module.Label;
+      instantiate = module.instantiate;
+      UITransform = module.UITransform;
+      Vec3 = module.Vec3;
+    }, function (module) {
+      Message = module.Message;
+    }, function (module) {
+      TalentManager = module.TalentManager;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      TalentItem = module.TalentItem;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _temp;
+
+      cclegacy._RF.push({}, "c4d7b4gRL9Ga7bKz0sZBuMA", "SelectTalentPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SelectTalentPanel = exports('SelectTalentPanel', (_dec = ccclass('SelectTalentPanel'), _dec2 = property({
+        type: Node
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Prefab
+      }), _dec6 = property({
+        type: Button
+      }), _dec7 = property({
+        type: Button
+      }), _dec8 = property({
+        type: Button
+      }), _dec9 = property({
+        type: Button
+      }), _dec10 = property({
+        type: Button
+      }), _dec11 = property({
+        type: Label
+      }), _dec12 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(SelectTalentPanel, _UIPanel);
+
+        function SelectTalentPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemGroup", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "step1Node", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "step2Node", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemPrfb", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "checkButton", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "DrawButton", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "AdvDrawButton", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "AddChoiceButton", _descriptor8, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "RefreshButton", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "checkButtonLbl", _descriptor10, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tips", _descriptor11, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "talentItems", []);
+
+          _defineProperty(_assertThisInitialized(_this), "selectedTalentIndices", []);
+
+          _defineProperty(_assertThisInitialized(_this), "_talentList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_limitSelectedTalentNum", 3);
+
+          _defineProperty(_assertThisInitialized(_this), "_curMaxHeight", void 0);
+
+          return _this;
+        }
+
+        var _proto = SelectTalentPanel.prototype;
+
+        _proto.start = function start() {};
+
+        _proto.init = function init() {
+          this.AddChoiceButton.interactable = true;
+          this.RefreshButton.interactable = true;
+          this.checkButton.interactable = true;
+          this._contentUITrans = this.talentItemGroup._uiProps.uiTransformComp;
+          this._talentList = [];
+          this.refreshPanel();
+        };
+
+        _proto.refreshPanel = function refreshPanel() {
+          var _this2 = this;
+
+          if (this._talentList.length <= 0) {
+            this.step1Node.active = true;
+            this.step2Node.active = false;
+          } else {
+            this.step1Node.active = false;
+            this.step2Node.active = true;
+            this.talentItems = [];
+            this.selectedTalentIndices = [];
+            this.talentItemGroup.removeAllChildren();
+            this._curMaxHeight = 0;
+
+            this._talentList.forEach(function (talentInfo, index) {
+              var itemNode = instantiate(_this2.talentItemPrfb);
+              itemNode.setParent(_this2.talentItemGroup);
+              var item = itemNode.getComponent(TalentItem);
+              item.index = index;
+              item.setData(talentInfo);
+
+              _this2.talentItems.push(item);
+
+              item.onItemClick = _this2.onTalentItemClicked.bind(_this2);
+              var itemHeight = itemNode.getComponent(UITransform).contentSize.height;
+              itemNode.setPosition(new Vec3(0, _this2._curMaxHeight - itemHeight / 2, 0));
+              _this2._curMaxHeight -= itemHeight;
+              _this2._contentUITrans.height = -_this2._curMaxHeight;
+            });
+
+            this.updateTalentCheckState();
+          }
+        };
+
+        _proto.updateTalentCheckState = function updateTalentCheckState() {
+          this.tips.string = "\u6700\u591A\u9009\u62E9" + this._limitSelectedTalentNum + "\u4E2A\u5929\u8D4B";
+
+          if (this.selectedTalentIndices.length === this._limitSelectedTalentNum) {
+            this.checkButtonLbl.string = "完成";
+            this.checkButton.interactable = true;
+          } else {
+            var left = this._limitSelectedTalentNum - this.selectedTalentIndices.length;
+            this.checkButtonLbl.string = "\u8FD8\u5DEE" + left + "\u4E2A\u5929\u8D4B";
+            this.checkButton.interactable = false;
+          }
+        };
+
+        _proto.onTalentItemClicked = function onTalentItemClicked(itemIndex) {
+          var _this3 = this;
+
+          var idx = this.selectedTalentIndices.indexOf(itemIndex);
+
+          if (idx >= 0) {
+            this.selectedTalentIndices.splice(idx, 1);
+          } else {
+            // 超过数量则替换掉上个选择的对象
+            if (this.selectedTalentIndices.length === this._limitSelectedTalentNum) {
+              this.selectedTalentIndices.splice(this._limitSelectedTalentNum - 1, 1);
+            }
+
+            this.selectedTalentIndices.push(itemIndex);
+          }
+
+          this.talentItems.forEach(function (item, index) {
+            if (_this3.selectedTalentIndices.indexOf(index) >= 0) {
+              item.setSelected(true);
+            } else {
+              item.setSelected(false);
+            }
+          });
+          this.updateTalentCheckState();
+        };
+
+        _proto.onCheckButtonClicked = function onCheckButtonClicked() {
+          var _this4 = this;
+
+          var selectedTalentList = [];
+          this.selectedTalentIndices.forEach(function (idx) {
+            selectedTalentList.push(_this4._talentList[idx]);
+          });
+          eventMsg.emit(Message.TalentSelectEnd, selectedTalentList);
+        };
+
+        _proto.onDrawButtonClicked = function onDrawButtonClicked() {
+          this._talentList = lifeMgr.talentRandom().sort(TalentManager.SortTalent);
+          this.refreshPanel();
+        };
+
+        _proto.onAdvDrawButtonClicked = function onAdvDrawButtonClicked() {
+          this._talentList = lifeMgr.talentRandom(40, false).sort(TalentManager.SortTalent);
+          this.refreshPanel();
+        };
+
+        _proto.onAddChoiceButtonClicked = function onAddChoiceButtonClicked() {
+          this._limitSelectedTalentNum += 2;
+          this.AddChoiceButton.interactable = false;
+          this.updateTalentCheckState();
+        };
+
+        _proto.onRefreshButtonClicked = function onRefreshButtonClicked() {
+          this._talentList = lifeMgr.talentRandom(this._talentList.length, true).sort(TalentManager.SortTalent);
+          this.RefreshButton.interactable = false;
+          this.refreshPanel();
+        };
+
+        _proto.onShow = function onShow() {
+          this.init();
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        return SelectTalentPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "talentItemGroup", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "step1Node", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "step2Node", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "talentItemPrfb", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "checkButton", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "DrawButton", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "AdvDrawButton", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "AddChoiceButton", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "RefreshButton", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "checkButtonLbl", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "tips", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/util.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _createForOfIteratorHelperLoose, cclegacy;
+
+  return {
+    setters: [function (module) {
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      exports({
+        average: average,
+        clone: clone,
+        listRandom: listRandom,
+        max: max,
+        min: min,
+        sum: sum,
+        weightRandom: weightRandom
+      });
+
+      cclegacy._RF.push({}, "cbaaf06ZhFAdKhR7JtE1ykV", "util", undefined);
+
+      function clone(value) {
+        switch (typeof value) {
+          case 'object':
+            if (Array.isArray(value)) return value.map(function (v) {
+              return clone(v);
+            });
+            var newObj = {};
+
+            for (var key in value) {
+              newObj[key] = clone(value[key]);
+            }
+
+            return newObj;
+
+          default:
+            return value;
+        }
+      }
+
+      function max() {
+        for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
+          arr[_key] = arguments[_key];
+        }
+
+        return Math.max.apply(Math, arr.flat());
+      }
+
+      function min() {
+        for (var _len2 = arguments.length, arr = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          arr[_key2] = arguments[_key2];
+        }
+
+        return Math.min.apply(Math, arr.flat());
+      }
+
+      function sum() {
+        var s = 0;
+
+        for (var _len3 = arguments.length, arr = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          arr[_key3] = arguments[_key3];
+        }
+
+        arr.flat().forEach(function (v) {
+          return s += v;
+        });
+        return s;
+      }
+
+      function average() {
+        for (var _len4 = arguments.length, arr = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          arr[_key4] = arguments[_key4];
+        }
+
+        var s = sum.apply(void 0, arr);
+        return s / arr.flat().length;
+      }
+
+      function weightRandom(list) {
+        var totalWeights = 0;
+
+        for (var _iterator = _createForOfIteratorHelperLoose(list), _step; !(_step = _iterator()).done;) {
+          var _step$value = _step.value,
+              weight = _step$value[1];
+          totalWeights += weight;
+        }
+
+        var random = Math.random() * totalWeights;
+
+        for (var _iterator2 = _createForOfIteratorHelperLoose(list), _step2; !(_step2 = _iterator2()).done;) {
+          var _step2$value = _step2.value,
+              id = _step2$value[0],
+              _weight = _step2$value[1];
+          if ((random -= _weight) < 0) return id;
+        }
+
+        return list[list.length - 1];
+      }
+
+      function listRandom(list) {
+        return list[Math.floor(Math.random() * list.length)];
+      }
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/UIPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, Component;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "d4254NMR3hCDYP9uPC5N4jf", "UIPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var UIPanel = exports('UIPanel', (_dec = ccclass('UIPanel'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UIPanel, _Component);
+
+        function UIPanel() {
+          return _Component.apply(this, arguments) || this;
+        }
+
+        var _proto = UIPanel.prototype; // update (deltaTime: number) {
+        //     // [4]
+        // }
+
+        _proto.show = function show() {
+          this.node.active = true;
+          this.onShow.apply(this, arguments);
+        };
+
+        _proto.onShow = function onShow() {};
+
+        _proto.hide = function hide() {
+          this.node.active = false;
+        };
+
+        return UIPanel;
+      }(Component)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './EventMessage.ts', './UIPanel.ts', './TagItem.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Prefab, Node, instantiate, eventMsg, UIPanel, TagItem;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      instantiate = module.instantiate;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
+      TagItem = module.TagItem;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _temp;
+
+      cclegacy._RF.push({}, "ff68dOP4v5KTacY3/xxvNmR", "StartMenuPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var fallLength = 400;
+      var RADIUS = 200;
+      var oneRadian = Math.PI / 180;
+      var StartMenuPanel = exports('StartMenuPanel', (_dec = ccclass('StartMenuPanel'), _dec2 = property({
+        type: Prefab
+      }), _dec3 = property({
+        type: Node
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(StartMenuPanel, _UIPanel);
+
+        function StartMenuPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tagLabelPrfb", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "tagCloud", _descriptor2, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_tagItems", []);
+
+          _defineProperty(_assertThisInitialized(_this), "_angleX", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_angleY", 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_isAutoRotY", true);
+
+          return _this;
+        }
+
+        var _proto = StartMenuPanel.prototype;
+
+        _proto.onStartButtonClicked = function onStartButtonClicked() {
+          eventMsg.emit('StartGame');
+        };
+
+        _proto.onShow = function onShow(tagList) {
+          this.createTagCloud(tagList);
+        };
+
+        _proto.createTagCloud = function createTagCloud(tagList) {
+          this._tagItems = [];
+          this.tagCloud.removeAllChildren();
+          var tagLength = tagList.length;
+
+          for (var i = 0; i < tagLength; i++) {
+            var k = (2 * (i + 1) - 1) / tagLength - 1;
+            var a = Math.acos(k);
+            var b = a * Math.sqrt(tagLength * Math.PI); // var a = Math.random()*2*Math.PI;
+            // var b = Math.random()*2*Math.PI;
+
+            var x = RADIUS * Math.sin(a) * Math.cos(b);
+            var y = RADIUS * Math.sin(a) * Math.sin(b);
+            var z = RADIUS * Math.cos(a);
+            var labelNode = instantiate(this.tagLabelPrfb);
+            labelNode.setParent(this.tagCloud);
+            labelNode.setPosition(x, y, z);
+            var tagItem = labelNode.getComponent(TagItem);
+
+            this._tagItems.push(tagItem);
+
+            tagItem.setTagName(tagList[i]);
+            tagItem.refresh(fallLength, RADIUS);
+          }
+        };
+
+        _proto.rotateX = function rotateX() {
+          var cos = Math.cos(this._angleX);
+          var sin = Math.sin(this._angleX);
+
+          this._tagItems.forEach(function (tagItem) {
+            var pos = tagItem.node.position;
+            var y1 = pos.y * cos - pos.z * sin;
+            var z1 = pos.z * cos + pos.y * sin;
+            tagItem.node.setPosition(pos.x, y1, z1);
+          });
+        };
+
+        _proto.rotateY = function rotateY() {
+          var cos = Math.cos(this._angleY);
+          var sin = Math.sin(this._angleY);
+
+          this._tagItems.forEach(function (tagItem) {
+            var pos = tagItem.node.position;
+            var x1 = pos.x * cos - pos.z * sin;
+            var z1 = pos.z * cos + pos.x * sin;
+            tagItem.node.setPosition(x1, pos.y, z1);
+          });
+        };
+
+        _proto.rotateItems = function rotateItems() {
+          this.rotateX();
+          this.rotateY();
+
+          this._tagItems.forEach(function (tagItem) {
+            tagItem.refresh(fallLength, RADIUS);
+          });
+        };
+
+        _proto.update = function update(deltaTime) {
+          // [4]
+          if (this._isAutoRotY) {
+            this._angleY = deltaTime * oneRadian * 5;
+            this.rotateItems();
+          }
+        };
+
+        return StartMenuPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "tagLabelPrfb", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "tagCloud", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/main", ['./Defines.ts', './LifeTrackItem.ts', './util.ts', './property.ts', './condition.ts', './event.ts', './Talent.ts', './EventMessage.ts', './achievement.ts', './ConfigManager.ts', './Life.ts', './TalentItem.ts', './PropItem.ts', './UIPanel.ts', './SummaryPanel.ts', './AchievementItem.ts', './TagItem.ts', './LifeTrackPanel.ts', './AchievementHint.ts', './StatisticsItem.ts', './AchievementPanel.ts', './DistributePropItem.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './StartMenuPanel.ts', './GameManager.ts', './summary.ts'], function () {
+  'use strict';
+
+  return {
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/main', 'chunks:///_virtual/main'); 

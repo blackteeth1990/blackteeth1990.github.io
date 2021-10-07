@@ -1,1 +1,99 @@
-{"importBase":"import","nativeBase":"native","name":"resources","deps":[],"uuids":["09OnKFLjNMPL0TSamLAmM3","11FmTpHvJMHI7NLeqbGHUf","1ewKXVNadJ8LKfieExtbRQ","2fZdpnUQRB+4jO0hICY+DQ","35amea5u9CeaGYxdW0vM+B","3f+QKI62JCnpHAN9D8eAYR","44PpzG2z5H5pj2FcMgnZET","4d0s2xMG9Al6uGherYjZKT","68/uwzI+9IBZj50xmrIUBy","98j7UN9YhDabIIjpmH3AhN","adBTTPHa5KB5jia1IxZlBn","aeXcS5hlROn5dnR5iX+WWy","cay3MpXQJESZiYnQiFDyak","d3Gps6FLxB648NKOCn0lvA","d3oaDj/wNNAale758RqK9Z","d8vWwhJEBHkIhZ7n836e2y"],"paths":{"0":["csv表/events",2],"1":["events2",0],"2":["csv表/age",2],"3":["talents",0],"4":["csv表/talents",2],"5":["events",0],"6":["test",0],"7":["csv表",1],"8":["age",0],"9":["specialthanks",0],"10":["events",2],"11":["achievement",0],"12":["test",2],"13":["happy_life",0],"14":["新建 Microsoft Excel 工作表",1],"15":["csv表/achievement",2]},"scenes":{},"packs":{},"versions":{"import":[],"native":[]},"redirect":[],"debug":false,"extensionMap":{},"types":["cc.JsonAsset","cc.Asset","cc.TextAsset"]}
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "resources",
+    "deps": [],
+    "uuids": [
+        "093a7285-2e33-4c3c-bd13-49a98b026337",
+        "111664e9-1ef2-4c1c-8ecd-2dea9b18751f",
+        "1ec0a5d5-35a7-49f0-b29f-89e131b5b450",
+        "2f65da67-5104-41fb-88ce-d2120263e0d0",
+        "356a679a-e6ef-4279-a198-c5d5b4bccf81",
+        "3ff90288-eb62-429e-91c0-37d0fc780611",
+        "443e9cc6-db3e-47e6-98f6-15c3209d9113",
+        "4dd2cdb1-306f-4097-ab86-85ead88d9293",
+        "68feec33-23ef-4805-98f9-d319ab214072",
+        "988fb50d-f588-4369-b208-8e9987dc084d",
+        "ad0534cf-1dae-4a07-98e2-6b5231665067",
+        "ae5dc4b9-8654-4e9f-9767-479897f965b2",
+        "cacb7329-5d02-4449-9898-9d08850f26a4",
+        "d31a9b3a-14bc-41eb-8f0d-28e0a7d25bc0",
+        "d3a1a0e3-ff03-4d01-a95e-ef9f11a8af59",
+        "d8bd6c21-2440-4790-8859-ee7f37e9edb2"
+    ],
+    "paths": {
+        "ae5dc4b9-8654-4e9f-9767-479897f965b2": [
+            "achievement",
+            "cc.JsonAsset"
+        ],
+        "68feec33-23ef-4805-98f9-d319ab214072": [
+            "age",
+            "cc.JsonAsset"
+        ],
+        "4dd2cdb1-306f-4097-ab86-85ead88d9293": [
+            "csv表",
+            "cc.Asset"
+        ],
+        "ad0534cf-1dae-4a07-98e2-6b5231665067": [
+            "events",
+            "cc.TextAsset"
+        ],
+        "3ff90288-eb62-429e-91c0-37d0fc780611": [
+            "events",
+            "cc.JsonAsset"
+        ],
+        "111664e9-1ef2-4c1c-8ecd-2dea9b18751f": [
+            "events2",
+            "cc.JsonAsset"
+        ],
+        "d31a9b3a-14bc-41eb-8f0d-28e0a7d25bc0": [
+            "happy_life",
+            "cc.JsonAsset"
+        ],
+        "988fb50d-f588-4369-b208-8e9987dc084d": [
+            "specialthanks",
+            "cc.JsonAsset"
+        ],
+        "2f65da67-5104-41fb-88ce-d2120263e0d0": [
+            "talents",
+            "cc.JsonAsset"
+        ],
+        "cacb7329-5d02-4449-9898-9d08850f26a4": [
+            "test",
+            "cc.TextAsset"
+        ],
+        "443e9cc6-db3e-47e6-98f6-15c3209d9113": [
+            "test",
+            "cc.JsonAsset"
+        ],
+        "d3a1a0e3-ff03-4d01-a95e-ef9f11a8af59": [
+            "新建 Microsoft Excel 工作表",
+            "cc.Asset"
+        ],
+        "d8bd6c21-2440-4790-8859-ee7f37e9edb2": [
+            "csv表/achievement",
+            "cc.TextAsset"
+        ],
+        "1ec0a5d5-35a7-49f0-b29f-89e131b5b450": [
+            "csv表/age",
+            "cc.TextAsset"
+        ],
+        "093a7285-2e33-4c3c-bd13-49a98b026337": [
+            "csv表/events",
+            "cc.TextAsset"
+        ],
+        "356a679a-e6ef-4279-a198-c5d5b4bccf81": [
+            "csv表/talents",
+            "cc.TextAsset"
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}
