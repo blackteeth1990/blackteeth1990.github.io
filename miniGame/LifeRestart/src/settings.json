@@ -17,6 +17,9 @@
     "moduleIds": [],
     "renderPipeline": "",
     "engineModules": [],
+    "macros": {
+        "CLEANUP_IMAGE_CACHE": true
+    },
     "splashScreen": {
         "displayRatio": 0.4,
         "totalTime": 3000,

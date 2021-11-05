@@ -1,7 +1,126 @@
+System.register("chunks:///_virtual/ConfirmPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Button, Label, UIPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Button = module.Button;
+      Label = module.Label;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
+
+      cclegacy._RF.push({}, "0e2437ACFZKjq7bLVdPr1Ro", "ConfirmPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var ConfirmPanel = exports('ConfirmPanel', (_dec = ccclass('ConfirmPanel'), _dec2 = property({
+        type: Button
+      }), _dec3 = property({
+        type: Button
+      }), _dec4 = property({
+        type: Label
+      }), _dec5 = property({
+        type: Label
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(ConfirmPanel, _UIPanel);
+
+        function ConfirmPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "confirmBtn", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "cancelBtn", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "titleLab", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "desLab", _descriptor4, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_conFunc", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_canFunc", void 0);
+
+          return _this;
+        }
+
+        var _proto = ConfirmPanel.prototype;
+
+        _proto.onShow = function onShow(des, conFunc, title, canFunc) {
+          if (title === void 0) {
+            title = "警告";
+          }
+
+          this._conFunc = conFunc;
+          this._canFunc = canFunc;
+          this.titleLab.string = title;
+          this.desLab.string = des;
+        };
+
+        _proto.onConfirmClicked = function onConfirmClicked() {
+          if (this._conFunc) {
+            this._conFunc();
+          }
+
+          this.close();
+        };
+
+        _proto.onCancelClicked = function onCancelClicked() {
+          if (this._canFunc) {
+            this._canFunc();
+          }
+
+          this.close();
+        };
+
+        return ConfirmPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "confirmBtn", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "cancelBtn", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "titleLab", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "desLab", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/LifeTrackItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, RichText, Node, UITransform, Size, Sprite, Component, GradeColor;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Node, UITransform, Size, Sprite, Component, GradeColor;
 
   return {
     setters: [function (module) {
@@ -13,7 +132,6 @@ System.register("chunks:///_virtual/LifeTrackItem.ts", ['./_rollupPluginModLoBab
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       Label = module.Label;
-      RichText = module.RichText;
       Node = module.Node;
       UITransform = module.UITransform;
       Size = module.Size;
@@ -32,7 +150,7 @@ System.register("chunks:///_virtual/LifeTrackItem.ts", ['./_rollupPluginModLoBab
       var LifeTrackItem = exports('LifeTrackItem', (_dec = ccclass('LifeTrackItem'), _dec2 = property({
         type: Label
       }), _dec3 = property({
-        type: RichText
+        type: Label
       }), _dec4 = property({
         type: Node
       }), _dec5 = property({
@@ -68,6 +186,7 @@ System.register("chunks:///_virtual/LifeTrackItem.ts", ['./_rollupPluginModLoBab
         _proto.setData = function setData(age, description, finalGrade) {
           this.agaLabel.string = age;
           this.descriptionText.string = description;
+          this.descriptionText.updateRenderData(true);
           var height = this.getHeight();
           var descriptionBGTrans = this.descriptionBG.getComponent(UITransform);
           var size = descriptionBGTrans.contentSize;
@@ -596,7 +715,7 @@ System.register("chunks:///_virtual/property.ts", ['./_rollupPluginModLoBabelHel
         _proto.lsget = function lsget(key) {
           // return;
           var data = sys.localStorage.getItem(key);
-          if (data == null || data == "undefined") return;
+          if (data == null || data == "") return;
           return JSON.parse(data);
         };
 
@@ -612,10 +731,10 @@ System.register("chunks:///_virtual/property.ts", ['./_rollupPluginModLoBabelHel
   };
 });
 
-System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './PropItem.ts', './UIPanel.ts'], function (exports) {
+System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './PropItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, CalStage, GradeColor, PropNameMap, Message, talentMgr, eventMsg, lifeMgr, TalentItem, PropItem, UIPanel;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, UIPanel, CalStage, GradeColor, Message, talentMgr, eventMsg, lifeMgr, TalentItem, PropItem;
 
   return {
     setters: [function (module) {
@@ -635,9 +754,10 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
       UITransform = module.UITransform;
       Vec3 = module.Vec3;
     }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
       CalStage = module.CalStage;
       GradeColor = module.GradeColor;
-      PropNameMap = module.PropNameMap;
       Message = module.Message;
     }, function (module) {
       talentMgr = module.talentMgr;
@@ -649,8 +769,6 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
       TalentItem = module.TalentItem;
     }, function (module) {
       PropItem = module.PropItem;
-    }, function (module) {
-      UIPanel = module.UIPanel;
     }],
     execute: function () {
       var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _temp;
@@ -788,17 +906,25 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
             var itemHeight = itemNode.getComponent(UITransform).contentSize.height;
             itemNode.setPosition(new Vec3(0, _this2._curMaxHeight - itemHeight / 2, 0));
             _this2._curMaxHeight -= itemHeight;
-            _this2._contentUITrans.height = -_this2._curMaxHeight;
+            _this2._contentUITrans.height = -_this2._curMaxHeight; //重置talentList
+
+            _this2.talentItems.forEach(function (item, index) {
+              if (_this2.selectedTalentIndices.indexOf(index) >= 0) {
+                item.setSelected(true);
+              } else {
+                item.setSelected(false);
+              }
+            });
           });
 
           this.initProp();
         };
 
-        _proto.createPropItem = function createPropItem(name, value) {
+        _proto.createPropItem = function createPropItem(propName, value) {
           var itemNode = instantiate(this.propItemPrfb);
           itemNode.setParent(this.propGroup);
           var item = itemNode.getComponent(PropItem);
-          item.setData(name, value);
+          item.setData(propName, value);
           return item;
         };
 
@@ -811,7 +937,7 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
 
           var property = lifeMgr.getLastRecord();
           showPropKeys.forEach(function (key) {
-            _this3._propItemsMap.set(key, _this3.createPropItem(PropNameMap[key], property[key]));
+            _this3._propItemsMap.set(key, _this3.createPropItem(key, property[key]));
           });
         };
 
@@ -1635,7 +1761,7 @@ System.register("chunks:///_virtual/TagItem.ts", ['./_rollupPluginModLoBabelHelp
 System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Label, Sprite, Button, Color, Component, GradeColor;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Label, Sprite, Button, Component, GradeColor;
 
   return {
     setters: [function (module) {
@@ -1650,13 +1776,12 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
       Label = module.Label;
       Sprite = module.Sprite;
       Button = module.Button;
-      Color = module.Color;
       Component = module.Component;
     }, function (module) {
       GradeColor = module.GradeColor;
     }],
     execute: function () {
-      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _temp;
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _temp;
 
       cclegacy._RF.push({}, "3512a8fVOxJgIUDJCjLwZRo", "TalentItem", undefined);
 
@@ -1665,8 +1790,12 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
       var TalentItem = exports('TalentItem', (_dec = ccclass('TalentItem'), _dec2 = property({
         type: Label
       }), _dec3 = property({
-        type: Sprite
+        type: Label
       }), _dec4 = property({
+        type: Sprite
+      }), _dec5 = property({
+        type: Sprite
+      }), _dec6 = property({
         type: Button
       }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
         _inheritsLoose(TalentItem, _Component);
@@ -1682,9 +1811,13 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
 
           _initializerDefineProperty(_assertThisInitialized(_this), "nameLbl", _descriptor, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "frame", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "desLbl", _descriptor2, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "ItemButton", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "gradeNode", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "frame", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "ItemButton", _descriptor5, _assertThisInitialized(_this));
 
           _defineProperty(_assertThisInitialized(_this), "index", 0);
 
@@ -1702,8 +1835,9 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
         ;
 
         _proto.setData = function setData(data) {
-          this.nameLbl.string = data.name + ("(" + data.description + ")");
-          this.ItemButton.normalColor = GradeColor[data.grade];
+          this.nameLbl.string = data.name;
+          this.desLbl.string = data.description;
+          this.gradeNode.color = GradeColor[data.grade];
         };
 
         _proto.onButtonClick = function onButtonClick() {
@@ -1714,9 +1848,9 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
 
         _proto.setSelected = function setSelected(selected) {
           if (selected) {
-            this.frame.color = Color.GREEN;
+            this.frame.enabled = true;
           } else {
-            this.frame.color = Color.WHITE;
+            this.frame.enabled = false;
           }
         };
 
@@ -1726,12 +1860,22 @@ System.register("chunks:///_virtual/TalentItem.ts", ['./_rollupPluginModLoBabelH
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "frame", [_dec3], {
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "desLbl", [_dec3], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "ItemButton", [_dec4], {
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "gradeNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "frame", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "ItemButton", [_dec6], {
         configurable: true,
         enumerable: true,
         writable: true,
@@ -1985,10 +2129,10 @@ System.register("chunks:///_virtual/EventMessage.ts", ['./_rollupPluginModLoBabe
   };
 });
 
-System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './LifeTrackItem.ts', './EventMessage.ts', './Life.ts', './PropItem.ts', './UIPanel.ts'], function (exports) {
+System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './LifeTrackItem.ts', './EventMessage.ts', './Life.ts', './PropItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Color, ScrollView, Node, Prefab, Button, Label, instantiate, Vec3, Animation, Message, PropNameMap, LifeTrackItem, eventMsg, lifeMgr, PropItem, UIPanel;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Color, ScrollView, Node, Prefab, Button, Label, instantiate, Vec3, Animation, UIPanel, Message, LifeTrackItem, eventMsg, lifeMgr, PropItem;
 
   return {
     setters: [function (module) {
@@ -2011,8 +2155,9 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
       Vec3 = module.Vec3;
       Animation = module.Animation;
     }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
       Message = module.Message;
-      PropNameMap = module.PropNameMap;
     }, function (module) {
       LifeTrackItem = module.LifeTrackItem;
     }, function (module) {
@@ -2021,8 +2166,6 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
       lifeMgr = module.lifeMgr;
     }, function (module) {
       PropItem = module.PropItem;
-    }, function (module) {
-      UIPanel = module.UIPanel;
     }],
     execute: function () {
       var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _temp;
@@ -2150,11 +2293,11 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
           this._contentUITrans.height = -this._curMaxHeight;
         };
 
-        _proto.createPropItem = function createPropItem(name, value) {
+        _proto.createPropItem = function createPropItem(propName, value) {
           var itemNode = instantiate(this.propItemPrfb);
           itemNode.setParent(this.propGroup);
           var item = itemNode.getComponent(PropItem);
-          item.setData(name, value);
+          item.setData(propName, value);
           return item;
         };
 
@@ -2171,7 +2314,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
 
           var property = lifeMgr.getLastRecord();
           showPropKeys.forEach(function (key) {
-            _this2._propItemsMap.set(key, _this2.createPropItem(PropNameMap[key], property[key]));
+            _this2._propItemsMap.set(key, _this2.createPropItem(key, property[key]));
           });
         };
 
@@ -2220,7 +2363,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
           initData.TLT = selectedTalentIds;
           var contents = lifeMgr.restart(initData);
           this.initProp();
-          this.triggerOneLifeTrack();
+          this.scoreLabel.string = lifeMgr._property.get(lifeMgr._property.TYPES.ESC).toString(); // this.triggerOneLifeTrack();
         };
 
         _proto.onNextYearButtonClicked = function onNextYearButtonClicked() {
@@ -2472,18 +2615,17 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
 
           var talentGradeStruct = {};
 
+          for (var i = 0; i < 7; i++) {
+            talentGradeStruct[i] = [];
+          }
+
           for (var talentId in this._talents) {
             var _this$_talents$talent = this._talents[talentId],
                 _id = _this$_talents$talent.id,
                 grade = _this$_talents$talent.grade,
                 name = _this$_talents$talent.name,
                 description = _this$_talents$talent.description;
-            if (!talentGradeStruct[grade]) talentGradeStruct[grade] = [{
-              grade: grade,
-              name: name,
-              description: description,
-              id: _id
-            }];else talentGradeStruct[grade].push({
+            talentGradeStruct[grade].push({
               grade: grade,
               name: name,
               description: description,
@@ -2606,7 +2748,23 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
             talentArr[i] = randomGrade();
           }
 
-          var talentGradeStruct = clone(this._talentGradeStruct); // talentArr.map(
+          var talentGradeStruct = clone(this._talentGradeStruct);
+          includeId = 1011;
+
+          if (includeId) {
+            for (var key in talentGradeStruct) {
+              var idList = talentGradeStruct[key];
+
+              for (var j = 0; j < idList.length; j++) {
+                var hh = idList[j].id;
+
+                if (includeId == idList[j].id) {
+                  idList.splice(j, 1);
+                  break;
+                }
+              }
+            }
+          } // talentArr.map(
           //     (grade, i)=>{
           //         while(talentGradeStruct[grade].length == 0) grade--;
           //         const length = talentGradeStruct[grade].length;
@@ -2616,6 +2774,7 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
           //         // return data[0];
           //     }
           // );
+
 
           for (var _i = 0; _i < talentArr.length; _i++) {
             var _grade3 = talentArr[_i];
@@ -2742,342 +2901,6 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
   };
 });
 
-System.register("chunks:///_virtual/GameManager.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './EventMessage.ts', './ConfigManager.ts', './Life.ts', './SummaryPanel.ts', './LifeTrackPanel.ts', './AchievementHint.ts', './AchievementPanel.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './StartMenuPanel.ts'], function (exports) {
-  'use strict';
-
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _asyncToGenerator, cclegacy, _decorator, Node, Button, sys, Component, setDisplayStats, Message, eventMsg, ConfigManager, lifeMgr, SummaryPanel, LifeTrackPanel, AchievementHint, AchievementPanel, DistributePropPanel, SelectTalentPanel, StartMenuPanel;
-
-  return {
-    setters: [function (module) {
-      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
-      _inheritsLoose = module.inheritsLoose;
-      _initializerDefineProperty = module.initializerDefineProperty;
-      _assertThisInitialized = module.assertThisInitialized;
-      _defineProperty = module.defineProperty;
-      _asyncToGenerator = module.asyncToGenerator;
-    }, function (module) {
-      cclegacy = module.cclegacy;
-      _decorator = module._decorator;
-      Node = module.Node;
-      Button = module.Button;
-      sys = module.sys;
-      Component = module.Component;
-      setDisplayStats = module.setDisplayStats;
-    }, function (module) {
-      Message = module.Message;
-    }, function (module) {
-      eventMsg = module.eventMsg;
-    }, function (module) {
-      ConfigManager = module.default;
-    }, function (module) {
-      lifeMgr = module.lifeMgr;
-    }, function (module) {
-      SummaryPanel = module.SummaryPanel;
-    }, function (module) {
-      LifeTrackPanel = module.LifeTrackPanel;
-    }, function (module) {
-      AchievementHint = module.AchievementHint;
-    }, function (module) {
-      AchievementPanel = module.AchievementPanel;
-    }, function (module) {
-      DistributePropPanel = module.DistributePropPanel;
-    }, function (module) {
-      SelectTalentPanel = module.SelectTalentPanel;
-    }, function (module) {
-      StartMenuPanel = module.StartMenuPanel;
-    }],
-    execute: function () {
-      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _temp;
-
-      cclegacy._RF.push({}, "6f8c8q9ZkpDqKjGhsV04tDD", "GameManager", undefined);
-
-      var ccclass = _decorator.ccclass,
-          property = _decorator.property;
-      var GameManager = exports('GameManager', (_dec = ccclass('GameManager'), _dec2 = property({
-        type: AchievementHint
-      }), _dec3 = property({
-        type: Node
-      }), _dec4 = property({
-        type: Node
-      }), _dec5 = property({
-        type: Button
-      }), _dec6 = property({
-        type: StartMenuPanel
-      }), _dec7 = property({
-        type: AchievementPanel
-      }), _dec8 = property({
-        type: SelectTalentPanel
-      }), _dec9 = property({
-        type: DistributePropPanel
-      }), _dec10 = property({
-        type: LifeTrackPanel
-      }), _dec11 = property({
-        type: SummaryPanel
-      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
-        _inheritsLoose(GameManager, _Component);
-
-        function GameManager() {
-          var _this;
-
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-          }
-
-          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "achievementHint", _descriptor, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "homeButtonNode", _descriptor2, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "achievementButtonNode", _descriptor3, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "clearButton", _descriptor4, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "startMenuPanel", _descriptor5, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "achievementPanel", _descriptor6, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "selectTalentPanel", _descriptor7, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropPanel", _descriptor8, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "lifeTrackPanel", _descriptor9, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_assertThisInitialized(_this), "summaryPanel", _descriptor10, _assertThisInitialized(_this));
-
-          _defineProperty(_assertThisInitialized(_this), "_selectedTalentList", void 0);
-
-          return _this;
-        }
-
-        var _proto = GameManager.prototype;
-
-        _proto.start = function start() {
-          this.init();
-        };
-
-        _proto.init = /*#__PURE__*/function () {
-          var _init = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-            var _this2 = this;
-
-            var _yield$Promise$all, happyLife, specialthanks;
-
-            return regeneratorRuntime.wrap(function _callee$(_context) {
-              while (1) {
-                switch (_context.prev = _context.next) {
-                  case 0:
-                    setDisplayStats(false);
-                    _context.next = 3;
-                    return Promise.all([lifeMgr.initial(), ConfigManager.readJson('happy_life'), ConfigManager.readJson('specialthanks')]);
-
-                  case 3:
-                    _yield$Promise$all = _context.sent;
-                    happyLife = _yield$Promise$all[1];
-                    specialthanks = _yield$Promise$all[2];
-                    eventMsg.on(Message.StartMenu, function () {
-                      _this2.startMenuPanel.show(happyLife);
-
-                      _this2.selectTalentPanel.hide();
-
-                      _this2.distributePropPanel.hide();
-
-                      _this2.lifeTrackPanel.hide();
-
-                      _this2.homeButtonNode.active = false;
-                      _this2.achievementButtonNode.active = true;
-                    });
-                    eventMsg.on(Message.StartGame, function () {
-                      _this2.startMenuPanel.hide();
-
-                      _this2.homeButtonNode.active = true;
-                      _this2.achievementButtonNode.active = false;
-
-                      _this2.openSelectTalentPanel();
-                    });
-                    eventMsg.on(Message.TalentSelectEnd, function (selectedTalentList) {
-                      _this2._selectedTalentList = selectedTalentList;
-
-                      _this2.selectTalentPanel.hide();
-
-                      _this2.distributePropPanel.show(selectedTalentList);
-                    });
-                    eventMsg.on(Message.DistributePropEnd, function (propData) {
-                      _this2.distributePropPanel.hide();
-
-                      _this2.lifeTrackPanel.show(_this2._selectedTalentList, propData);
-                    });
-                    eventMsg.on(Message.LifeTrackEnd, function () {
-                      _this2.lifeTrackPanel.hide();
-
-                      _this2.summaryPanel.show();
-                    });
-                    eventMsg.on(Message.Replay, function () {
-                      _this2.summaryPanel.hide();
-
-                      lifeMgr.times++;
-
-                      _this2.openSelectTalentPanel();
-                    }); // achievement
-
-                    eventMsg.on(Message.Achievement, function (achievementData) {
-                      _this2.achievementHint.show(achievementData);
-                    }); // start
-
-                    eventMsg.emit(Message.StartMenu);
-
-                  case 14:
-                  case "end":
-                    return _context.stop();
-                }
-              }
-            }, _callee);
-          }));
-
-          function init() {
-            return _init.apply(this, arguments);
-          }
-
-          return init;
-        }();
-
-        _proto.openSelectTalentPanel = function openSelectTalentPanel() {
-          this.selectTalentPanel.show();
-        } // update (deltaTime: number) {
-        //     // [4]
-        // }
-        ;
-
-        _proto.save = function save() {
-          if (sys.platform === sys.Platform.MOBILE_BROWSER || sys.platform === sys.Platform.DESKTOP_BROWSER) {
-            var data = {};
-            Object.keys(localStorage).filter(function (v) {
-              return v.substr(0, 4) != 'goog';
-            }).forEach(function (key) {
-              return data[key] = localStorage[key];
-            });
-            var blob = new Blob([JSON.stringify(data)], {
-              type: 'application/json'
-            }); // @ts-ignore
-
-            var slice = blob.slice || blob.webkitSlice || blob.mozSlice;
-            blob = slice.call(blob, 0, blob.size, 'application/octet-stream');
-            var a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-            a.href = URL.createObjectURL(blob);
-            a.download = "Remake_save_" + new Date().toISOString().replace(':', '.') + ".json";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(a.href);
-          }
-        };
-
-        _proto.load = function load() {
-          var _this3 = this;
-
-          if (sys.platform === sys.Platform.MOBILE_BROWSER || sys.platform === sys.Platform.DESKTOP_BROWSER) {
-            var file = document.createElement('input');
-            file.type = 'file';
-            file.name = 'file';
-            file.accept = "application/json"; // @ts-ignore
-
-            file.style = "display: none;";
-            file.append('body');
-            file.click();
-            file.addEventListener('change', function (e) {
-              // @ts-ignore
-              var file = e.target.files[0];
-              if (!file) return;
-              var reader = new FileReader();
-
-              reader.onload = function () {
-                var data = JSON.parse(reader.result);
-
-                for (var key in data) {
-                  localStorage[key] = data[key];
-                }
-
-                _this3.achievementHint.show('加载存档成功');
-              };
-
-              reader.readAsText(file);
-            });
-          }
-        };
-
-        _proto.onClearButtonClicked = function onClearButtonClicked() {
-          localStorage.clear();
-        };
-
-        _proto.onHomeButtonClicked = function onHomeButtonClicked() {
-          eventMsg.emit(Message.StartMenu);
-        };
-
-        _proto.onGithubButtonClicked = function onGithubButtonClicked() {
-          sys.openURL("https://github.com/gameall3d/LifeRestart_Cocos");
-        };
-
-        _proto.onOpenAchievementButtonClicked = function onOpenAchievementButtonClicked() {
-          this.achievementPanel.show();
-        };
-
-        return GameManager;
-      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementHint", [_dec2], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "homeButtonNode", [_dec3], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "achievementButtonNode", [_dec4], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "clearButton", [_dec5], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "startMenuPanel", [_dec6], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "achievementPanel", [_dec7], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "selectTalentPanel", [_dec8], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "distributePropPanel", [_dec9], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "lifeTrackPanel", [_dec10], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "summaryPanel", [_dec11], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: null
-      })), _class2)) || _class));
-
-      cclegacy._RF.pop();
-    }
-  };
-});
-
 System.register("chunks:///_virtual/ConfigManager.ts", ['cc'], function (exports) {
   'use strict';
 
@@ -3095,7 +2918,7 @@ System.register("chunks:///_virtual/ConfigManager.ts", ['cc'], function (exports
 
         ConfigManager.readJson = function readJson(path) {
           return new Promise(function (resolve, reject) {
-            resources.load(path, function (err, jsonObj) {
+            resources.load("Json/" + path, function (err, jsonObj) {
               if (err) {
                 console.error(err);
                 reject(err);
@@ -3114,10 +2937,10 @@ System.register("chunks:///_virtual/ConfigManager.ts", ['cc'], function (exports
   };
 });
 
-System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
+System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Sprite, Label, Component, GradeColor;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Sprite, Label, Component;
 
   return {
     setters: [function (module) {
@@ -3131,8 +2954,6 @@ System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBa
       Sprite = module.Sprite;
       Label = module.Label;
       Component = module.Component;
-    }, function (module) {
-      GradeColor = module.GradeColor;
     }],
     execute: function () {
       var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _temp;
@@ -3178,8 +2999,8 @@ System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBa
 
         _proto.setData = function setData(title, desc, grade) {
           this.titleLbl.string = title;
-          this.descLbl.string = desc;
-          this.BG.color = GradeColor[grade];
+          this.descLbl.string = desc; // 不在修改统计格子的color
+          // this.BG.color = GradeColor[grade];
         };
 
         return StatisticsItem;
@@ -3205,10 +3026,10 @@ System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBa
   };
 });
 
-System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Life.ts', './UIPanel.ts', './AchievementItem.ts', './StatisticsItem.ts'], function (exports) {
+System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './Life.ts', './AchievementItem.ts', './StatisticsItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, instantiate, getGrade, getRate, lifeMgr, UIPanel, AchievementItem, StatisticsItem;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, instantiate, Sprite, UIPanel, GradeColor, getGrade, getRate, lifeMgr, AchievementItem, StatisticsItem;
 
   return {
     setters: [function (module) {
@@ -3224,20 +3045,22 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
       Prefab = module.Prefab;
       Button = module.Button;
       instantiate = module.instantiate;
+      Sprite = module.Sprite;
     }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
+      GradeColor = module.GradeColor;
       getGrade = module.getGrade;
       getRate = module.getRate;
     }, function (module) {
       lifeMgr = module.lifeMgr;
-    }, function (module) {
-      UIPanel = module.UIPanel;
     }, function (module) {
       AchievementItem = module.AchievementItem;
     }, function (module) {
       StatisticsItem = module.StatisticsItem;
     }],
     execute: function () {
-      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _temp;
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _temp;
 
       cclegacy._RF.push({}, "7baefjqdLRKUrgY5285bpeS", "AchievementPanel", undefined);
 
@@ -3259,6 +3082,22 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
         type: Button
       }), _dec9 = property({
         type: Button
+      }), _dec10 = property({
+        type: Node
+      }), _dec11 = property({
+        type: Node
+      }), _dec12 = property({
+        type: Node
+      }), _dec13 = property({
+        type: Node
+      }), _dec14 = property({
+        type: Node
+      }), _dec15 = property({
+        type: Node
+      }), _dec16 = property({
+        type: Node
+      }), _dec17 = property({
+        type: Node
       }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
         _inheritsLoose(AchievementPanel, _UIPanel);
 
@@ -3287,7 +3126,27 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
 
           _initializerDefineProperty(_assertThisInitialized(_this), "tabButton3", _descriptor8, _assertThisInitialized(_this));
 
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseSprite0", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseSprite1", _descriptor10, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseSprite2", _descriptor11, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseSprite3", _descriptor12, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseFrame0", _descriptor13, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseFrame1", _descriptor14, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseFrame2", _descriptor15, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "chooseFrame3", _descriptor16, _assertThisInitialized(_this));
+
           _defineProperty(_assertThisInitialized(_this), "_tabButtonList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_tabButtonFrameList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_tabButtonSpriteList", void 0);
 
           _defineProperty(_assertThisInitialized(_this), "_itemHeight", 100);
 
@@ -3335,13 +3194,19 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
 
           for (var i = 0; i < this._tabButtonList.length; i++) {
             var element = this._tabButtonList[i];
+            var chooseSprite = this._tabButtonSpriteList[i];
+            var chooseFrame = this._tabButtonFrameList[i];
 
             if (data == i) {
               element.interactable = false;
+              chooseSprite.active = true;
+              chooseFrame.active = true;
               continue;
             }
 
             element.interactable = true;
+            chooseSprite.active = false;
+            chooseFrame.active = false;
           }
 
           this.achievementItemsGroup.removeAllChildren();
@@ -3368,6 +3233,15 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
 
         _proto.onShow = function onShow() {
           this._tabButtonList = [this.tabButton0, this.tabButton1, this.tabButton2, this.tabButton3];
+          this._tabButtonFrameList = [this.chooseSprite0, this.chooseSprite1, this.chooseSprite2, this.chooseSprite3];
+          this._tabButtonSpriteList = [this.chooseFrame0, this.chooseFrame1, this.chooseFrame2, this.chooseFrame3];
+
+          for (var i = 0; i < this._tabButtonList.length; i++) {
+            var element = this._tabButtonList[i];
+            var tSprite = element.getComponent(Sprite);
+            tSprite.color = GradeColor[i + 3];
+          }
+
           this._contentUITrans = this.achievementItemsGroup._uiProps.uiTransformComp;
           this.generateStatisticsData();
           this.initAchievementData();
@@ -3469,6 +3343,46 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
         enumerable: true,
         writable: true,
         initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "chooseSprite0", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "chooseSprite1", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "chooseSprite2", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "chooseSprite3", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "chooseFrame0", [_dec14], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor14 = _applyDecoratedDescriptor(_class2.prototype, "chooseFrame1", [_dec15], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor15 = _applyDecoratedDescriptor(_class2.prototype, "chooseFrame2", [_dec16], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor16 = _applyDecoratedDescriptor(_class2.prototype, "chooseFrame3", [_dec17], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
       })), _class2)) || _class));
 
       cclegacy._RF.pop();
@@ -3514,6 +3428,13 @@ System.register("chunks:///_virtual/Defines.ts", ['cc'], function (exports) {
         ConfigProp[ConfigProp["SPR"] = 4] = "SPR";
       })(ConfigProp || (ConfigProp = exports('ConfigProp', {})));
 
+      var PropColorMap = exports('PropColorMap', {
+        CHR: new Color().fromHEX('#a0a9ed'),
+        INT: new Color().fromHEX('#deb3ba'),
+        STR: new Color().fromHEX('#cea6e5'),
+        MNY: new Color().fromHEX('#9fddca'),
+        SPR: new Color().fromHEX('#e9d8aa')
+      });
       var PropNameMap = exports('PropNameMap', {
         CHR: '颜值',
         INT: '智力',
@@ -3521,7 +3442,7 @@ System.register("chunks:///_virtual/Defines.ts", ['cc'], function (exports) {
         MNY: '家境',
         SPR: '快乐'
       });
-      var GradeColor = exports('GradeColor', [new Color().fromHEX('#464646'), new Color().fromHEX('#7ea5ec'), new Color().fromHEX('#e2a7ff'), new Color().fromHEX('#ffa07a'), new Color().fromHEX('#f77323'), new Color().fromHEX('#be2525'), new Color().fromHEX('#ffc600')]);
+      var GradeColor = exports('GradeColor', [new Color().fromHEX('#ffffff'), new Color().fromHEX('#179425'), new Color().fromHEX('#2588d4'), new Color().fromHEX('#834eda'), new Color().fromHEX('#f77323'), new Color().fromHEX('#be2525'), new Color().fromHEX('#ffc600')]);
 
       function CalStage(list, value) {
         for (var i = 0; i < list.length; i++) {
@@ -3532,7 +3453,7 @@ System.register("chunks:///_virtual/Defines.ts", ['cc'], function (exports) {
           }
         }
 
-        return list.length;
+        return list.length - 1;
       }
 
       function getRate(type, value) {
@@ -3901,10 +3822,10 @@ System.register("chunks:///_virtual/summary.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Component;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Sprite, resources, SpriteFrame, Component, PropNameMap, PropColorMap;
 
   return {
     setters: [function (module) {
@@ -3916,10 +3837,16 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       Label = module.Label;
+      Sprite = module.Sprite;
+      resources = module.resources;
+      SpriteFrame = module.SpriteFrame;
       Component = module.Component;
+    }, function (module) {
+      PropNameMap = module.PropNameMap;
+      PropColorMap = module.PropColorMap;
     }],
     execute: function () {
-      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _temp;
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
 
       cclegacy._RF.push({}, "928255UO/ZP+ZHuVTFkrvgo", "PropItem", undefined);
 
@@ -3929,6 +3856,10 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
         type: Label
       }), _dec3 = property({
         type: Label
+      }), _dec4 = property({
+        type: Sprite
+      }), _dec5 = property({
+        type: Sprite
       }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
         _inheritsLoose(PropItem, _Component);
 
@@ -3945,6 +3876,10 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
 
           _initializerDefineProperty(_assertThisInitialized(_this), "valueLbl", _descriptor2, _assertThisInitialized(_this));
 
+          _initializerDefineProperty(_assertThisInitialized(_this), "icon", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "propBg", _descriptor4, _assertThisInitialized(_this));
+
           return _this;
         }
 
@@ -3953,8 +3888,15 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
         _proto.start = function start() {// [3]
         };
 
-        _proto.setData = function setData(name, value) {
-          this.nameLbl.string = name;
+        _proto.setData = function setData(propName, value) {
+          var _this2 = this;
+
+          this.nameLbl.string = PropNameMap[propName];
+          this.propBg.color = PropColorMap[propName];
+          var path = 'Images/game/decoration/icon_';
+          resources.load(path + propName, SpriteFrame, function (err, tSpriteFrame) {
+            _this2.icon.spriteFrame = tSpriteFrame;
+          });
           this.updateValue(value);
         };
 
@@ -3972,6 +3914,16 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
         writable: true,
         initializer: null
       }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "valueLbl", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "icon", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "propBg", [_dec5], {
         configurable: true,
         enumerable: true,
         writable: true,
@@ -4268,11 +4220,11 @@ System.register("chunks:///_virtual/event.ts", ['./_rollupPluginModLoBabelHelper
               score = _this$get3.score;
 
           if (!score) {
-            score = 1;
+            score = 0;
           }
 
           if (!grade) {
-            grade = 1;
+            grade = 0;
           }
 
           if (branch) {
@@ -4307,10 +4259,10 @@ System.register("chunks:///_virtual/event.ts", ['./_rollupPluginModLoBabelHelper
   };
 });
 
-System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './EventMessage.ts', './Life.ts', './UIPanel.ts', './DistributePropItem.ts'], function (exports) {
+System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './DistributePropItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Label, Button, instantiate, PropNameMap, Message, eventMsg, lifeMgr, UIPanel, DistributePropItem;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Label, Button, instantiate, UITransform, Vec3, UIPanel, PropNameMap, Message, eventMsg, lifeMgr, TalentItem, DistributePropItem;
 
   return {
     setters: [function (module) {
@@ -4327,6 +4279,10 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
       Label = module.Label;
       Button = module.Button;
       instantiate = module.instantiate;
+      UITransform = module.UITransform;
+      Vec3 = module.Vec3;
+    }, function (module) {
+      UIPanel = module.UIPanel;
     }, function (module) {
       PropNameMap = module.PropNameMap;
       Message = module.Message;
@@ -4335,12 +4291,12 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
     }, function (module) {
       lifeMgr = module.lifeMgr;
     }, function (module) {
-      UIPanel = module.UIPanel;
+      TalentItem = module.TalentItem;
     }, function (module) {
       DistributePropItem = module.DistributePropItem;
     }],
     execute: function () {
-      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _temp;
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _temp;
 
       cclegacy._RF.push({}, "b4a3eoREDRPQZL9VkpDb8rf", "DistributePropPanel", undefined);
 
@@ -4352,8 +4308,12 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
       }), _dec3 = property({
         type: Prefab
       }), _dec4 = property({
-        type: Label
+        type: Node
       }), _dec5 = property({
+        type: Prefab
+      }), _dec6 = property({
+        type: Label
+      }), _dec7 = property({
         type: Button
       }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
         _inheritsLoose(DistributePropPanel, _UIPanel);
@@ -4367,13 +4327,29 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
 
           _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "propGroup", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemGroup", _descriptor, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropItemPrfb", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "talentItemPrfb", _descriptor2, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "totalPointsLbl", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "propGroup", _descriptor3, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "AddPropButton", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropItemPrfb", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "totalPointsLbl", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "AddPropButton", _descriptor6, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "talentItems", []);
+
+          _defineProperty(_assertThisInitialized(_this), "selectedTalentIndices", []);
+
+          _defineProperty(_assertThisInitialized(_this), "_talentList", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_limitSelectedTalentNum", 1);
+
+          _defineProperty(_assertThisInitialized(_this), "_curMaxHeight", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_contentUITrans", void 0);
 
           _defineProperty(_assertThisInitialized(_this), "totalPoints", 20);
 
@@ -4390,6 +4366,10 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
         _proto.init = function init(selectedTalentList) {
           var _this2 = this;
 
+          this._talentList = selectedTalentList;
+          this.talentItemGroup.removeAllChildren();
+          this.selectedTalentIndices = [];
+          this.talentItems = [];
           this.AddPropButton.interactable = true;
           this.propGroup.removeAllChildren();
           this.distributePropItemsMap.clear();
@@ -4401,6 +4381,24 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
             var id = _ref.id;
             return id;
           }));
+          this._contentUITrans = this.talentItemGroup._uiProps.uiTransformComp;
+          this._curMaxHeight = 0;
+
+          this._talentList.forEach(function (talentInfo, index) {
+            var itemNode = instantiate(_this2.talentItemPrfb);
+            itemNode.setParent(_this2.talentItemGroup);
+            var item = itemNode.getComponent(TalentItem);
+            item.index = index;
+            item.setData(talentInfo);
+
+            _this2.talentItems.push(item);
+
+            var itemHeight = itemNode.getComponent(UITransform).contentSize.height;
+            itemNode.setPosition(new Vec3(0, _this2._curMaxHeight - itemHeight / 2, 0));
+            _this2._curMaxHeight -= itemHeight;
+            _this2._contentUITrans.height = -_this2._curMaxHeight;
+          });
+
           this.updateLeftPoints();
         };
 
@@ -4493,22 +4491,32 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
         ;
 
         return DistributePropPanel;
-      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "propGroup", [_dec2], {
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "talentItemGroup", [_dec2], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "distributePropItemPrfb", [_dec3], {
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "talentItemPrfb", [_dec3], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "totalPointsLbl", [_dec4], {
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "propGroup", [_dec4], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "AddPropButton", [_dec5], {
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "distributePropItemPrfb", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "totalPointsLbl", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "AddPropButton", [_dec7], {
         configurable: true,
         enumerable: true,
         writable: true,
@@ -4520,10 +4528,10 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
   };
 });
 
-System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts', './UIPanel.ts'], function (exports) {
+System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './Talent.ts', './EventMessage.ts', './Life.ts', './TalentItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, Message, TalentManager, eventMsg, lifeMgr, TalentItem, UIPanel;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, Label, instantiate, UITransform, Vec3, UIPanel, Message, TalentManager, eventMsg, lifeMgr, TalentItem;
 
   return {
     setters: [function (module) {
@@ -4543,6 +4551,8 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
       UITransform = module.UITransform;
       Vec3 = module.Vec3;
     }, function (module) {
+      UIPanel = module.UIPanel;
+    }, function (module) {
       Message = module.Message;
     }, function (module) {
       TalentManager = module.TalentManager;
@@ -4552,8 +4562,6 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
       lifeMgr = module.lifeMgr;
     }, function (module) {
       TalentItem = module.TalentItem;
-    }, function (module) {
-      UIPanel = module.UIPanel;
     }],
     execute: function () {
       var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _temp;
@@ -4679,6 +4687,15 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
         };
 
         _proto.updateTalentCheckState = function updateTalentCheckState() {
+          var _this3 = this;
+
+          this.talentItems.forEach(function (item, index) {
+            if (_this3.selectedTalentIndices.indexOf(index) >= 0) {
+              item.setSelected(true);
+            } else {
+              item.setSelected(false);
+            }
+          });
           this.tips.string = "\u6700\u591A\u9009\u62E9" + this._limitSelectedTalentNum + "\u4E2A\u5929\u8D4B";
 
           if (this.selectedTalentIndices.length === this._limitSelectedTalentNum) {
@@ -4692,8 +4709,6 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
         };
 
         _proto.onTalentItemClicked = function onTalentItemClicked(itemIndex) {
-          var _this3 = this;
-
           var idx = this.selectedTalentIndices.indexOf(itemIndex);
 
           if (idx >= 0) {
@@ -4707,13 +4722,6 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
             this.selectedTalentIndices.push(itemIndex);
           }
 
-          this.talentItems.forEach(function (item, index) {
-            if (_this3.selectedTalentIndices.indexOf(index) >= 0) {
-              item.setSelected(true);
-            } else {
-              item.setSelected(false);
-            }
-          });
           this.updateTalentCheckState();
         };
 
@@ -4745,7 +4753,6 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
 
         _proto.onRefreshButtonClicked = function onRefreshButtonClicked() {
           this._talentList = lifeMgr.talentRandom(this._talentList.length, true).sort(TalentManager.SortTalent);
-          this.RefreshButton.interactable = false;
           this.refreshPanel();
         };
 
@@ -4813,6 +4820,31 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
         writable: true,
         initializer: null
       })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/GameManager.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _defineProperty, cclegacy;
+
+  return {
+    setters: [function (module) {
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "c9c1cQBZM5F5aJxMuvmN6/C", "GameManager", undefined);
+
+      var GameManager = function GameManager() {
+        _defineProperty(this, "uiManager", void 0);
+      };
+
+      var gameMgr = exports('gameMgr', new GameManager());
 
       cclegacy._RF.pop();
     }
@@ -4930,6 +4962,154 @@ System.register("chunks:///_virtual/util.ts", ['./_rollupPluginModLoBabelHelpers
   };
 });
 
+System.register("chunks:///_virtual/DialogPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Label, Node, UIPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Node = module.Node;
+    }, function (module) {
+      UIPanel = module.UIPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _temp;
+
+      cclegacy._RF.push({}, "ceff3i+dtNAtJb/2auU/eDo", "DialogPanel", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var DialogPanel = exports('DialogPanel', (_dec = ccclass('DialogPanel'), _dec2 = property({
+        type: Label
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: Node
+      }), _dec6 = property({
+        type: Node
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+        _inheritsLoose(DialogPanel, _UIPanel);
+
+        function DialogPanel() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _UIPanel.call.apply(_UIPanel, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "desLab", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "Sprite1", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "grayMask1", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "Sprite2", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "grayMask2", _descriptor5, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_current_dialog", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_current_count", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_speed", void 0);
+
+          _defineProperty(_assertThisInitialized(_this), "_state", void 0);
+
+          return _this;
+        }
+
+        var _proto = DialogPanel.prototype;
+
+        _proto.onShow = function onShow(dialogId, speed) {
+          if (speed === void 0) {
+            speed = 1;
+          }
+
+          this._speed = speed;
+          this._state = 1;
+          this.play(dialogId);
+        };
+
+        _proto.play = function play(dialogId) {
+          this._current_count = 0;
+          this.desLab.string = "";
+          this._current_dialog = {
+            text: "你好啊哈哈哈哈哈哈哈嗝，你好啊哈fasdfs哈哈哈哈哈哈嗝"
+          };
+          this.schedule(this.typeWriterCB, 0.2);
+        };
+
+        _proto.typeWriterCB = function typeWriterCB() {
+          this._current_count++;
+          var totalLen = this._current_count * this._speed;
+
+          if (totalLen > this._current_dialog.text.length) {
+            totalLen = this._current_dialog.text.length;
+            this.unschedule(this.typeWriterCB);
+            this._state = 0;
+          }
+
+          this.desLab.string = this._current_dialog.text.substring(0, totalLen);
+        };
+
+        _proto.onPanelTouchEnd = function onPanelTouchEnd(event) {
+          if (this._state == 0) {
+            this.close();
+          } else {
+            var totalLen = this._current_dialog.text.length;
+            this.unschedule(this.typeWriterCB);
+            this._state = 0;
+            this.desLab.string = this._current_dialog.text;
+          }
+        };
+
+        return DialogPanel;
+      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "desLab", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "Sprite1", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "grayMask1", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "Sprite2", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "grayMask2", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/UIPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
   'use strict';
 
@@ -4968,7 +5148,10 @@ System.register("chunks:///_virtual/UIPanel.ts", ['./_rollupPluginModLoBabelHelp
 
         _proto.onShow = function onShow() {};
 
-        _proto.hide = function hide() {
+        _proto.dispose = function dispose() {};
+
+        _proto.close = function close() {
+          this.dispose();
           this.node.active = false;
         };
 
@@ -4980,10 +5163,365 @@ System.register("chunks:///_virtual/UIPanel.ts", ['./_rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './EventMessage.ts', './UIPanel.ts', './TagItem.ts'], function (exports) {
+System.register("chunks:///_virtual/UIManager.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './ConfirmPanel.ts', './Defines.ts', './EventMessage.ts', './ConfigManager.ts', './Life.ts', './SummaryPanel.ts', './LifeTrackPanel.ts', './AchievementPanel.ts', './AchievementHint.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './GameManager.ts', './DialogPanel.ts', './StartMenuPanel.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Prefab, Node, instantiate, eventMsg, UIPanel, TagItem;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _asyncToGenerator, cclegacy, _decorator, Node, Component, setDisplayStats, ConfirmPanel, Message, eventMsg, ConfigManager, lifeMgr, SummaryPanel, LifeTrackPanel, AchievementPanel, AchievementHint, DistributePropPanel, SelectTalentPanel, gameMgr, DialogPanel, StartMenuPanel;
+
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _defineProperty = module.defineProperty;
+      _asyncToGenerator = module.asyncToGenerator;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+      setDisplayStats = module.setDisplayStats;
+    }, function (module) {
+      ConfirmPanel = module.ConfirmPanel;
+    }, function (module) {
+      Message = module.Message;
+    }, function (module) {
+      eventMsg = module.eventMsg;
+    }, function (module) {
+      ConfigManager = module.default;
+    }, function (module) {
+      lifeMgr = module.lifeMgr;
+    }, function (module) {
+      SummaryPanel = module.SummaryPanel;
+    }, function (module) {
+      LifeTrackPanel = module.LifeTrackPanel;
+    }, function (module) {
+      AchievementPanel = module.AchievementPanel;
+    }, function (module) {
+      AchievementHint = module.AchievementHint;
+    }, function (module) {
+      DistributePropPanel = module.DistributePropPanel;
+    }, function (module) {
+      SelectTalentPanel = module.SelectTalentPanel;
+    }, function (module) {
+      gameMgr = module.gameMgr;
+    }, function (module) {
+      DialogPanel = module.DialogPanel;
+    }, function (module) {
+      StartMenuPanel = module.StartMenuPanel;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _temp;
+
+      cclegacy._RF.push({}, "fc700khn4ZHQJgQWee02qwd", "UIManager", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var UIManager = exports('UIManager', (_dec = ccclass('UIManager'), _dec2 = property({
+        type: AchievementHint
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property({
+        type: Node
+      }), _dec5 = property({
+        type: StartMenuPanel
+      }), _dec6 = property({
+        type: AchievementPanel
+      }), _dec7 = property({
+        type: SelectTalentPanel
+      }), _dec8 = property({
+        type: DistributePropPanel
+      }), _dec9 = property({
+        type: LifeTrackPanel
+      }), _dec10 = property({
+        type: SummaryPanel
+      }), _dec11 = property({
+        type: ConfirmPanel
+      }), _dec12 = property({
+        type: DialogPanel
+      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UIManager, _Component);
+
+        function UIManager() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementHint", _descriptor, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "homeButtonNode", _descriptor2, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementButtonNode", _descriptor3, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "startMenuPanel", _descriptor4, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "achievementPanel", _descriptor5, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "selectTalentPanel", _descriptor6, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "distributePropPanel", _descriptor7, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "lifeTrackPanel", _descriptor8, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "summaryPanel", _descriptor9, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "confirmPanel", _descriptor10, _assertThisInitialized(_this));
+
+          _initializerDefineProperty(_assertThisInitialized(_this), "dialogPanel", _descriptor11, _assertThisInitialized(_this));
+
+          _defineProperty(_assertThisInitialized(_this), "_selectedTalentList", void 0);
+
+          return _this;
+        }
+
+        var _proto = UIManager.prototype;
+
+        _proto.start = function start() {
+          this.init();
+        };
+
+        _proto.init = /*#__PURE__*/function () {
+          var _init = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this2 = this;
+
+            var _yield$Promise$all, happyLife, specialthanks;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    setDisplayStats(false);
+                    _context.next = 3;
+                    return Promise.all([lifeMgr.initial(), ConfigManager.readJson('happy_life'), ConfigManager.readJson('specialthanks')]);
+
+                  case 3:
+                    _yield$Promise$all = _context.sent;
+                    happyLife = _yield$Promise$all[1];
+                    specialthanks = _yield$Promise$all[2];
+                    eventMsg.on(Message.StartMenu, function () {
+                      _this2.startMenuPanel.show(happyLife);
+
+                      _this2.selectTalentPanel.close();
+
+                      _this2.distributePropPanel.close();
+
+                      _this2.lifeTrackPanel.close();
+
+                      _this2.homeButtonNode.active = false;
+                      _this2.achievementButtonNode.active = true;
+                    });
+                    eventMsg.on(Message.StartGame, function () {
+                      _this2.startMenuPanel.close();
+
+                      _this2.homeButtonNode.active = true;
+                      _this2.achievementButtonNode.active = false;
+
+                      _this2.openSelectTalentPanel();
+                    });
+                    eventMsg.on(Message.TalentSelectEnd, function (selectedTalentList) {
+                      _this2._selectedTalentList = selectedTalentList;
+
+                      _this2.selectTalentPanel.close();
+
+                      _this2.distributePropPanel.show(selectedTalentList);
+                    });
+                    eventMsg.on(Message.DistributePropEnd, function (propData) {
+                      _this2.distributePropPanel.close();
+
+                      _this2.lifeTrackPanel.show(_this2._selectedTalentList, propData);
+                    });
+                    eventMsg.on(Message.LifeTrackEnd, function () {
+                      _this2.lifeTrackPanel.close();
+
+                      _this2.summaryPanel.show();
+                    });
+                    eventMsg.on(Message.Replay, function () {
+                      _this2.summaryPanel.close();
+
+                      lifeMgr.times++;
+
+                      _this2.openSelectTalentPanel();
+                    }); // achievement
+
+                    eventMsg.on(Message.Achievement, function (achievementData) {
+                      _this2.achievementHint.show(achievementData);
+                    }); // start
+
+                    eventMsg.emit(Message.StartMenu);
+                    gameMgr.uiManager = this;
+
+                  case 15:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+
+          function init() {
+            return _init.apply(this, arguments);
+          }
+
+          return init;
+        }();
+
+        _proto.openSelectTalentPanel = function openSelectTalentPanel() {
+          this.selectTalentPanel.show();
+        } // update (deltaTime: number) {
+        //     // [4]
+        // }
+        ;
+
+        _proto.onClearButtonClicked = function onClearButtonClicked() {
+          localStorage.clear();
+        };
+
+        _proto.onOpenAchievementButtonClicked = function onOpenAchievementButtonClicked() {
+          this.achievementPanel.show();
+        };
+
+        _proto.onHomeButtonClicked = function onHomeButtonClicked() {
+          eventMsg.emit(Message.StartMenu);
+        } //警示
+        // gameMgr.uiManager.ShowConfirm("请问你是否要开始",()=>{log("haha")},"通知");
+        ;
+
+        _proto.ShowConfirm = function ShowConfirm(des, conFunc, title, canFunc) {
+          this.confirmPanel.show(des, conFunc, title, canFunc);
+        } //对话
+        // gameMgr.uiManager.ShowDialog(1,1);
+        ;
+
+        _proto.ShowDialog = function ShowDialog(dialogId, speed) {
+          this.dialogPanel.show(dialogId, speed);
+        }
+        /*
+        public save() {
+            if (sys.platform === sys.Platform.MOBILE_BROWSER ||
+                sys.platform === sys.Platform.DESKTOP_BROWSER) {
+                    const data = {};
+                    Object
+                        .keys(localStorage)
+                        .filter(v=>v.substr(0,4)!='goog')
+                        .forEach(key=>data[key] = localStorage[key]);
+                      let blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+                    // @ts-ignore
+                    const slice = blob.slice || blob.webkitSlice || blob.mozSlice;
+                    blob = slice.call(blob, 0, blob.size, 'application/octet-stream');
+                    const a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a') as HTMLAnchorElement;
+                      a.href = URL.createObjectURL(blob);
+                    a.download = `Remake_save_${new Date().toISOString().replace(':','.')}.json`;
+                      document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(a.href);
+            }
+        }
+          public load() {
+            if (sys.platform === sys.Platform.MOBILE_BROWSER ||
+                sys.platform === sys.Platform.DESKTOP_BROWSER) {
+                    const file = document.createElement('input');
+                    file.type = 'file';
+                    file.name = 'file';
+                    file.accept = "application/json";
+                    // @ts-ignore
+                    file.style = "display: none;";
+                    file.append('body');
+                    file.click();
+                    file.addEventListener('change', (e)=>{
+                        // @ts-ignore
+                        const file = e.target.files[0];
+                        if(!file) return;
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            const data = JSON.parse(reader.result as string);
+                            for(const key in data) {
+                                localStorage[key] = data[key];
+                            }
+                            this.achievementHint.show('加载存档成功');
+                        }
+                        reader.readAsText(file);
+                    });
+            }
+        }
+            public onGithubButtonClicked() {
+            sys.openURL("https://github.com/gameall3d/LifeRestart_Cocos");
+        }
+        */
+        ;
+
+        return UIManager;
+      }(Component), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementHint", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "homeButtonNode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "achievementButtonNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "startMenuPanel", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "achievementPanel", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "selectTalentPanel", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "distributePropPanel", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "lifeTrackPanel", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "summaryPanel", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "confirmPanel", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "dialogPanel", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './EventMessage.ts', './TagItem.ts'], function (exports) {
+  'use strict';
+
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Prefab, Node, instantiate, UIPanel, eventMsg, TagItem;
 
   return {
     setters: [function (module) {
@@ -4999,9 +5537,9 @@ System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBa
       Node = module.Node;
       instantiate = module.instantiate;
     }, function (module) {
-      eventMsg = module.eventMsg;
-    }, function (module) {
       UIPanel = module.UIPanel;
+    }, function (module) {
+      eventMsg = module.eventMsg;
     }, function (module) {
       TagItem = module.TagItem;
     }],
@@ -5049,6 +5587,7 @@ System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBa
         var _proto = StartMenuPanel.prototype;
 
         _proto.onStartButtonClicked = function onStartButtonClicked() {
+          // gameMgr.uiManager.ShowDialog(1,0.5);
           eventMsg.emit('StartGame');
         };
 
@@ -5141,11 +5680,11 @@ System.register("chunks:///_virtual/StartMenuPanel.ts", ['./_rollupPluginModLoBa
   };
 });
 
-System.register("chunks:///_virtual/main", ['./Defines.ts', './LifeTrackItem.ts', './util.ts', './property.ts', './condition.ts', './event.ts', './Talent.ts', './EventMessage.ts', './achievement.ts', './ConfigManager.ts', './Life.ts', './TalentItem.ts', './PropItem.ts', './UIPanel.ts', './SummaryPanel.ts', './AchievementItem.ts', './TagItem.ts', './LifeTrackPanel.ts', './AchievementHint.ts', './StatisticsItem.ts', './AchievementPanel.ts', './DistributePropItem.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './StartMenuPanel.ts', './GameManager.ts', './summary.ts'], function () {
+System.register("chunks:///_virtual/main", ['./UIPanel.ts', './ConfirmPanel.ts', './Defines.ts', './LifeTrackItem.ts', './util.ts', './property.ts', './condition.ts', './event.ts', './Talent.ts', './EventMessage.ts', './achievement.ts', './ConfigManager.ts', './Life.ts', './TalentItem.ts', './PropItem.ts', './SummaryPanel.ts', './AchievementItem.ts', './TagItem.ts', './LifeTrackPanel.ts', './StatisticsItem.ts', './AchievementPanel.ts', './summary.ts', './DistributePropItem.ts', './AchievementHint.ts', './DistributePropPanel.ts', './SelectTalentPanel.ts', './GameManager.ts', './DialogPanel.ts', './StartMenuPanel.ts', './UIManager.ts'], function () {
   'use strict';
 
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
