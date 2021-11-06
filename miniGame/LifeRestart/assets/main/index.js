@@ -2449,9 +2449,9 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
                   _this5.setCombo(_this5._combo - 1);
                 }
 
-                return description + (postEvent ? "<br/>" + postEvent : '');
+                return description + (postEvent ? "\n" + postEvent : '');
             }
-          }).join('<br/>');
+          }).join('\n');
           this.createLifeTrack(track.age + "\u5C81 ", contentText, finalGrade);
         };
 
@@ -2547,7 +2547,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
 System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './Defines.ts', './util.ts', './condition.ts'], function (exports) {
   'use strict';
 
-  var _createForOfIteratorHelperLoose, _defineProperty, cclegacy, getRate, clone, weightRandom, extractMaxTriggers, checkCondition;
+  var _createForOfIteratorHelperLoose, _defineProperty, cclegacy, clone, weightRandom, extractMaxTriggers, checkCondition;
 
   return {
     setters: [function (module) {
@@ -2555,9 +2555,7 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
       _defineProperty = module.defineProperty;
     }, function (module) {
       cclegacy = module.cclegacy;
-    }, function (module) {
-      getRate = module.getRate;
-    }, function (module) {
+    }, null, function (module) {
       clone = module.clone;
       weightRandom = module.weightRandom;
     }, function (module) {
@@ -2687,39 +2685,25 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
         _proto.talentRandom = function talentRandom(num, protect, includeId, _temp) {
           var _ref4 = _temp === void 0 ? {} : _temp,
               _ref4$times = _ref4.times,
-              times = _ref4$times === void 0 ? 0 : _ref4$times,
-              _ref4$achievement = _ref4.achievement,
-              achievement = _ref4$achievement === void 0 ? 0 : _ref4$achievement; //基本概率
+              _ref4$achievement = _ref4.achievement; //基本概率
 
 
           var rate = {
-            1: 100,
-            2: 10,
-            3: 1
+            1: 650,
+            2: 350,
+            3: 150,
+            4: 50
           }; //加强概率
-
-          var rateAddition = {
-            1: 0,
-            2: 0,
-            3: 0
-          };
-          var timesRate = getRate('times', times);
-          var achievementRate = getRate('achievement', achievement);
-
-          for (var grade in timesRate) {
-            rateAddition[grade] += timesRate[grade];
-          }
-
-          for (var _grade in achievementRate) {
-            rateAddition[_grade] += achievementRate[_grade];
-          }
-
-          for (var _grade2 in rateAddition) {
-            rate[_grade2] *= 1 + rateAddition[_grade2];
-          }
+          // for(const grade in timesRate)
+          //     rateAddition[grade] += timesRate[grade] ;
+          // for(const grade in achievementRate)
+          //     rateAddition[grade] += achievementRate[grade] ;
+          // for(const grade in rateAddition)
+          //     rate[grade] *= (1+rateAddition[grade]);
 
           var randomGrade = function randomGrade() {
             var randomNumber = Math.floor(Math.random() * 1000);
+            if ((randomNumber -= rate[4]) < 0) return 4;
             if ((randomNumber -= rate[3]) < 0) return 3;
             if ((randomNumber -= rate[2]) < 0) return 2;
             if ((randomNumber -= rate[1]) < 0) return 1;
@@ -2738,7 +2722,7 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
           var startId;
 
           if (protect) {
-            talentArr[0] = 3;
+            talentArr[0] = 4;
             startId = 1;
           } else {
             startId = 0;
@@ -2777,17 +2761,15 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
 
 
           for (var _i = 0; _i < talentArr.length; _i++) {
-            var _grade3 = talentArr[_i];
+            var grade = talentArr[_i];
 
-            while (talentGradeStruct[_grade3].length == 0) {
-              _grade3--;
+            while (talentGradeStruct[grade].length == 0) {
+              grade--;
             }
 
-            var length = talentGradeStruct[_grade3].length;
+            var length = talentGradeStruct[grade].length;
             var random = Math.floor(Math.random() * length) % length;
-
-            var data = talentGradeStruct[_grade3].splice(random, 1);
-
+            var data = talentGradeStruct[grade].splice(random, 1);
             talentArr[_i] = data[0];
           }
 
