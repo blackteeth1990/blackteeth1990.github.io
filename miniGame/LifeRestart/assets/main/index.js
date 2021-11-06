@@ -2703,10 +2703,10 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
 
           var randomGrade = function randomGrade() {
             var randomNumber = Math.floor(Math.random() * 1000);
-            if ((randomNumber -= rate[4]) < 0) return 4;
-            if ((randomNumber -= rate[3]) < 0) return 3;
-            if ((randomNumber -= rate[2]) < 0) return 2;
-            if ((randomNumber -= rate[1]) < 0) return 1;
+            if ((randomNumber -= rate[4]) <= 0) return 4;
+            if ((randomNumber -= rate[3]) <= 0) return 3;
+            if ((randomNumber -= rate[2]) <= 0) return 2;
+            if ((randomNumber -= rate[1]) <= 0) return 1;
             return 0;
           };
 
@@ -2722,7 +2722,16 @@ System.register("chunks:///_virtual/Talent.ts", ['./_rollupPluginModLoBabelHelpe
           var startId;
 
           if (protect) {
-            talentArr[0] = 4;
+            var randomNumber = Math.floor(Math.random() * 100);
+            var quality;
+
+            if (randomNumber <= 33) {
+              quality = 5;
+            } else {
+              quality = 4;
+            }
+
+            talentArr[0] = quality;
             startId = 1;
           } else {
             startId = 0;
@@ -3920,7 +3929,7 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
 System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Label, EditBox, Component;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Label, Component;
 
   return {
     setters: [function (module) {
@@ -3934,7 +3943,6 @@ System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginMod
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       Label = module.Label;
-      EditBox = module.EditBox;
       Component = module.Component;
     }],
     execute: function () {
@@ -3947,7 +3955,7 @@ System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginMod
       var DistributePropItem = exports('DistributePropItem', (_dec = ccclass('DistributePropItem'), _dec2 = property({
         type: Label
       }), _dec3 = property({
-        type: EditBox
+        type: Label
       }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_Component) {
         _inheritsLoose(DistributePropItem, _Component);
 
@@ -3962,7 +3970,7 @@ System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginMod
 
           _initializerDefineProperty(_assertThisInitialized(_this), "titleLbl", _descriptor, _assertThisInitialized(_this));
 
-          _initializerDefineProperty(_assertThisInitialized(_this), "pointEditBox", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_assertThisInitialized(_this), "numLbl", _descriptor2, _assertThisInitialized(_this));
 
           _defineProperty(_assertThisInitialized(_this), "onAddButtonClick", void 0);
 
@@ -4006,7 +4014,7 @@ System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginMod
           },
           set: function set(value) {
             this._point = value;
-            this.pointEditBox.string = this._point.toString();
+            this.numLbl.string = this._point.toString();
           }
         }]);
 
@@ -4016,7 +4024,7 @@ System.register("chunks:///_virtual/DistributePropItem.ts", ['./_rollupPluginMod
         enumerable: true,
         writable: true,
         initializer: null
-      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "pointEditBox", [_dec3], {
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "numLbl", [_dec3], {
         configurable: true,
         enumerable: true,
         writable: true,
@@ -4614,7 +4622,7 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
 
           _defineProperty(_assertThisInitialized(_this), "_talentList", void 0);
 
-          _defineProperty(_assertThisInitialized(_this), "_limitSelectedTalentNum", 3);
+          _defineProperty(_assertThisInitialized(_this), "_limitSelectedTalentNum", void 0);
 
           _defineProperty(_assertThisInitialized(_this), "_curMaxHeight", void 0);
 
@@ -4626,6 +4634,7 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
         _proto.start = function start() {};
 
         _proto.init = function init() {
+          this._limitSelectedTalentNum = 3;
           this.AddChoiceButton.interactable = true;
           this.RefreshButton.interactable = true;
           this.checkButton.interactable = true;
@@ -4723,7 +4732,7 @@ System.register("chunks:///_virtual/SelectTalentPanel.ts", ['./_rollupPluginModL
         };
 
         _proto.onAdvDrawButtonClicked = function onAdvDrawButtonClicked() {
-          this._talentList = lifeMgr.talentRandom(40, false).sort(TalentManager.SortTalent);
+          this._talentList = lifeMgr.talentRandom(20, false).sort(TalentManager.SortTalent);
           this.refreshPanel();
         };
 
