@@ -155,6 +155,15 @@ System.register([], function (_export, _context) {
     window._CCSettings = undefined;
     cc.view.enableRetina(true);
     cc.view.resizeWithBrowserSize(true);
+
+    if (cc.sys.isMobile) {
+      if (settings.orientation === 'landscape') {
+        cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE);
+      } else if (settings.orientation === 'portrait') {
+        cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
+      }
+    }
+
     var launchScene = settings.launchScene; // load scene
 
     cc.director.loadScene(launchScene, null, function () {

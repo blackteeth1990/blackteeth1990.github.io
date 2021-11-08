@@ -1,0 +1,30 @@
+{
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": false,
+    "enhance": true,
+    "useIsolateContext": true
+  },
+  "compileType": "game",
+  "libVersion": "game",
+  "appid": "wx3152c0be72b1f037",
+  "projectname": "myLifeRestart",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
+}
