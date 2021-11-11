@@ -3882,12 +3882,17 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
           var _this2 = this;
 
           this.nameLbl.string = PropNameMap[propName];
-          this.propBg.color = PropColorMap[propName];
-          var path = 'Images/game/decoration/icon_';
-          resources.load(path + propName, SpriteFrame, function (err, tSpriteFrame) {
+          this.propBg.color = PropColorMap[propName]; //打了图集无法读取
+
+          var path = 'Images/game/icon_';
+          resources.load(path + propName + "/spriteFrame", SpriteFrame, function (err, tSpriteFrame) {
             _this2.icon.spriteFrame = tSpriteFrame;
           });
           this.updateValue(value);
+        };
+
+        _proto.test = function test(err, tSpriteFrame) {
+          this.icon.spriteFrame = tSpriteFrame;
         };
 
         _proto.updateValue = function updateValue(value) {
@@ -4353,8 +4358,10 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
         };
 
         _proto.init = function init(selectedTalentList) {
-          var _this2 = this;
+          var _this2 = this; //重置天赋点
 
+
+          this.totalPoints = 20;
           this._talentList = selectedTalentList;
           this.talentItemGroup.removeAllChildren();
           this.selectedTalentIndices = [];
@@ -4467,7 +4474,7 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
         };
 
         _proto.onAddPropButtonClicked = function onAddPropButtonClicked() {
-          this.totalPoints += 4;
+          this.totalPoints += 20;
           this.AddPropButton.interactable = false;
           this.updateLeftPoints();
         };
