@@ -4452,23 +4452,20 @@ System.register("chunks:///_virtual/DistributePropPanel.ts", ['./_rollupPluginMo
 
           var t = this.totalPoints;
           var arr = [10, 10, 10, 10];
+          var i = 0;
 
-          while (t > 0) {
-            var sub = Math.round(Math.random() * (Math.min(t, 10) - 1)) + 1;
-
-            while (true) {
-              var select = Math.floor(Math.random() * 4) % 4;
-              if (arr[select] - sub < 0) continue;
-              arr[select] -= sub;
-              t -= sub;
-              break;
-            }
+          while (i <= 2) {
+            var sub = Math.round(Math.random() * t);
+            arr[i] = sub;
+            t -= sub;
+            i++;
           }
 
+          arr[3] = t;
           Array.from(this.distributePropItemsMap.keys()).forEach(function (key, index) {
             var item = _this4.distributePropItemsMap.get(key);
 
-            item.point = 10 - arr[index];
+            item.point = arr[index];
           });
           this.updateLeftPoints();
         };
