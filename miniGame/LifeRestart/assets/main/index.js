@@ -3885,7 +3885,9 @@ System.register("chunks:///_virtual/PropItem.ts", ['./_rollupPluginModLoBabelHel
           this.propBg.color = PropColorMap[propName]; //打了图集无法读取
 
           var path = 'Images/game/icon_';
+          this.icon.enabled = false;
           resources.load(path + propName + "/spriteFrame", SpriteFrame, function (err, tSpriteFrame) {
+            _this2.icon.enabled = true;
             _this2.icon.spriteFrame = tSpriteFrame;
           });
           this.updateValue(value);
