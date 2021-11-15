@@ -779,20 +779,41 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
           property = _decorator.property;
       var showPropKeys = ['CHR', 'INT', 'STR', 'MNY', 'SPR'];
       var SCORE_DES_LIST = [{
-        value: 10,
-        des: "啊。这。。。"
+        value: 5,
+        des: "生不逢时",
+        colorStage: 0
       }, {
-        value: 20,
-        des: "平平凡凡"
+        value: 100,
+        des: "惨不忍睹",
+        colorStage: 0
       }, {
-        value: 40,
-        des: "平平安安"
+        value: 500,
+        des: "平平淡淡",
+        colorStage: 0
       }, {
-        value: 80,
-        des: "在世仙人"
+        value: 1000,
+        des: "自强不息",
+        colorStage: 1
       }, {
-        value: 160,
-        des: "超神"
+        value: 1500,
+        des: "出类拔萃",
+        colorStage: 2
+      }, {
+        value: 5000,
+        des: "富贵安康",
+        colorStage: 3
+      }, {
+        value: 10000,
+        des: "欧皇在世",
+        colorStage: 4
+      }, {
+        value: 30000,
+        des: "惊为天人",
+        colorStage: 5
+      }, {
+        value: 50000,
+        des: "超出三界",
+        colorStage: 5
       }];
       var SummaryPanel = exports('SummaryPanel', (_dec = ccclass('SummaryPanel'), _dec2 = property({
         type: Node
@@ -889,7 +910,7 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
           this.resetTimesLabel.string = "\u7B2C" + lifeMgr._property.get(lifeMgr._property.TYPES.TMS) + "\u4E16\u4EE3";
           var stage = CalStage(SCORE_DES_LIST, score);
           this.scoreDesLabel.string = SCORE_DES_LIST[stage].des;
-          this.scoreDesLabel.color = GradeColor[stage];
+          this.scoreDesLabel.color = GradeColor[SCORE_DES_LIST[stage].colorStage];
           this._contentUITrans = this.talentItemGroup._uiProps.uiTransformComp;
           this._curMaxHeight = 0;
 
