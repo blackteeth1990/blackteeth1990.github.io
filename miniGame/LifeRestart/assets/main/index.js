@@ -3460,7 +3460,7 @@ System.register("chunks:///_virtual/Defines.ts", ['cc'], function (exports) {
           var element = list[i];
 
           if (value < element.value) {
-            return i;
+            return i - 1;
           }
         }
 
