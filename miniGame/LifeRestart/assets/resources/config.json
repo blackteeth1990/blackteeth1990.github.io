@@ -833,6 +833,20 @@
             "cc.SpriteFrame",
             1
         ],
+        "822acdd7-96ca-4bfa-81f3-65c34c021733": [
+            "Images/transparent/ui/frame/bg_3",
+            "cc.ImageAsset"
+        ],
+        "822acdd7-96ca-4bfa-81f3-65c34c021733@6c48a": [
+            "Images/transparent/ui/frame/bg_3/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "822acdd7-96ca-4bfa-81f3-65c34c021733@f9941": [
+            "Images/transparent/ui/frame/bg_3/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
         "1e80985e-8da1-48c3-94e0-41db8fc0427f": [
             "Images/transparent/ui/frame/frame_choose",
             "cc.ImageAsset"
@@ -858,20 +872,6 @@
         ],
         "4db6de4f-4d7b-4fe0-81e0-4442ef156699@f9941": [
             "Images/transparent/ui/frame/frame_down/spriteFrame",
-            "cc.SpriteFrame",
-            1
-        ],
-        "822acdd7-96ca-4bfa-81f3-65c34c021733": [
-            "Images/transparent/ui/frame/bg_3",
-            "cc.ImageAsset"
-        ],
-        "822acdd7-96ca-4bfa-81f3-65c34c021733@6c48a": [
-            "Images/transparent/ui/frame/bg_3/texture",
-            "cc.Texture2D",
-            1
-        ],
-        "822acdd7-96ca-4bfa-81f3-65c34c021733@f9941": [
-            "Images/transparent/ui/frame/bg_3/spriteFrame",
             "cc.SpriteFrame",
             1
         ]
