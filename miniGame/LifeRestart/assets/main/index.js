@@ -2153,7 +2153,7 @@ System.register("chunks:///_virtual/EventMessage.ts", ['./_rollupPluginModLoBabe
 System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './LifeTrackItem.ts', './EventMessage.ts', './Life.ts', './PropItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Color, ScrollView, Node, Prefab, Button, Label, instantiate, Vec3, Animation, UIPanel, Message, LifeTrackItem, eventMsg, lifeMgr, PropItem;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, _createClass, cclegacy, _decorator, Color, ScrollView, Node, Prefab, Button, Label, instantiate, Vec3, Animation, Sprite, resources, SpriteFrame, UIPanel, Message, LifeTrackItem, eventMsg, lifeMgr, PropItem;
 
   return {
     setters: [function (module) {
@@ -2175,6 +2175,9 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
       instantiate = module.instantiate;
       Vec3 = module.Vec3;
       Animation = module.Animation;
+      Sprite = module.Sprite;
+      resources = module.resources;
+      SpriteFrame = module.SpriteFrame;
     }, function (module) {
       UIPanel = module.UIPanel;
     }, function (module) {
@@ -2196,6 +2199,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
       var ccclass = _decorator.ccclass,
           property = _decorator.property;
       var showPropKeys = ['CHR', 'INT', 'STR', 'MNY', 'SPR'];
+      var lianJiImg = exports('lianJiImg', ['1', '1', '1', '1', '1', '2', '3']);
       var autoPlayColor = new Color(53, 194, 115);
       var COMBO_LEVEL = 3;
       var LifeTrackPanel = exports('LifeTrackPanel', (_dec = ccclass('LifeTrackPanel'), _dec2 = property(ScrollView), _dec3 = property({
@@ -2282,6 +2286,8 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
 
           _defineProperty(_assertThisInitialized(_this), "_combo", 0);
 
+          _defineProperty(_assertThisInitialized(_this), "_lastShowGrade", 0);
+
           return _this;
         }
 
@@ -2352,14 +2358,24 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
         };
 
         _proto.playAnimation = function playAnimation() {
+          var _this4 = this;
+
           var labelAni = this.scoreLabel.getComponent(Animation);
           labelAni.play("scorePop");
           var scoreAni = this.lianJiNode.getComponent(Animation);
           var scoreAniState = scoreAni.getState("lianJiPop");
 
           if (this._combo > 2) {
-            this.lianJiLabel.string = "X".concat(this._combo.toString());
-            scoreAni.play("lianJiPop");
+            var lianJiSp = this.lianJiNode.getComponent(Sprite);
+            labelAni.play("scorePop");
+            var path = 'Images/game/lianJi_';
+            lianJiSp.enabled = false;
+            resources.load(path + lianJiImg[this._lastShowGrade] + "/spriteFrame", SpriteFrame, function (err, tSpriteFrame) {
+              lianJiSp.enabled = true;
+              lianJiSp.spriteFrame = tSpriteFrame;
+              _this4.lianJiLabel.string = "X".concat(_this4._combo.toString());
+              scoreAni.play("lianJiPop");
+            });
           } // scoreAniState.setTime(0.0);
 
         };
@@ -2414,7 +2430,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
         };
 
         _proto.triggerOneLifeTrack = function triggerOneLifeTrack() {
-          var _this4 = this;
+          var _this5 = this;
 
           if (!this._isEnd) {
             var track = lifeMgr.next();
@@ -2429,7 +2445,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
             } else {
               if (this._isAutoPlay) {
                 setTimeout(function () {
-                  _this4.triggerOneLifeTrack();
+                  _this5.triggerOneLifeTrack();
                 }, this.realTriggerTime);
               }
             }
@@ -2447,7 +2463,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
         };
 
         _proto.showOneTrackItem = function showOneTrackItem(track) {
-          var _this5 = this;
+          var _this6 = this;
 
           var finalGrade;
           var contentText = track.content.map(function (_ref) {
@@ -2465,9 +2481,11 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
                 finalGrade = grade;
 
                 if (grade >= COMBO_LEVEL) {
-                  _this5.setCombo(_this5._combo + 1);
+                  _this6.setCombo(_this6._combo + 1);
+
+                  _this6._lastShowGrade = finalGrade;
                 } else {
-                  _this5.setCombo(_this5._combo - 1);
+                  _this6.setCombo(_this6._combo - 1);
                 }
 
                 return description + (postEvent ? "\n" + postEvent : '');
