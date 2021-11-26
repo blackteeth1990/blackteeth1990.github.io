@@ -842,7 +842,7 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
         colorStage: 3
       }, {
         value: 10000,
-        des: "欧皇在世",
+        des: "鸥皇在世",
         colorStage: 4
       }, {
         value: 30000,
@@ -947,6 +947,7 @@ System.register("chunks:///_virtual/SummaryPanel.ts", ['./_rollupPluginModLoBabe
           this.ageLabel.string = "\u4EAB\u5E74" + lifeMgr._property.get(lifeMgr._property.TYPES.AGE) + "\u5C81";
           this.resetTimesLabel.string = "\u7B2C" + lifeMgr._property.get(lifeMgr._property.TYPES.TMS) + "\u4E16\u4EE3";
           var stage = CalStage(SCORE_DES_LIST, score);
+          stage = 6;
           this.scoreDesLabel.string = SCORE_DES_LIST[stage].des;
           this.scoreDesLabel.color = GradeColor[SCORE_DES_LIST[stage].colorStage];
           this._contentUITrans = this.talentItemGroup._uiProps.uiTransformComp;
