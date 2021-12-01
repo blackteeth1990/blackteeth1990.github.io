@@ -2528,7 +2528,7 @@ System.register("chunks:///_virtual/LifeTrackPanel.ts", ['./_rollupPluginModLoBa
 
                   _this6._lastShowGrade = finalGrade;
                 } else {
-                  _this6.setCombo(_this6._combo - 1);
+                  _this6.setCombo(0);
                 }
 
                 return description + (postEvent ? "\n" + postEvent : '');
@@ -4185,7 +4185,7 @@ System.register("chunks:///_virtual/AchievementHint.ts", ['./_rollupPluginModLoB
         ;
 
         _proto.show = function show(achievementData, time) {
-          this.contentLbl.string = achievementData.name;
+          this.contentLbl.string = "获得成就：" + achievementData.name;
           var bg = this.getComponent(Sprite);
           bg.color = GradeColor[achievementData.grade];
           var scoreAni = this.getComponent(Animation);
