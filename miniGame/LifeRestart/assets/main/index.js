@@ -3101,15 +3101,15 @@ System.register("chunks:///_virtual/StatisticsItem.ts", ['./_rollupPluginModLoBa
 System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLoBabelHelpers.js', 'cc', './UIPanel.ts', './Defines.ts', './Life.ts', './AchievementItem.ts', './StatisticsItem.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _defineProperty, cclegacy, _decorator, Node, Prefab, Button, instantiate, Sprite, UIPanel, GradeColor, getGrade, getRate, lifeMgr, AchievementItem, StatisticsItem;
+  var _defineProperty, _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Prefab, Button, instantiate, Sprite, UIPanel, GradeColor, getGrade, getRate, lifeMgr, AchievementItem, StatisticsItem;
 
   return {
     setters: [function (module) {
+      _defineProperty = module.defineProperty;
       _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
       _inheritsLoose = module.inheritsLoose;
       _initializerDefineProperty = module.initializerDefineProperty;
       _assertThisInitialized = module.assertThisInitialized;
-      _defineProperty = module.defineProperty;
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
@@ -3132,7 +3132,7 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
       StatisticsItem = module.StatisticsItem;
     }],
     execute: function () {
-      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _temp;
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _class3, _temp;
 
       cclegacy._RF.push({}, "7baefjqdLRKUrgY5285bpeS", "AchievementPanel", undefined);
 
@@ -3170,7 +3170,7 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
         type: Node
       }), _dec17 = property({
         type: Node
-      }), _dec(_class = (_class2 = (_temp = /*#__PURE__*/function (_UIPanel) {
+      }), _dec(_class = (_class2 = (_temp = _class3 = /*#__PURE__*/function (_UIPanel) {
         _inheritsLoose(AchievementPanel, _UIPanel);
 
         function AchievementPanel() {
@@ -3282,10 +3282,11 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
           }
 
           this.achievementItemsGroup.removeAllChildren();
+          var chooseGrade = AchievementPanel.TabToGrade[data];
 
           this._achievementList.filter(function (_ref) {
             var grade = _ref.grade;
-            return grade == data;
+            return grade == chooseGrade;
           }).forEach(function (_ref2) {
             var name = _ref2.name,
                 description = _ref2.description,
@@ -3311,7 +3312,7 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
           for (var i = 0; i < this._tabButtonList.length; i++) {
             var element = this._tabButtonList[i];
             var tSprite = element.getComponent(Sprite);
-            tSprite.color = GradeColor[i + 3];
+            tSprite.color = GradeColor[AchievementPanel.TabToGrade[i]];
           }
 
           this._contentUITrans = this.achievementItemsGroup._uiProps.uiTransformComp;
@@ -3375,7 +3376,12 @@ System.register("chunks:///_virtual/AchievementPanel.ts", ['./_rollupPluginModLo
         };
 
         return AchievementPanel;
-      }(UIPanel), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementItemsGroup", [_dec2], {
+      }(UIPanel), _defineProperty(_class3, "TabToGrade", {
+        0: 0,
+        1: 2,
+        2: 3,
+        3: 4
+      }), _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "achievementItemsGroup", [_dec2], {
         configurable: true,
         enumerable: true,
         writable: true,
